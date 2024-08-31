@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Industries() {
+export default function Services() {
   return (
     <div className="grid h-screen w-full place-content-center border">
-      Industries
+      Services
     </div>
   )
 }
