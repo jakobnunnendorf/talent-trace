@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react'
 
 export default function NavBar() {
   return (
-    <div className="rborder h-14 relative top-7 mx-auto w-4/5">
-      NavBar
-    </div>
-  );
+    <header className="z-90 absolute w-full">
+      <nav className="rborder relative top-7 mx-auto grid h-14 w-4/5 place-content-center">
+        NavBar
+      </nav>
+    </header>
+  )
 }
