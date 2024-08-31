@@ -6,7 +6,7 @@ import UploadCV from './UploadCV'
 export default function NavBar() {
   return (
     <header className="z-90 absolute w-full">
-      <nav className="relative top-7 mx-auto flex h-14 w-4/5 gap-64 border">
+      <nav className="relative top-7 mx-auto flex h-14 w-4/5 gap-64 text-white">
         <Logo />
         <div className="flex flex-grow gap-12">
           <NavLinks />

@@ -10,7 +10,7 @@ export default function NavLinks() {
     { title: 'Contact us', relativePath: '/contact-us' },
   ]
   return (
-    <ul className="flex flex-grow items-center justify-between gap-12 border text-center">
+    <ul className="flex flex-grow items-center justify-between gap-12  text-center">
       {links.map((link) => {
         return (
           <li key={link.title} className="h-fit w-fit ">
