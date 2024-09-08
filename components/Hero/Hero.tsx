@@ -17,9 +17,9 @@ export default function Hero() {
           <Headline />
           <div className="row-span-1 row-start-4 flex items-center gap-4">
             <div className="h-fit w-fit border bg-white px-5 py-3">
-              <span className="text-black">Search something</span>
+              <span className="text-black">Search Jobs</span>
             </div>
-            <div className="h-fit w-fit border px-5 py-3">Find something</div>
+            <div className="h-fit w-fit border px-5 py-3">Find Talent</div>
           </div>
         </div>
       </div>

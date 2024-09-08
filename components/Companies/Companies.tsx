@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function Companies() {
   const companies = [
-    // '/Oldendorff logo.png',
-    // '/RioTinto logo.png',
+    '/Oldendorff logo.png',
+    '/RioTinto logo.png',
     '/BHP logo.avif',
     '/Vale logo.jpg',
     '/Glencore logo.png',
@@ -14,8 +14,7 @@ export default function Companies() {
   return (
     <div className="grid h-96 w-full grid-rows-4 text-center">
       <div className="row-start-2">
-        <h2 className="text-3xl">Top Companies hiring at Mysterious Client</h2>{' '}
-        {/* Talent Trace */}
+        <h2 className="text-3xl">Top Companies hiring at Talent Trace</h2>
         <h4 className="text-md mt-1 text-gray-500">
           We have longstanding business relations with
         </h4>
