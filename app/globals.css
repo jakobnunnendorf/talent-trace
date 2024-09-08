@@ -19,11 +19,40 @@
   animation: slideLeft 15s linear infinite;
 }
 
+.drift-right {
+  animation: driftRight 60s linear infinite;
+}
+
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-1250px);
+  }
+}
+
+@keyframes driftRight {
+  0% {
+    transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.move-ship {
+  animation: moveShip 60s linear infinite;
+}
+
+@keyframes moveShip {
+  0% {
+    transform: translate(50vw, 50vh); /* Start at bottom-right */
+  }
+  100% {
+    transform: translate(
+      -38vw,
+      -50vh
+    ); /* Move towards top-left at a 140-degree angle */
   }
 }
