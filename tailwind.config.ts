@@ -13,6 +13,9 @@ const config: Config = {
         '11xl': '10rem',
         '12xl': '11rem',
       },
+      fontFamily: {
+        sans: ['jost', 'sans-serif'],
+      },
     },
   },
   plugins: [],
