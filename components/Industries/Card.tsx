@@ -23,9 +23,10 @@ export default function Card({
       initial={{ x: `${x}vw` }}
       animate={{ x: animation }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      onClick={onClick}
     >
-      <div className="absolute right-0 -z-10 h-full w-1/2 border-l bg-slate-50"></div>
-      <div className="grid h-fit w-full grid-cols-2">
+      <div className="absolute right-0 -z-10 hidden h-1/2 w-full border-l bg-slate-50 md:block md:h-full md:w-1/2"></div>
+      <div className="grid h-fit w-full grid-rows-2 md:grid-cols-2 md:grid-rows-1">
         <LeftComponent />
         <RightComponent />
       </div>
