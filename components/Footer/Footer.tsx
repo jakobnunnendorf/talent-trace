@@ -1,98 +1,58 @@
-// components/Footer.tsx
 import React from 'react'
-// import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
-
+import SocialLinks from './SocialLinks'
+import FooterColumn from './FooterColumn'
+import Copyright from './Copyright'
+import Image from 'next/image'
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 p-6">
-      <div className="mx-auto grid max-w-7xl grid-cols-4 gap-4">
-        {/* Logo and Social Media */}
+    <footer className="bg-gray-100 pt-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-5 gap-4 pb-6">
         <div className="flex flex-col items-start">
-          <div className="mb-2 text-lg font-bold">Talent Trace</div>
-          <div className="flex space-x-4">
-            <a
-              href="https://facebook.com"
-              className="text-gray-600 hover:text-gray-800"
-            >
-              {/* <FaFacebookF /> */}
-              FB
-            </a>
-            <a
-              href="https://twitter.com"
-              className="text-gray-600 hover:text-gray-800"
-            >
-              {/* <FaTwitter /> */}X
-            </a>
-            <a
-              href="https://instagram.com"
-              className="text-gray-600 hover:text-gray-800"
-            >
-              {/* <FaInstagram /> */}
-              IG
-            </a>
+          <div className="flex flex-col items-center">
+            <figure className="mb-2">
+              <Image
+                src="/Talent Trace logo.png"
+                alt="Talent Trace"
+                width={100}
+                height={100}
+              />
+            </figure>
+            <SocialLinks />
           </div>
         </div>
-
-        {/* Column for Candidates */}
-        <div className="flex flex-col">
-          <div className="mb-1 font-semibold">For Candidates</div>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Job Opportunities
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Browse Categories
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Upload CV
-          </a>
-        </div>
-
-        {/* Column for Employers */}
-        <div className="flex flex-col">
-          <div className="mb-1 font-semibold">For Employers</div>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Browse Candidates
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Employer Dashboard
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Add Job
-          </a>
-        </div>
-
-        {/* Column for Others and Legal */}
-        <div className="flex flex-col">
-          <div className="mb-1 font-semibold">Other</div>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            About Us
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Executive Search
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Contingency Search
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            News
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Contact Us
-          </a>
-          <div className="mb-1 mt-2 font-semibold">Legal</div>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Privacy Policy
-          </a>
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Terms and Conditions
-          </a>
-        </div>
+        <FooterColumn title="For Candidates" links={candidateLinks} />
+        <FooterColumn title="For Employers" links={employerLinks} />
+        <FooterColumn title="Other" links={otherLinks} />
+        <FooterColumn title="Legal" links={legalLinks} />
       </div>
-      <div className="mt-6 text-center text-xs text-gray-600">
-        Copyright © 2024 Talent Trace Pte Ltd. All Rights Reserved
-      </div>
+      <Copyright />
     </footer>
   )
 }
+
+const candidateLinks = [
+  { href: '#', text: 'Job Opportunities' },
+  { href: '#', text: 'Browse Categories' },
+  { href: '#', text: 'Upload CV' },
+]
+
+const employerLinks = [
+  { href: '#', text: 'Browse Candidates' },
+  { href: '#', text: 'Employer Dashboard' },
+  { href: '#', text: 'Add Job' },
+]
+
+const otherLinks = [
+  { href: '#', text: 'About Us' },
+  { href: '#', text: 'Executive Search' },
+  { href: '#', text: 'Contingency Search' },
+  { href: '#', text: 'News' },
+  { href: '#', text: 'Contact Us' },
+]
+
+const legalLinks = [
+  { href: '#', text: 'Privacy Policy' },
+  { href: '#', text: 'Terms and Conditions' },
+]
 
 export default Footer
