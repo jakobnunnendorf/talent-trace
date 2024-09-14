@@ -19,7 +19,7 @@ export default function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <motion.li
-      className="flex-shrink-0 w-[430px] rounded-lg bg-gray-100 p-6 shadow cursor-pointer"
+      className="w-[430px] flex-shrink-0 cursor-pointer rounded-lg bg-white p-6 shadow-xl"
       onClick={onClick}
       layout
       animate={{
@@ -28,10 +28,14 @@ export default function TestimonialCard({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
-      <h3 className="text-lg font-semibold">{testimonial.title}</h3>
-      <p className="mt-2 text-sm text-gray-600">{testimonial.text}</p>
-      <p className="mt-4 text-sm font-semibold">{testimonial.author}</p>
-      <p className="text-sm text-gray-500">{testimonial.position}</p>
+      <h3 className="mt-6 text-lg font-semibold text-[#1098EF]">
+        {testimonial.title}
+      </h3>
+      <p className="mt-2 font-sans text-sm text-gray-600">{testimonial.text}</p>
+      <div className="ml-8">
+        <p className="text-md mt-4 font-medium">{testimonial.author}</p>
+        <p className="text-sm text-gray-500">{testimonial.position}</p>
+      </div>
     </motion.li>
   )
 }
