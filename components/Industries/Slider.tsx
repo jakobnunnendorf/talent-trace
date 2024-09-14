@@ -1,29 +1,36 @@
 import React from 'react'
 
-export default function Slider({
-  activeCard,
-  setActiveCard,
-}: {
+interface DotProps {
+  isActive: boolean
+  onClick: () => void
+}
+
+const Dot: React.FC<DotProps> = ({ isActive, onClick }) => (
+  <button
+    onClick={onClick}
+    className={`h-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2] transition-all duration-300 ${
+      isActive ? 'w-16' : 'w-4'
+    }`}
+  ></button>
+)
+
+interface SliderProps {
   activeCard: number
   setActiveCard: (index: number) => void
-}) {
+  totalCards: number
+}
+
+export default function Slider({ activeCard, setActiveCard, totalCards }: SliderProps) {
   return (
     <ul className="flex gap-4">
-      <li>
-        <button className="h-4 w-16 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2]"></button>
-      </li>
-      <li>
-        <button className="h-4 w-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2]"></button>
-      </li>
-      <li>
-        <button className="h-4 w-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2]"></button>
-      </li>
-      <li>
-        <button className="h-4 w-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2]"></button>
-      </li>
-      <li>
-        <button className="h-4 w-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2]"></button>
-      </li>
+      {[...Array(totalCards)].map((_, index) => (
+        <li key={index}>
+          <Dot
+            isActive={index === activeCard}
+            onClick={() => setActiveCard(index)}
+          />
+        </li>
+      ))}
     </ul>
   )
 }
