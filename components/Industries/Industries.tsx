@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
-import { motion, useTransform, useScroll } from 'framer-motion'
+import { motion, useTransform, useScroll, PanInfo } from 'framer-motion'
 import Card from './Card'
 import Slider from './Slider'
 import Animation from './Animation'
@@ -17,8 +17,8 @@ const cardData = [
 
 export default function Industries() {
   const [activeCard, setActiveCard] = useState(0)
-  console.log(activeCard)
   const ref = useRef(null)
+  const containerRef = useRef<HTMLUListElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['0 0.3', 'center start'],
@@ -35,6 +35,26 @@ export default function Industries() {
     setActiveCard(index)
   }
 
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ) => {
+    const container = containerRef.current
+    if (!container) return
+
+    const threshold = container.offsetWidth * 0.2
+    const dragDistance = info.offset.x
+    const dragDirection = dragDistance > 0 ? -1 : 1
+
+    if (Math.abs(dragDistance) > threshold) {
+      const newIndex = Math.max(
+        0,
+        Math.min(cardData.length - 1, activeCard + dragDirection)
+      )
+      setActiveCard(newIndex)
+    }
+  }
+
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden">
       <motion.h2 className="text-3xl" style={{ translateY: slideUp }}>
@@ -45,14 +65,20 @@ export default function Industries() {
         className="my-auto flex h-[88%] w-[93%] flex-col items-center gap-8"
         style={{ scale }}
       >
-        <motion.ul className="flex h-full w-[80vw] gap-8">
+        <motion.ul
+          ref={containerRef}
+          className="relative flex h-full w-[80vw] touch-pan-y gap-8"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.1}
+          onDragEnd={handleDragEnd}
+        >
           {cardData.map((card, index) => (
             <Card
               key={index}
               {...card}
-              index={index}
               activeCard={activeCard}
-              onClick={() => setActiveCard(index)}
+              onClick={() => handleCardClick(index)}
             />
           ))}
         </motion.ul>
