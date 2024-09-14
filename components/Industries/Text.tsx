@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Text() {
   return (
-    <div className="gborder flex h-full w-full flex-col gap-16 py-20 font-sans">
+    <div className="my-auto flex h-fit w-full flex-col gap-16 py-20 font-sans">
       <div className="h-fit">
         <h2 className="mb-3 w-full text-center text-4xl font-semibold leading-tight">
           Popular Industries.

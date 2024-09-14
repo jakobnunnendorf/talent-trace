@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Animation() {
   return (
-    <div className="bborder grid h-full w-full place-content-center">
+    <div className="grid h-full w-full place-content-center">
       <video
         src="/animation.mp4"
         width={500}

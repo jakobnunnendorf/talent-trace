@@ -26,7 +26,7 @@ export default function Card({
       onClick={onClick}
     >
       <div className="absolute right-0 -z-10 hidden h-1/2 w-full border-l bg-slate-50 md:block md:h-full md:w-1/2"></div>
-      <div className="grid h-fit w-full grid-rows-2 md:grid-cols-2 md:grid-rows-1">
+      <div className="grid h-full w-full grid-rows-2 md:grid-cols-2 md:grid-rows-1">
         <LeftComponent />
         <RightComponent />
       </div>
