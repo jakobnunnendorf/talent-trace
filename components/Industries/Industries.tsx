@@ -17,6 +17,7 @@ const cardData = [
 
 export default function Industries() {
   const [activeCard, setActiveCard] = useState(0)
+  console.log(activeCard)
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -30,6 +31,10 @@ export default function Industries() {
   )
   const slideUp = useTransform(scrollYProgress, [0, 0.3, 1], [150, -100, -100])
 
+  const handleCardClick = (index: number) => {
+    setActiveCard(index)
+  }
+
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden">
       <motion.h2 className="text-3xl" style={{ translateY: slideUp }}>
@@ -40,13 +45,15 @@ export default function Industries() {
         className="my-auto flex h-[88%] w-[93%] flex-col items-center gap-8"
         style={{ scale }}
       >
-        <motion.ul
-          drag
-          dragConstraints={{ right: -50, left: -50, top: 0, bottom: 0 }}
-          className="flex h-full w-[80vw] gap-8"
-        >
+        <motion.ul className="flex h-full w-[80vw] gap-8">
           {cardData.map((card, index) => (
-            <Card key={index} {...card} />
+            <Card
+              key={index}
+              {...card}
+              index={index}
+              activeCard={activeCard}
+              onClick={() => setActiveCard(index)}
+            />
           ))}
         </motion.ul>
         <Slider

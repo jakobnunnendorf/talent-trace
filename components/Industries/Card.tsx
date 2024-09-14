@@ -1,18 +1,37 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 interface CardProps {
   LeftComponent: React.ComponentType
   RightComponent: React.ComponentType
+  index: number
+  activeCard: number
+  onClick: () => void
 }
 
-export default function Card({ LeftComponent, RightComponent }: CardProps) {
+export default function Card({
+  LeftComponent,
+  RightComponent,
+  index,
+  activeCard,
+  onClick,
+}: CardProps) {
+  const width = 80
+  const x = -1 * activeCard * width
+
   return (
-    <article className="relative flex h-full w-[80vw] flex-shrink-0 items-center overflow-hidden rounded-3xl border shadow-2xl">
+    <motion.article
+      className="relative flex h-full w-[80vw] flex-shrink-0 items-center overflow-hidden rounded-3xl border shadow-2xl"
+      initial={{ x: `${x}vw` }}
+      animate={{ x: `${x}vw` }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      onClick={onClick}
+    >
       <div className="absolute right-0 -z-10 h-full w-1/2 border-l bg-slate-50"></div>
       <div className="grid h-fit w-full grid-cols-2">
         <LeftComponent />
         <RightComponent />
       </div>
-    </article>
+    </motion.article>
   )
 }
