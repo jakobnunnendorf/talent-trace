@@ -1,0 +1,29 @@
+import React from 'react'
+import Image from 'next/image'
+
+export default function ContactHeader() {
+  return (
+    <div className="mb-24 text-center">
+      <h2 className="mb-2 font-sans text-4xl font-bold">Contact Us</h2>
+      <h3 className="mb-8 flex items-center justify-center gap-2 text-3xl font-bold opacity-50">
+        <p>book a consultation</p>
+        <figure>
+          <Image
+            src="/right-arrow-gray.png"
+            alt="arrow"
+            width={25}
+            height={25}
+          />
+        </figure>
+      </h3>
+      <p className="mx-auto w-2/3 font-sans">
+        We adopt a holistic approach in recruiting the right candidates for you.
+        From the initial step of requisition through to onboarding, we will work
+        alongside your team, profiling, consulting and onboarding candidates. We
+        have well-trained consultants who can objectively guide you through the
+        process. As global consultants, we can find you candidates in remote
+        locations as well as popular cities. Speak to us.
+      </p>
+    </div>
+  )
+}
