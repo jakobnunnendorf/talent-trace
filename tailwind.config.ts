@@ -16,6 +16,9 @@ const config: Config = {
       fontFamily: {
         sans: ['jost', 'sans-serif'],
       },
+      colors: {
+        blue: '#1098EF',
+      },
     },
   },
   plugins: [],

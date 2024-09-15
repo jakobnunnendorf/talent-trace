@@ -28,7 +28,7 @@ export default function TestimonialCard({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
-      <h3 className="mt-6 text-lg font-semibold text-[#1098EF]">
+      <h3 className="text-blue mt-6 text-lg font-semibold">
         {testimonial.title}
       </h3>
       <p className="mt-2 font-sans text-sm text-gray-600">{testimonial.text}</p>

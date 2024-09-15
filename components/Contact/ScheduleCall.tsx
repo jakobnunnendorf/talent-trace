@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function ScheduleCall() {
   return (
     <div className="w-96 rounded-lg bg-white p-6">
-      <p className="mb-2 text-sm text-[#1098EF]">At no extra cost</p>
+      <p className="text-blue mb-2 text-sm">At no extra cost</p>
       <h3 className="mb-3 text-4xl font-semibold text-gray-800">
         Schedule a call with us
       </h3>
@@ -15,13 +15,13 @@ export default function ScheduleCall() {
       <div className="grid grid-cols-2 gap-4">
         <Link
           href="/contact"
-          className="rounded border border-[#1098EF] px-4 py-2 text-center text-[#1098EF] transition duration-300 hover:bg-blue-600"
+          className="border-blue text-blue rounded border px-4 py-2 text-center transition duration-300 hover:bg-blue-600"
         >
           Find Talent
         </Link>
         <Link
           href="/contact"
-          className="rounded px-4 py-2 text-center text-[#1098EF] underline underline-offset-4 transition duration-300"
+          className="text-blue rounded px-4 py-2 text-center underline underline-offset-4 transition duration-300"
         >
           Search Jobs
         </Link>

@@ -19,8 +19,8 @@ const OurServices = () => {
           <Image
             src={imageUrl}
             alt="Our Services"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             priority
           />
         </div>

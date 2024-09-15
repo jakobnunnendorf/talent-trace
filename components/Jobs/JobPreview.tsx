@@ -16,7 +16,7 @@ export default function JobPreview() {
           <JobCard key={index} {...job} />
         ))}
       </ul>
-      <button className="mx-auto mt-20 block rounded-xl bg-[#1098EF] px-8 py-4 text-white transition-colors duration-300 hover:bg-[#0d7bc7]">
+      <button className="bg-blue mx-auto mt-20 block rounded-xl px-8 py-4 text-white transition-colors duration-300 hover:bg-[#0d7bc7]">
         Load more listings
       </button>
     </div>

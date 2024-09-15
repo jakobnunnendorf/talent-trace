@@ -8,7 +8,7 @@ interface DotProps {
 const Dot: React.FC<DotProps> = ({ isActive, onClick }) => (
   <button
     onClick={onClick}
-    className={`h-4 rounded-full bg-gradient-to-tr from-[#1098EF] to-[#41ADF2] transition-all duration-300 ${
+    className={`from-blue h-4 rounded-full bg-gradient-to-tr to-[#41ADF2] transition-all duration-300 ${
       isActive ? 'w-16' : 'w-4'
     }`}
   ></button>
@@ -20,7 +20,11 @@ interface SliderProps {
   totalCards: number
 }
 
-export default function Slider({ activeCard, setActiveCard, totalCards }: SliderProps) {
+export default function Slider({
+  activeCard,
+  setActiveCard,
+  totalCards,
+}: SliderProps) {
   return (
     <ul className="flex gap-4">
       {[...Array(totalCards)].map((_, index) => (

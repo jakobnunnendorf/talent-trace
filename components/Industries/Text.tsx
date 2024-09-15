@@ -18,7 +18,7 @@ export default function Text() {
       </div>
       <Link href="/" className="h-fit">
         <div className="flex justify-center gap-2.5">
-          <p className="text-center text-2xl text-[#1098EF] underline">
+          <p className="text-blue text-center text-2xl underline">
             submit talent requisition
           </p>
           <Image
