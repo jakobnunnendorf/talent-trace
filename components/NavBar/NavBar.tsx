@@ -7,8 +7,8 @@ import Image from 'next/image'
 export default function NavBar() {
   return (
     <header className="z-90 absolute w-full">
-      <nav className="relative top-7 mx-auto flex h-14 w-4/5 justify-between text-white md:justify-normal md:gap-64">
-        <button className="md:hidden">
+      <nav className="relative top-7 mx-auto flex h-14 w-4/5 justify-between text-white lg:justify-normal lg:gap-64">
+        <button className="lg:hidden">
           <Image
             src="/navburger.png"
             height={50}
@@ -17,7 +17,7 @@ export default function NavBar() {
           />
         </button>
         <Logo />
-        <div className="md:flex md:flex-grow md:gap-12">
+        <div className="lg:flex lg:flex-grow lg:gap-12">
           <NavLinks />
           <UploadCV />
         </div>
