@@ -27,7 +27,7 @@ export default function Hero() {
     <div className="relative grid h-[66vh] grid-rows-6 overflow-hidden md:grid-rows-5 lg:h-screen">
       <Background />
       <Ship />
-      <h1 className="hidden bg-gradient-to-b from-white/20 via-white/5 via-40% to-white/0 bg-clip-text text-center text-transparent md:row-start-2 md:block md:text-7xl md:font-extrabold lg:text-10xl">
+      <h1 className="-z-30 hidden bg-gradient-to-b from-white/20 via-white/5 via-40% to-white/0 bg-clip-text text-center text-transparent md:row-start-2 md:block md:text-7xl md:font-extrabold lg:text-10xl">
         TALENT TRACE
       </h1>
       <section className="row-span-3 row-start-3 flex flex-col items-center text-white md:row-span-2 md:mx-auto md:w-4/5 md:items-start">
