@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function NavBar() {
   return (
-    <header className="z-90 absolute w-full">
+    <header className="absolute z-50 w-full">
       <nav className="relative top-7 mx-auto flex h-14 w-4/5 justify-between text-white lg:justify-normal lg:gap-64">
         <button className="lg:hidden">
           <Image

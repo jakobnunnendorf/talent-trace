@@ -12,7 +12,7 @@ export default function Companies() {
     '/Glencore logo.png',
   ]
   return (
-    <div className="w-full overflow-hidden py-8 text-center md:grid md:h-96 md:grid-rows-4 md:py-0">
+    <div className=" z-50 w-full overflow-hidden bg-white py-8 text-center md:grid md:h-96 md:grid-rows-4 md:py-0">
       <div className="row-start-2 w-screen">
         <h2 className="text-3xl">Top Companies hiring at Talent Trace</h2>
         <h4 className="text-md mt-1 py-4 text-gray-500 md:py-0">
