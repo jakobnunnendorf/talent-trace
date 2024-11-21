@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function NavLinks() {
   const links = [
@@ -14,7 +15,9 @@ export default function NavLinks() {
       {links.map((link) => {
         return (
           <li key={link.title} className="h-fit w-fit">
-            <p className="text-sm">{link.title}</p>
+            <Link href={link.relativePath}>
+              <p className="text-sm">{link.title}</p>
+            </Link>
           </li>
         )
       })}
