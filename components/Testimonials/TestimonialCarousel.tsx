@@ -1,8 +1,16 @@
-import React, { useRef, useState } from 'react'
-import { motion, PanInfo } from 'framer-motion'
-import TestimonialCard from './TestimonialCard'
+import * as React from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel"
 import Slider from '../Industries/Slider'
 import testimonials from './testimonialData'
+import TestimonialCard from './TestimonialCard'
 
 export interface Testimonial {
   title: string
@@ -11,73 +19,66 @@ export interface Testimonial {
   position: string
 }
 
-interface TestimonialCarouselProps {
-  testimonials: Testimonial[]
-  activeCard: number
-  handleCardClick: (index: number) => void
-  handleDragEnd: (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => void
-}
-
 const TestimonialCarousel: React.FC = () => {
-  const containerRef = useRef<HTMLUListElement>(null)
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
 
-  const [activeCard, setActiveCard] = useState(1)
+  React.useEffect(() => {
+    if (!api) return
 
-  const handleCardClick = (index: number) => {
-    setActiveCard(Math.min(Math.max(index, 1), testimonials.length - 2))
-  }
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
 
-  const handleDragEnd = (
-    event: MouseEvent | TouchEvent | PointerEvent,
-    info: PanInfo
-  ) => {
-    const threshold = 50
-    const dragDistance = info.offset.x
-    const dragDirection = dragDistance > 0 ? -1 : 1
-
-    if (Math.abs(dragDistance) > threshold) {
-      const newIndex = Math.min(
-        Math.max(activeCard + dragDirection, 1),
-        testimonials.length - 2
-      )
-      setActiveCard(newIndex)
-    }
+  const handleSelect = (index: number) => {
+    api?.scrollTo(index)
   }
 
   return (
-    <div>
-      <motion.div className="relative overflow-hidden">
-        <motion.ul
-          ref={containerRef}
-          className="flex h-96 gap-8 py-12"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.1}
-          onDragEnd={handleDragEnd}
-          animate={{ x: -(activeCard - 1) * 430 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        >
+    <div className="relative px-16">
+      <Carousel
+        opts={{
+          align: "center",
+          startIndex: current,
+          loop: true,
+        }}
+        className="relative overflow-hidden"
+        setApi={setApi}
+      >
+        <CarouselContent className="h-96 py-12">
           {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              testimonial={testimonial}
-              isActive={index === activeCard}
-              onClick={() => handleCardClick(index)}
-            />
+            <CarouselItem key={index} className="basis-[430px]">
+              <div 
+                className={`cursor-pointer transition-all duration-300 ${
+                  index === current ? 'scale-105' : 'scale-95 opacity-50'
+                }`}
+                onClick={() => handleSelect(index)}
+              >
+                <Card className="shadow-none border-none bg-transparent">
+                  <CardContent className="p-6">
+                    <TestimonialCard
+                      testimonial={testimonial}
+                      isActive={index === current}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+            </CarouselItem>
           ))}
-        </motion.ul>
-      </motion.div>
+        </CarouselContent>
+        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
+      </Carousel>
       <div className="flex justify-center">
         <Slider
-          activeCard={activeCard - 1}
-          setActiveCard={(index) => setActiveCard(index + 1)}
-          totalCards={testimonials.length - 2}
+          activeCard={current}
+          setActiveCard={handleSelect}
+          totalCards={testimonials.length}
         />
       </div>
     </div>
   )
 }
+
 export default TestimonialCarousel

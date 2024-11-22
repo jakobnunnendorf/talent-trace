@@ -1,5 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardFooter,
+} from "@/components/ui/card"
 
 interface TestimonialCardProps {
   testimonial: {
@@ -9,7 +16,7 @@ interface TestimonialCardProps {
     position: string
   }
   isActive: boolean
-  onClick: () => void
+  onClick?: () => void
 }
 
 export default function TestimonialCard({
@@ -18,9 +25,7 @@ export default function TestimonialCard({
   onClick,
 }: TestimonialCardProps) {
   return (
-    <motion.li
-      className="w-[430px] flex-shrink-0 cursor-pointer rounded-lg bg-white p-6 shadow-xl"
-      onClick={onClick}
+    <motion.div
       layout
       animate={{
         scale: isActive ? 1 : 0.9,
@@ -28,14 +33,27 @@ export default function TestimonialCard({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
-      <h3 className="text-blue mt-6 text-lg font-semibold">
-        {testimonial.title}
-      </h3>
-      <p className="mt-2 font-sans text-sm text-gray-600">{testimonial.text}</p>
-      <div className="ml-8">
-        <p className="text-md mt-4 font-medium">{testimonial.author}</p>
-        <p className="text-sm text-gray-500">{testimonial.position}</p>
-      </div>
-    </motion.li>
+      <Card 
+        className="w-[430px] flex-shrink-0 cursor-pointer rounded-lg bg-white shadow-xl"
+        onClick={onClick}
+      >
+        <CardHeader className="pb-2">
+          <CardTitle className="text-blue text-lg font-semibold">
+            {testimonial.title}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="font-sans text-sm text-gray-600">
+            {testimonial.text}
+          </p>
+        </CardContent>
+        <CardFooter className="ml-8">
+          <div>
+            <p className="text-md font-medium">{testimonial.author}</p>
+            <p className="text-sm text-gray-500">{testimonial.position}</p>
+          </div>
+        </CardFooter>
+      </Card>
+    </motion.div>
   )
 }
