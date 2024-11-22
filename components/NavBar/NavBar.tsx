@@ -40,7 +40,6 @@ export default function NavBar() {
       </div>
       <div className="flex justify-center">
         <NavLinks scrollDirection={scrollDirection} />
-        {/* <NavigationMenuDemo/> */}
       </div>
       <div
         className={`transform transition-all duration-700 ease-in-out ${
