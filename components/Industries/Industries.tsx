@@ -91,6 +91,11 @@ export default function Industries() {
     [0, 0.3, 0.7, 1],
     [0.5, 1, 1, 0.5]
   )
+  const shiftUp = useTransform(
+    scrollYProgress,
+    [0, 0.3, 0.7, 1],
+    [`${-15}vh`, `${0}vh`, `${0}vh`, `${25}vh`]
+  )
   const slideUp = useTransform(scrollYProgress, [0, 0.3, 1], [150, -100, -100])
 
   const handleCardClick = (index: number): void => {
@@ -118,7 +123,11 @@ export default function Industries() {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden">
+    <motion.div
+      // initial={{ translateY: -100 }}
+      style={{ translateY: shiftUp }} // Changed from animate to style
+      className="flex h-screen w-full flex-col items-center justify-center overflow-hidden"
+    >
       <motion.h2 className="text-3xl" style={{ translateY: slideUp }}>
         The right expertise for your recruitment needs
       </motion.h2>
@@ -129,7 +138,7 @@ export default function Industries() {
       >
         <motion.ul
           ref={containerRef}
-          className="relative flex h-full w-[80vw] touch-pan-y gap-8"
+          className=" relative flex h-3/4 w-[90vw] touch-pan-y gap-8 md:h-full md:w-[80vw]"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.1}
@@ -150,6 +159,6 @@ export default function Industries() {
           totalCards={cardData.length}
         />
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
