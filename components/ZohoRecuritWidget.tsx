@@ -51,8 +51,8 @@ const ZohoRecruitWidget = () => {
 
   return (
     <div className="embed_jobs_head embed_jobs_with_style_3">
-      <div className="embed_jobs_head2 mt-14">
-        <h1 className="pb-8 pt-16 text-center text-3xl">Find Jobs</h1>
+      <div className="embed_jobs_head2 mt-24">
+        <h1 className="pb-8 pt-48 text-center text-3xl">Find Jobs</h1>
         <div className="embed_jobs_head3">
           <div id="rec_job_listing_div"></div>
           <Script
