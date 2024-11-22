@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../Logo'
 import NavLinks from './NavLinks'
+import { NavigationMenuDemo } from './NavLinks'
 import UploadCV from './UploadCV'
 import NavBurger from './NavBurger'
 
@@ -40,6 +41,7 @@ export default function NavBar() {
       </div>
       <div className="flex justify-center">
         <NavLinks scrollDirection={scrollDirection} />
+        {/* <NavigationMenuDemo/> */}
       </div>
       <div
         className={`transform transition-all duration-700 ease-in-out ${
