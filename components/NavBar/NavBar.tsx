@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import Logo from '../Logo'
 import NavLinks from './NavLinks'
-import { NavigationMenuDemo } from './NavLinks'
 import UploadCV from './UploadCV'
 import NavBurger from './NavBurger'
 
