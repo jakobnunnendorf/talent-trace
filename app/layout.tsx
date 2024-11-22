@@ -20,6 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://static.zohocdn.com/recruit/embed_careers_site/css/v1.1/embed_jobs.css"
+          type="text/css"
+        />
+      </head>
       <body className={inter.className}>
         <NavBar />
         {children}
