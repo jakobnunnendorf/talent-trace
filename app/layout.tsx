@@ -30,8 +30,10 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <NavBar />
-        {children}
+        <header className="= fixed z-50 w-full py-7">
+          <NavBar />
+        </header>
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>
