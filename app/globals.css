@@ -3,7 +3,6 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 .rborder {
   border: red 1px solid;
 }
@@ -186,5 +185,42 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  5%,
+  95%,
+  100% {
+    transform: translateY(0);
+    filter: brightness(100%);
+  }
+  1.5% {
+    transform: translateY(-12px);
+    filter: brightness(115%);
+  }
+  2.5% {
+    transform: translateY(-2px);
+    filter: brightness(105%);
+  }
+  3.5% {
+    transform: translateY(-8px);
+    filter: brightness(110%);
+  }
+}
+
+.bounce-animation {
+  animation: bounce 6s ease-out infinite;
+}
+
+@layer utilities {
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .duration-300 {
+    transition-duration: 300ms;
   }
 }
