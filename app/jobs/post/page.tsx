@@ -1,4 +1,5 @@
 import React from 'react'
+import { PostJobForm } from './PostJobForm'
 
 const PostJobs = () => {
   return (
@@ -118,14 +119,15 @@ const PostJobs = () => {
         <p className="mt-4 text-lg">
           Let’s help you build a stronger, more capable team.
         </p>
-        <div className="mt-6 space-x-4">
+        {/* <div className="mt-6 space-x-4">
           <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
             Find Talent Now
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Speak to a Specialist
           </button>
-        </div>
+        </div> */}
+        <PostJobForm />
       </section>
     </div>
   )
