@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import './FeaturedJobs.css'
 
 const FeaturedJobs = () => {
   useEffect(() => {
@@ -17,7 +18,7 @@ const FeaturedJobs = () => {
           page_name: 'Careers',
           source: 'CareerSite',
           site: 'https://talent-trace.zohorecruit.com',
-          brand_color: '#6875E2',
+          brand_color: '#1098EF',
           empty_job_msg: 'No current Openings',
           extra_fields: ['Salary', 'Industry'],
         })
@@ -40,7 +41,7 @@ const FeaturedJobs = () => {
         <div className="mt-8 flex items-center justify-center">
           <Link
             href=""
-            className="rounded-lg bg-[#6875E2] px-4 py-2 text-lg text-white"
+            className="rounded-lg bg-[#1098EF] px-4 py-2 text-lg text-white"
           >
             <p className="">View more</p>
           </Link>
