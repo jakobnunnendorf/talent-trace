@@ -16,75 +16,84 @@ interface NavLinksProps {
 }
 
 export default function NavLinks({ scrollDirection }: NavLinksProps) {
-  const regularLinks = [
-    { title: 'Home', relativePath: '/' },
-  ]
+  const regularLinks = [{ title: 'Home', relativePath: '/' }]
 
   const jobLinks = [
-    { 
-      title: 'Find a Job', 
+    {
+      title: 'Find a Job',
       relativePath: '/jobs/find',
-      description: 'Browse open positions and take the next step in your career.'
+      description:
+        'Browse open positions and take the next step in your career.',
     },
-    { 
-      title: 'Post a Job', 
+    {
+      title: 'Post a Job',
       relativePath: '/jobs/post',
-      description: 'Looking to hire? Submit your job requirements and reach top talent.'
-    }
+      description:
+        'Looking to hire? Submit your job requirements and reach top talent.',
+    },
   ]
 
   const serviceLinks = [
-    { 
-      title: 'Executive Search', 
+    {
+      title: 'Executive Search',
       relativePath: '/services/executive-search',
-      description: 'Premium search service for senior and executive-level positions.'
+      description:
+        'Premium search service for senior and executive-level positions.',
     },
-    { 
-      title: 'Contingent Search', 
+    {
+      title: 'Contingent Search',
       relativePath: '/services/contingent-search',
-      description: 'Flexible recruitment solutions for professional and specialist roles.'
+      description:
+        'Flexible recruitment solutions for professional and specialist roles.',
     },
-    { 
-      title: 'Consultancy', 
+    {
+      title: 'Consultancy',
       relativePath: '/services/consultancy',
-      description: 'Strategic HR and recruitment consulting services for your business.'
-    }
+      description:
+        'Strategic HR and recruitment consulting services for your business.',
+    },
   ]
 
   const exploreLinks = [
-    { 
-      title: 'About Us', 
-      relativePath: '/about-us',
-      description: 'Learn more about our company, mission, and values.'
+    {
+      title: 'About Us',
+      relativePath: '/explore/about-us',
+      description: 'Learn more about our company, mission, and values.',
     },
-    { 
-      title: 'Join the Team', 
-      relativePath: '/join-us',
-      description: 'Explore career opportunities and become part of our team.'
+    {
+      title: 'Join the Team',
+      relativePath: '/explore/join-us',
+      description: 'Explore career opportunities and become part of our team.',
     },
-    { 
-      title: 'Latest News', 
-      relativePath: '/news',
-      description: 'Stay updated with our latest company news, insights, and industry trends.'
-    }
+    {
+      title: 'Latest News',
+      relativePath: '/explore/news',
+      description:
+        'Stay updated with our latest company news, insights, and industry trends.',
+    },
   ]
 
   const contactLinks = [
-    { 
-      title: 'Schedule a Call', 
-      relativePath: '/contact-us/schedule',
-      description: 'Book a consultation call with one of our recruitment specialists.'
+    {
+      title: 'Schedule a Call',
+      relativePath: 'https://calendly.com/jakobnunnendorf/call',
+      description:
+        'Book a consultation call with one of our recruitment specialists.',
+      isExternal: true,
     },
-    { 
-      title: 'Send us a Message', 
-      relativePath: '/contact-us/message',
-      description: 'Get in touch with our team through our contact form.'
+    {
+      title: 'Send us a Message',
+      relativePath: '/contact-us',
+      description: 'Get in touch with our team through our contact form.',
     },
-    { 
-      title: 'Upload CV', 
-      relativePath: '/contact-us/upload-cv',
-      description: 'Submit your CV to our talent pool for future opportunities.'
-    }
+    {
+      title: 'Upload CV',
+      relativePath:
+        'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
+      description:
+        'Submit your CV to our talent pool for future opportunities.',
+      isExternal: true,
+    },
   ]
 
   return (
@@ -98,7 +107,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
       <NavigationMenuList className="items-center justify-between gap-12 rounded-full bg-blue/80 px-8 py-4 text-center text-white underline-offset-[6px] shadow-xl backdrop-blur-md transition-all duration-700 ease-in-out">
         {/* Home link */}
         {regularLinks.map((link) => (
-          <NavigationMenuItem 
+          <NavigationMenuItem
             key={link.title}
             className={`h-fit w-fit whitespace-nowrap transition-opacity duration-700 ease-in-out ${
               scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
@@ -118,7 +127,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
             scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <NavigationMenuTrigger className="text-sm bg-transparent hover:bg-blue/90">
+          <NavigationMenuTrigger className="bg-transparent text-sm hover:bg-blue/90">
             Jobs
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -142,7 +151,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
             scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <NavigationMenuTrigger className="text-sm bg-transparent hover:bg-blue/90">
+          <NavigationMenuTrigger className="bg-transparent text-sm hover:bg-blue/90">
             Services
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -166,7 +175,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
             scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <NavigationMenuTrigger className="text-sm bg-transparent hover:bg-blue/90">
+          <NavigationMenuTrigger className="bg-transparent text-sm hover:bg-blue/90">
             Explore
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -190,7 +199,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
             scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
           }`}
         >
-          <NavigationMenuTrigger className="text-sm bg-transparent hover:bg-blue/90">
+          <NavigationMenuTrigger className="bg-transparent text-sm hover:bg-blue/90">
             Contact us
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -200,6 +209,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
                   key={link.title}
                   title={link.title}
                   href={link.relativePath}
+                  isExternal={link.isExternal}
                 >
                   {link.description}
                 </ListItem>
@@ -214,8 +224,8 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
 
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<'a'> & { isExternal?: boolean }
+>(({ className, title, children, isExternal, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -226,6 +236,7 @@ const ListItem = React.forwardRef<
             className
           )}
           {...props}
+          {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
