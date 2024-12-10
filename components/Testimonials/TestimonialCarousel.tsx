@@ -1,5 +1,7 @@
-import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+'use client'
+
+import * as React from 'react'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -7,9 +9,8 @@ import {
   CarouselPrevious,
   CarouselNext,
   type CarouselApi,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 import Slider from '../Industries/Slider'
-import testimonials from './testimonialData'
 import TestimonialCard from './TestimonialCard'
 
 export interface Testimonial {
@@ -19,14 +20,16 @@ export interface Testimonial {
   position: string
 }
 
-const TestimonialCarousel: React.FC = () => {
+const TestimonialCarousel: React.FC<{ testimonials: Testimonial[] }> = ({
+  testimonials,
+}) => {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
 
   React.useEffect(() => {
     if (!api) return
 
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrent(api.selectedScrollSnap())
     })
   }, [api])
@@ -39,7 +42,7 @@ const TestimonialCarousel: React.FC = () => {
     <div className="relative px-16">
       <Carousel
         opts={{
-          align: "center",
+          align: 'center',
           startIndex: current,
           loop: true,
         }}
@@ -49,13 +52,13 @@ const TestimonialCarousel: React.FC = () => {
         <CarouselContent className="h-96 py-12">
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="basis-[430px]">
-              <div 
+              <div
                 className={`cursor-pointer transition-all duration-300 ${
                   index === current ? 'scale-105' : 'scale-95 opacity-50'
                 }`}
                 onClick={() => handleSelect(index)}
               >
-                <Card className="shadow-none border-none bg-transparent">
+                <Card className="border-none bg-transparent shadow-none">
                   <CardContent className="p-6">
                     <TestimonialCard
                       testimonial={testimonial}
