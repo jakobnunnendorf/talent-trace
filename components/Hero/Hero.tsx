@@ -41,8 +41,8 @@ export default function Hero() {
         </article>
         <nav className="my-8 text-white">
           <div className="flex gap-4">
-            <CTALink text="Search Jobs" primary={true} link="/jobs" />
-            <CTALink text="Find Talent" primary={false} link="/talent" />
+            <CTALink text="Search Jobs" primary={true} link="/jobs/find" />
+            <CTALink text="Find Talent" primary={false} link="/jobs/post" />
           </div>
           <ul className="flex justify-center gap-4 px-1 py-8 md:justify-start md:py-6">
             {socialLinks.map((link, index) => (
