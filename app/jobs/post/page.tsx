@@ -1,28 +1,16 @@
 import React from 'react'
 import { PostJobForm } from './PostJobForm'
+import SubPageHeader from '@/components/Header/SubPageHeader'
 
 const PostJobs = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 pt-48 text-center text-white">
-        <h1 className="text-4xl font-bold">
-          Find Exceptional Talent with Talent Trace
-        </h1>
-        <p className="mt-4 text-lg">
-          From executive leaders to skilled professionals, we connect you with
-          candidates who match your vision and drive growth in your
-          organization.
-        </p>
-        <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
-            Get Started Today
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
-            Request a Consultation
-          </button>
-        </div>
-      </section>
+      <SubPageHeader
+        headline="Find Exceptional Talent with Talent Trace"
+        description="From executive leaders to skilled professionals, we connect you with
+        candidates who match your vision and drive growth in your organization."
+      />
 
       {/* Introduction Section */}
       <section className="px-6 py-12">
