@@ -1,30 +1,20 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const ConsultancyPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">
-          Consultancy Services Tailored to Your Success
-        </h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Transforming Challenges into Opportunities
-        </p>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Our bespoke consultancy services empower businesses across industries
+      <SubHero
+        headline="Consultancy Services Tailored to Your Success"
+        description="Transforming Challenges into Opportunities
+        Our bespoke consultancy services empower businesses across industries
           to streamline operations, enhance productivity, and achieve measurable
           results.
-        </p>
-        <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
-            Request a Consultation
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
-            Explore Our Services
-          </button>
-        </div>
-      </section>
+        "
+        primaryButton="Request a Consultation"
+        secondaryButton="Explore Our Services"
+      />
 
       {/* Introduction Section */}
       <section className="px-6 py-12">
@@ -33,7 +23,7 @@ const ConsultancyPage: React.FC = () => {
           At <strong>Talent Trace</strong>, we go beyond recruitment. Our
           comprehensive consultancy services are designed to help businesses and
           professionals in industries such as commodity trading, shipping,
-          robotics, and IT thrive in today’s competitive landscape.
+          robotics, and IT thrive in today&apos;s competitive landscape.
         </p>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
           From market research to employee engagement, we deliver actionable
@@ -51,9 +41,9 @@ const ConsultancyPage: React.FC = () => {
             <h3 className="text-2xl font-bold">Market Research and Analysis</h3>
             <p className="mt-2">
               Gain a competitive edge with in-depth market insights tailored to
-              your industry. Whether you're entering a new market or looking to
-              expand, our research services provide the clarity and data you
-              need to make informed decisions.
+              your industry. Whether you&apos;re entering a new market or
+              looking to expand, our research services provide the clarity and
+              data you need to make informed decisions.
             </p>
           </div>
           <div className="rounded bg-white p-6 shadow-lg">
@@ -152,17 +142,18 @@ const ConsultancyPage: React.FC = () => {
       <section className="px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Success Stories</h2>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "Talent Trace’s consultancy services completely transformed our
-          workflows. Their expertise in market research and engagement
-          strategies enabled us to boost efficiency and save significant time."
+          &quot;Talent Trace&apos;s consultancy services completely transformed
+          our workflows. Their expertise in market research and engagement
+          strategies enabled us to boost efficiency and save significant
+          time.&quot;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
         </p>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "With Talent Trace’s benchmarking services, we gained invaluable
-          insights into industry standards, helping us attract and retain top
-          talent in a highly competitive market."
+          &quot;With Talent Trace&apos;s benchmarking services, we gained
+          invaluable insights into industry standards, helping us attract and
+          retain top talent in a highly competitive market.&quot;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
@@ -180,7 +171,7 @@ const ConsultancyPage: React.FC = () => {
           workflows, we’re here to help.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Request a Consultation
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">

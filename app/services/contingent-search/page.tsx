@@ -1,28 +1,19 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const ContingentSearchPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">Contingent Search Services</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Find the Right Talent Without the Upfront Costs
-        </p>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          With Talent Trace’s Contingent Search services, you only pay when the
+      <SubHero
+        headline="Contingent Search Services"
+        description="Find the Right Talent Without the Upfront Costs
+        With Talent Trace's Contingent Search services, you only pay when the
           right candidate is successfully placed. Save time, save resources, and
-          focus on growing your business.
-        </p>
-        <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
-            Start Your Search
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
-            Learn More About Contingent Search
-          </button>
-        </div>
-      </section>
+          focus on growing your business."
+        primaryButton="Start Your Search"
+        secondaryButton="Learn More About Contingent Search"
+      />
 
       {/* What is Contingent Search? */}
       <section className="px-6 py-12">
@@ -134,17 +125,17 @@ const ContingentSearchPage: React.FC = () => {
       <section className="px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Success Stories</h2>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "We needed to fill multiple junior positions fast, and Talent Trace
-          delivered exceptional candidates within weeks. The no upfront cost
-          model was a perfect fit for our budget."
+          &apos;We needed to fill multiple junior positions fast, and Talent
+          Trace delivered exceptional candidates within weeks. The no upfront
+          cost model was a perfect fit for our budget.&apos;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
         </p>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "Talent Trace’s Contingent Search saved us time and money while
+          &apos;Talent Trace’s Contingent Search saved us time and money while
           helping us find professionals who are now key contributors to our
-          team’s success."
+          team’s success.&apos;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
@@ -161,7 +152,7 @@ const ContingentSearchPage: React.FC = () => {
           services. Let’s help you build a stronger, more capable team today.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Start Your Search
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">

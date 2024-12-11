@@ -1,15 +1,14 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const JoinUsPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">Join Us</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Shape Your Career with Talent Trace
-        </p>
-      </section>
+      <SubHero
+        headline="Join Us"
+        description="Shape Your Career with Talent Trace"
+      />
 
       {/* Why Join Talent Trace */}
       <section className="px-6 py-12">
@@ -112,7 +111,7 @@ const JoinUsPage: React.FC = () => {
           grow together.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             View Open Positions
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">

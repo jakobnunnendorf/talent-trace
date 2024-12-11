@@ -1,15 +1,14 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const AboutUsPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">About Us</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Your Global Partner in Talent and HR Solutions
-        </p>
-      </section>
+      <SubHero
+        headline="About Us"
+        description=" Your Global Partner in Talent and HR Solutions"
+      />
 
       {/* Who We Are */}
       <section className="px-6 py-12">
@@ -98,10 +97,11 @@ const AboutUsPage: React.FC = () => {
         </h2>
         <div className="mx-auto mt-6 max-w-3xl text-center">
           <p className="text-lg italic">
-            "At Talent Trace, our number one priority is to deliver exceptional
-            service to both our clients and candidates. Whether you're hiring
-            talent or seeking a new opportunity, our Talent Tracers are here to
-            ensure a seamless experience at every step."
+            &quot;At Talent Trace, our number one priority is to deliver
+            exceptional service to both our clients and candidates. Whether
+            you&apos;re hiring talent or seeking a new opportunity, our Talent
+            Tracers are here to ensure a seamless experience at every
+            step.&quot;
           </p>
           <p className="mt-4 font-bold">– Pravin Nyanes</p>
           <p className="italic">Managing Director, Talent Trace</p>
@@ -151,7 +151,7 @@ const AboutUsPage: React.FC = () => {
           partnerships that empower businesses and transform careers.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Find Talent
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">

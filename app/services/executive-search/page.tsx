@@ -1,21 +1,22 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const ExecutiveSearchPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">Executive Search Services</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          At <strong>Talent Trace</strong>, we understand that finding the right
+      <SubHero
+        headline="Executive Search Services"
+        description="At <strong>Talent Trace</strong>, we understand that finding the right
           executive talent is critical to the success of your organization.
           Leadership roles demand more than just technical expertise—they
-          require vision, strategy, and cultural alignment. That’s why our
+          require vision, strategy, and cultural alignment. That's why our
           Executive Search services go beyond traditional recruitment to connect
           you with professionals who are not just qualified but are the perfect
-          fit for your unique organizational goals.
-        </p>
-      </section>
+          fit for your unique organizational goals."
+        primaryButton=""
+        secondaryButton="" // TODO: add executive search buttons
+      />
 
       {/* Why Choose Us */}
       <section className="px-6 py-12">
@@ -127,17 +128,17 @@ const ExecutiveSearchPage: React.FC = () => {
       <section className="bg-gray-100 px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Success Stories</h2>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "Talent Trace connected us with a visionary CEO who transformed our
-          operations within the first six months. Their personalized approach
-          and industry insights made all the difference."
+          &quot;Talent Trace connected us with a visionary CEO who transformed
+          our operations within the first six months. Their personalized
+          approach and industry insights made all the difference.&quot;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
         </p>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          "We were struggling to find a CFO with both financial acumen and
+          &quot;We were struggling to find a CFO with both financial acumen and
           leadership skills. Talent Trace delivered exactly what we needed—and
-          faster than we expected!"
+          faster than we expected!&quot;
         </blockquote>
         <p className="mt-4 text-center font-bold">
           – [Name], [Title], [Company Name]
@@ -152,7 +153,7 @@ const ExecutiveSearchPage: React.FC = () => {
           you find leaders who align with your vision and elevate your
           organization to new heights.
         </p>
-        <button className="bg-green mt-6 rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+        <button className="hover:bg-green-600 mt-6 rounded bg-green px-6 py-3 font-semibold text-white transition">
           Find Your Leader
         </button>
       </section>

@@ -1,30 +1,32 @@
 import React from 'react'
 import { PostJobForm } from './PostJobForm'
-import SubPageHeader from '@/components/Header/SubPageHeader'
+import SubHero from '@/components/Header/SubHero'
 
 const PostJobs = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <SubPageHeader
+      <SubHero
         headline="Find Exceptional Talent with Talent Trace"
         description="From executive leaders to skilled professionals, we connect you with
         candidates who match your vision and drive growth in your organization."
+        primaryButton="Get Started Today"
+        secondaryButton="Request a Consultation"
       />
 
       {/* Introduction Section */}
       <section className="px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Why Talent Trace?</h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Finding the right talent doesn’t have to be a challenge. At Talent
-          Trace, we specialize in matching your organization with candidates who
-          not only meet your technical requirements but also align with your
-          goals, values, and culture.
+          Finding the right talent doesn&apos;t have to be a challenge. At
+          Talent Trace, we specialize in matching your organization with
+          candidates who not only meet your technical requirements but also
+          align with your goals, values, and culture.
         </p>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Whether you're hiring for an executive role or filling a mid-level
-          position, we deliver tailored solutions to save you time, effort, and
-          resources.
+          Whether you&apos;re hiring for an executive role or filling a
+          mid-level position, we deliver tailored solutions to save you time,
+          effort, and resources.
         </p>
       </section>
 
@@ -83,7 +85,7 @@ const PostJobs = () => {
           </li>
           <li>
             <strong>3. Final Selection:</strong> You choose the best fit from
-            our curated shortlist. We’ll assist in managing interviews,
+            our curated shortlist. We&apos;ll assist in managing interviews,
             negotiations, and onboarding to ensure a smooth hiring process.
           </li>
         </ol>
@@ -93,9 +95,9 @@ const PostJobs = () => {
       <section className="bg-gray-100 px-6 py-12">
         <div className="mx-auto max-w-3xl text-center">
           <blockquote className="text-xl italic">
-            "Talent Trace helped us find an executive leader who transformed our
-            business operations. Their professionalism and dedication made all
-            the difference!"
+            &quot;Talent Trace helped us find an executive leader who
+            transformed our business operations. Their professionalism and
+            dedication made all the difference!&quot;
           </blockquote>
           <p className="mt-4 font-bold">– [Name], [Title], [Company Name]</p>
         </div>

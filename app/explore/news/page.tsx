@@ -1,3 +1,4 @@
+import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const LatestNewsPage: React.FC = () => {
@@ -53,21 +54,13 @@ const LatestNewsPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
-        <h1 className="text-4xl font-bold">Latest News & Insights</h1>
-        <p className="mx-auto mt-4 max-w-3xl text-lg">
-          Explore insights, industry trends, and company updates from the world
-          of recruitment, HR, and beyond.
-        </p>
-        <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
-            Read Our Blog
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
-            Subscribe for Updates
-          </button>
-        </div>
-      </section>
+      <SubHero
+        headline="Latest News & Insights"
+        description="Explore insights, industry trends, and company updates from the world
+          of recruitment, HR, and beyond."
+        primaryButton="Read Our Blog"
+        secondaryButton="Subscribe for Updates"
+      />
 
       {/* Featured Post Section */}
       <section className="px-6 py-12">
@@ -86,7 +79,7 @@ const LatestNewsPage: React.FC = () => {
             </p>
             <a
               href={featuredPost.link}
-              className="bg-green mt-4 inline-block rounded px-6 py-2 font-semibold text-white transition hover:bg-green-600"
+              className="hover:bg-green-600 mt-4 inline-block rounded bg-green px-6 py-2 font-semibold text-white transition"
             >
               Read More
             </a>
@@ -148,7 +141,7 @@ const LatestNewsPage: React.FC = () => {
           />
           <button
             type="submit"
-            className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600"
+            className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition"
           >
             Subscribe Now
           </button>
