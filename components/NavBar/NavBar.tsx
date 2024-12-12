@@ -30,7 +30,7 @@ export default function NavBar() {
   }, [lastScrollY])
 
   return (
-    <header className="grid w-full grid-cols-3 items-center px-8 py-4">
+    <header className="z-50 grid w-full grid-cols-3 items-center px-8 py-4">
       <div
         className={`transform transition-all duration-700 ease-in-out ${
           scrollDirection === 'down' ? 'translate-x-1/2' : 'translate-x-0 gap-4'
