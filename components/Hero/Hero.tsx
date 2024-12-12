@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const IconLink = ({ icon, link }: { icon: React.ReactNode; link: string }) => {
   return (
-    <li className="hover:border-blue hover:bg-blue group flex items-center justify-center rounded-full border border-white p-2 text-2xl opacity-50 hover:opacity-100 hover:shadow-xl">
+    <li className="group flex items-center justify-center rounded-full border border-white p-2 text-2xl opacity-50 hover:border-blue hover:bg-blue hover:opacity-100 hover:shadow-xl">
       <Link className="group-hover:text-white" href={link}>
         {icon}
       </Link>
