@@ -30,10 +30,13 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <header className="= fixed z-50 w-full py-7">
-          <NavBar />
-        </header>
-        <main className="relative">{children}</main>
+        <SidebarProvider defaultOpen={false}>
+          <AppSidebar />
+          <header className="fixed z-50 w-full py-7">
+            <NavBar />
+          </header>
+          <main className="relative w-full">{children}</main>
+        </SidebarProvider>
         <Footer />
       </body>
     </html>
