@@ -67,8 +67,8 @@ export function PostJobForm() {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(data)
-    // Handle form submission here
+    //TODO: add form logic
+    return null
   }
 
   return (
