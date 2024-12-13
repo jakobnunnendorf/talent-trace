@@ -33,13 +33,7 @@ export default function RootLayout({
         <header className="= fixed z-50 w-full py-7">
           <NavBar />
         </header>
-        <SidebarProvider defaultOpen={false}>
-          <AppSidebar />
-          <main className="relative">
-            <SidebarTrigger />
-            {children}
-          </main>
-        </SidebarProvider>
+        <main className="relative">{children}</main>
         <Footer />
       </body>
     </html>
