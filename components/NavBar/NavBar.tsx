@@ -4,11 +4,12 @@ import Logo from '../Logo'
 import NavLinks from './NavLinks'
 import UploadCV from './UploadCV'
 import NavBurger from './NavBurger'
+import { useSidebar } from '../ui/sidebar'
 
 export default function NavBar() {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
   const [lastScrollY, setLastScrollY] = useState(0)
-
+  const { isMobile } = useSidebar()
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -30,23 +31,33 @@ export default function NavBar() {
   }, [lastScrollY])
 
   return (
-    <header className="z-50 grid w-full grid-cols-3 items-center px-8 py-4">
+    <header
+      className={`z-50 grid w-full ${scrollDirection === 'down' ? 'grid-cols-1' : 'grid-cols-2'} items-center px-8 py-4 md:grid-cols-3`}
+    >
       <div
         className={`transform transition-all duration-700 ease-in-out ${
-          scrollDirection === 'down' ? 'translate-x-1/2' : 'translate-x-0 gap-4'
+          scrollDirection === 'down'
+            ? 'hidden md:block md:translate-x-1/2'
+            : 'translate-x-0 gap-4'
         }`}
       >
         <Logo scrollDirection={scrollDirection} />
       </div>
-      <div className="flex justify-center">
+      <div className="hidden justify-center lg:flex">
         <NavLinks scrollDirection={scrollDirection} />
       </div>
       <div
-        className={`transform transition-all duration-700 ease-in-out ${
-          scrollDirection === 'down' ? '-translate-x-1/2' : 'translate-x-0'
+        className={`flex h-full transform items-center justify-center transition-all duration-700 ease-in-out md:block ${
+          scrollDirection === 'down' ? 'md:-translate-x-1/2' : 'translate-x-0'
         }`}
       >
-        <UploadCV scrollDirection={scrollDirection} />
+        {!isMobile ? (
+          <UploadCV scrollDirection={scrollDirection} />
+        ) : scrollDirection === 'up' ? (
+          <NavBurger scrollDirection={scrollDirection} />
+        ) : (
+          <UploadCV scrollDirection={scrollDirection} />
+        )}
       </div>
     </header>
   )

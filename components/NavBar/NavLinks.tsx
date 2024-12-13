@@ -98,7 +98,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
 
   return (
     <NavigationMenu
-      className={`hidden lg:flex ${
+      className={` ${
         scrollDirection === 'down'
           ? 'invisible w-0 scale-x-0 opacity-0'
           : 'visible w-fit scale-x-100 opacity-100'
