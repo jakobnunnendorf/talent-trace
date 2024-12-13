@@ -14,8 +14,8 @@ const ExecutiveSearchPage: React.FC = () => {
           Executive Search services go beyond traditional recruitment to connect
           you with professionals who are not just qualified but are the perfect
           fit for your unique organizational goals."
-        primaryButton=""
-        secondaryButton="" // TODO: add executive search buttons
+        primaryButton="Find Executive"
+        secondaryButton="Contact Us" // TODO: add executive search buttons
       />
 
       {/* Why Choose Us */}
