@@ -1,4 +1,4 @@
-import Categories from '@/components/Categories'
+import Categories from '@/components/Categories/Categories'
 import Companies from '@/components/Companies/Companies'
 import ContactUs from '@/components/Contact/ContactUs'
 import FeaturedJobs from '@/components/FeaturedJobs/FeaturedJobs'
