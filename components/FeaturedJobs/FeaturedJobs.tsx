@@ -40,7 +40,7 @@ const FeaturedJobs = () => {
         </div>
         <div className="mt-8 flex items-center justify-center">
           <Link
-            href=""
+            href="/jobs/find"
             className="rounded-lg bg-[#1098EF] px-4 py-2 text-lg text-white"
           >
             <p className="">View more</p>
