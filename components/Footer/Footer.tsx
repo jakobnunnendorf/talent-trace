@@ -6,9 +6,9 @@ import Image from 'next/image'
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-100 pt-6">
-      <div className="mx-auto grid max-w-7xl grid-cols-5 gap-4 pb-6">
-        <div className="flex flex-col items-start">
-          <div className="flex flex-col items-center">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 grid-rows-3 gap-4 pb-6 md:grid-cols-5 md:grid-rows-1">
+        <div className="col-span-2 flex flex-col items-start md:col-span-1">
+          <div className="my-auto flex flex-col items-center self-center md:my-0 md:self-auto">
             <figure className="mb-2">
               <Image
                 src="/Talent Trace logo.png"
