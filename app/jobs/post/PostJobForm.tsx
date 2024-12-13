@@ -52,10 +52,8 @@ const formSchema = z.object({
   }),
 })
 
-type FormValues = z.infer<typeof formSchema>
-
 export function PostJobForm() {
-  const form = useForm<FormValues>({
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       jobTitle: '',
@@ -68,27 +66,31 @@ export function PostJobForm() {
     },
   })
 
-  function onSubmit(data: FormValues) {
+  function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(data)
     // Handle form submission here
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">Post a New Job</h1>
-        <p className="mt-2 text-gray-600">
-          Fill in the details below to post your job listing
-        </p>
-      </div>
-
+    <div className="mx-auto max-w-3xl px-4 py-16">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-            <div className="space-y-8">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 text-gray-600"
+        >
+          <div className="rounded-lg border border-gray-200 bg-white px-10 pt-16 shadow-sm">
+            <div className="mb-6">
+              <h1 className="text-3xl font-bold">Post a New Job</h1>
+              <p className="mt-2 text-gray-600">
+                Fill in the details below to post your job listing
+              </p>
+            </div>
+            <div className="space-y-16 py-10">
               {/* Basic Information Section */}
               <div>
-                <h2 className="mb-4 text-xl font-semibold">Basic Information</h2>
+                <h2 className="mb-4 text-xl font-semibold">
+                  Basic Information
+                </h2>
                 <div className="grid gap-6 md:grid-cols-2">
                   <FormField
                     control={form.control}
@@ -97,7 +99,10 @@ export function PostJobForm() {
                       <FormItem>
                         <FormLabel>Job Title</FormLabel>
                         <FormControl>
-                          <Input placeholder="e.g., Senior Software Engineer" {...field} />
+                          <Input
+                            placeholder="e.g., Senior Software Engineer"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -144,7 +149,10 @@ export function PostJobForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>Employment Type</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger>
                               <SelectValue placeholder="Select employment type" />
@@ -183,7 +191,10 @@ export function PostJobForm() {
                       <FormItem>
                         <FormLabel>Salary Range (Optional)</FormLabel>
                         <FormControl>
-                          <Input placeholder="e.g., $80,000 - $100,000" {...field} />
+                          <Input
+                            placeholder="e.g., $80,000 - $100,000"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -194,23 +205,24 @@ export function PostJobForm() {
 
               {/* Description Section */}
               <div>
-                <h2 className="mb-4 text-xl font-semibold">Job Description</h2>
-                <div className="space-y-6">
+                <h2 className="mb-8 text-xl font-semibold">Job Description</h2>
+                <div className="space-y-4">
                   <FormField
                     control={form.control}
                     name="description"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Description</FormLabel>
+                        <FormLabel>Describe the role</FormLabel>
                         <FormControl>
-                          <Textarea 
+                          <Textarea
                             placeholder="Describe the role and responsibilities"
                             className="min-h-[150px]"
                             {...field}
                           />
                         </FormControl>
                         <FormDescription>
-                          Include key responsibilities, day-to-day activities, and team structure
+                          Include key responsibilities, day-to-day activities,
+                          and team structure
                         </FormDescription>
                         <FormMessage />
                       </FormItem>
@@ -224,7 +236,7 @@ export function PostJobForm() {
                       <FormItem>
                         <FormLabel>Requirements</FormLabel>
                         <FormControl>
-                          <Textarea 
+                          <Textarea
                             placeholder="List the required qualifications and experience"
                             className="min-h-[150px]"
                             {...field}
@@ -242,7 +254,9 @@ export function PostJobForm() {
 
               {/* Contact Section */}
               <div>
-                <h2 className="mb-4 text-xl font-semibold">Contact Information</h2>
+                <h2 className="mb-4 text-xl font-semibold">
+                  Contact Information
+                </h2>
                 <FormField
                   control={form.control}
                   name="contactEmail"
@@ -250,7 +264,11 @@ export function PostJobForm() {
                     <FormItem>
                       <FormLabel>Contact Email</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="contact@company.com" {...field} />
+                        <Input
+                          type="email"
+                          placeholder="contact@company.com"
+                          {...field}
+                        />
                       </FormControl>
                       <FormDescription>
                         This email will receive job applications
@@ -261,11 +279,10 @@ export function PostJobForm() {
                 />
               </div>
             </div>
+            <Button type="submit" className="mb-8 w-full">
+              Post Job
+            </Button>
           </div>
-
-          <Button type="submit" className="w-full">
-            Post Job
-          </Button>
         </form>
       </Form>
     </div>

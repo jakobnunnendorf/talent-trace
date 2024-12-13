@@ -1,6 +1,15 @@
 import React from 'react'
 import { PostJobForm } from './PostJobForm'
 import SubHero from '@/components/Header/SubHero'
+import Introduction from './Introduction'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 const PostJobs = () => {
   return (
@@ -15,61 +24,58 @@ const PostJobs = () => {
       />
 
       {/* Introduction Section */}
-      <section className="px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">Why Talent Trace?</h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Finding the right talent doesn&apos;t have to be a challenge. At
-          Talent Trace, we specialize in matching your organization with
-          candidates who not only meet your technical requirements but also
-          align with your goals, values, and culture.
-        </p>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Whether you&apos;re hiring for an executive role or filling a
-          mid-level position, we deliver tailored solutions to save you time,
-          effort, and resources.
-        </p>
-      </section>
+      <Introduction />
 
       {/* Services Section */}
-      <section className="bg-gray-100 px-6 py-12">
+      <section className="bg-gray-100 px-6 pb-24">
         <h2 className="text-center text-3xl font-bold">
           Our Talent Acquisition Services
         </h2>
         <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Executive Search</h3>
-            <p className="mt-2">
-              For C-suite, senior leadership, and high-impact roles, our
-              executive search services go beyond traditional recruitment
-              methods to find the right professionals who can drive
-              transformation and innovation in your organization.
-            </p>
-            <ul className="mt-4 list-disc pl-5">
-              <li>
-                Access an exclusive network of highly skilled professionals.
-              </li>
-              <li>
-                Tailored search strategies to meet your specific requirements.
-              </li>
-            </ul>
-          </div>
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Contingent Search</h3>
-            <p className="mt-2">
-              Avoid upfront costs and only pay once we successfully place the
-              right candidate. Ideal for junior to mid-level positions, our
-              contingent search service ensures quality and efficiency.
-            </p>
-            <ul className="mt-4 list-disc pl-5">
-              <li>Flexible, risk-free hiring model.</li>
-              <li>Dedicated support to streamline the recruitment process.</li>
-            </ul>
-          </div>
+          <Card className="rounded bg-white p-6 shadow-lg">
+            <CardHeader>
+              <h3 className="text-2xl font-bold">Executive Search</h3>
+            </CardHeader>
+            <CardContent>
+              <p className="mt-2">
+                For C-suite, senior leadership, and high-impact roles, our
+                executive search services go beyond traditional recruitment
+                methods to find the right professionals who can drive
+                transformation and innovation in your organization.
+              </p>
+              <ul className="mt-4 list-disc pl-5">
+                <li>
+                  Access an exclusive network of highly skilled professionals.
+                </li>
+                <li>
+                  Tailored search strategies to meet your specific requirements.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+          <Card className="rounded bg-white p-6 shadow-lg">
+            <CardHeader>
+              <h3 className="text-2xl font-bold">Contingent Search</h3>
+            </CardHeader>
+            <CardContent>
+              <p className="mt-2">
+                Avoid upfront costs and only pay once we successfully place the
+                right candidate. Ideal for junior to mid-level positions, our
+                contingent search service ensures quality and efficiency.
+              </p>
+              <ul className="mt-4 list-disc pl-5">
+                <li>Flexible, risk-free hiring model.</li>
+                <li>
+                  Dedicated support to streamline the recruitment process.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="px-6 py-12">
+      <section className="px-6 py-24">
         <h2 className="text-center text-3xl font-bold">How It Works</h2>
         <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
           <li>
@@ -92,9 +98,11 @@ const PostJobs = () => {
       </section>
 
       {/* Testimonial Section */}
-      <section className="bg-gray-100 px-6 py-12">
+      <section className="bg-gray-100 px-6 py-24">
         <div className="mx-auto max-w-3xl text-center">
           <blockquote className="text-xl italic">
+            {' '}
+            {/*TODO: Insert real testimonial */}
             &quot;Talent Trace helped us find an executive leader who
             transformed our business operations. Their professionalism and
             dedication made all the difference!&quot;
@@ -104,19 +112,19 @@ const PostJobs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue px-6 py-12 text-center text-white">
+      <section className="bg-blue px-6 py-24 text-center text-white">
         <h2 className="text-3xl font-bold">Ready to Find Your Next Hire?</h2>
         <p className="mt-4 text-lg">
           Let’s help you build a stronger, more capable team.
         </p>
-        {/* <div className="mt-6 space-x-4">
-          <button className="bg-green rounded px-6 py-3 font-semibold text-white transition hover:bg-green-600">
+        <div className="mt-6 space-x-4">
+          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Find Talent Now
           </button>
           <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Speak to a Specialist
           </button>
-        </div> */}
+        </div>
         <PostJobForm />
       </section>
     </div>
