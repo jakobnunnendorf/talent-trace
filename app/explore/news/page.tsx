@@ -67,9 +67,13 @@ const LatestNewsPage: React.FC = async () => {
       date: postObject.properties.Date.date.start,
       blogPostLink: '/explore/news/' + postObject.id,
       author: getNotionProperty(postObject, 'Author'),
+      featured: postObject.properties.Featured?.checkbox || false,
     }
     return post
   })
+
+  const featuredPosts = blogPosts.filter((post) => post.featured).slice(0, 3)
+  const regularPosts = blogPosts.filter((post) => !post.featured)
 
   const fetchSummary = async (id: string) => {
     //TODO: add summary
@@ -92,17 +96,16 @@ const LatestNewsPage: React.FC = async () => {
       />
 
       {/* Featured Post Section */}
-      <FeaturedPosts />
+      <FeaturedPosts posts={featuredPosts} />
 
       {/* Recent Posts Section */}
       <section className="bg-gray-100 px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">Recent Updates</h2>
+        <h2 className="text-center text-3xl font-bold">Latest Blog Posts</h2>
         <div className="mx-auto mt-8 grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post, index) => (
+          {regularPosts.map((post, index) => (
             <NewsCard
               key={index}
               imageLink={post.imageLink}
-              // title={post.title}
               title={post.title}
               summary={post.summary}
               date={post.date}
@@ -111,7 +114,6 @@ const LatestNewsPage: React.FC = async () => {
             />
           ))}
         </div>
-        {/* <div>{blogPosts}</div> */}
       </section>
 
       {/* Newsletter Subscription Section */}
