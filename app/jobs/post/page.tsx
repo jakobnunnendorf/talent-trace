@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/card'
 
 const PostJobs = () => {
+  // TODO: Insert real testimonial
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
@@ -101,8 +102,6 @@ const PostJobs = () => {
       <section className="bg-gray-100 px-6 py-24">
         <div className="mx-auto max-w-3xl text-center">
           <blockquote className="text-xl italic">
-            {' '}
-            {/*TODO: Insert real testimonial */}
             &quot;Talent Trace helped us find an executive leader who
             transformed our business operations. Their professionalism and
             dedication made all the difference!&quot;

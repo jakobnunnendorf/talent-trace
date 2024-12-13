@@ -2,6 +2,7 @@ import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const ConsultancyPage: React.FC = () => {
+  // TODO: add real success stories
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
@@ -138,7 +139,7 @@ const ConsultancyPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Success Stories */}
+      {/* Success Stories*/}
       <section className="px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Success Stories</h2>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">

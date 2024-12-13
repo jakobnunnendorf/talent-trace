@@ -2,6 +2,7 @@ import SubHero from '@/components/Header/SubHero'
 import React from 'react'
 
 const JoinUsPage: React.FC = () => {
+  // TODO insert real links
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
@@ -101,7 +102,7 @@ const JoinUsPage: React.FC = () => {
         </ol>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section  */}
       <section className="bg-blue px-6 py-12 text-center text-white">
         <h2 className="text-3xl font-bold">
           Start Your Journey with Talent Trace
