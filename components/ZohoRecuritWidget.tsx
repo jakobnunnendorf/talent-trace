@@ -43,7 +43,7 @@ const ZohoRecruitWidget = () => {
         page_name: 'new',
         source: 'CareerSite',
         site: 'https://talent-trace.zohorecruit.com',
-        brand_color: '#F3733E',
+        brand_color: '#70CB34',
         empty_job_msg: 'No current Openings',
       })
     }
