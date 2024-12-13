@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import NavBar from '@/components/NavBar/NavBar'
 import Footer from '@/components/Footer/Footer'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Analytics } from '@vercel/analytics/react'
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/app-sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -33,7 +33,13 @@ export default function RootLayout({
         <header className="= fixed z-50 w-full py-7">
           <NavBar />
         </header>
-        <main className="relative">{children}</main>
+        <SidebarProvider defaultOpen={false}>
+          <AppSidebar />
+          <main className="relative">
+            <SidebarTrigger />
+            {children}
+          </main>
+        </SidebarProvider>
         <Footer />
       </body>
     </html>
