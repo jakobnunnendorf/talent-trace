@@ -1,21 +1,18 @@
 import { ContactForm } from './ContactForm'
 import { MapPin, Clock, Phone, Mail } from 'lucide-react'
+import SubHero from '@/components/Header/SubHero'
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="">
       {/* Hero Section */}
-      <div className="mb-16 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Let's Connect!
-        </h1>
-        <p className="mt-6 text-lg leading-8 text-gray-600">
-          Have a question, feedback, or inquiry? We'd love to hear from you. Our
-          team is here to help you with all your recruitment and HR needs.
-        </p>
-      </div>
+      <SubHero
+        headline="Let's Connect!"
+        description="Have a question, feedback, or inquiry? We'd love to hear from you. Our
+          team is here to help you with all your recruitment and HR needs."
+      />
 
-      <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-16 gap-y-8 py-16 lg:grid-cols-5">
         {/* Contact Information */}
         <div className="lg:col-span-2 lg:pt-8">
           <div className="space-y-8">
