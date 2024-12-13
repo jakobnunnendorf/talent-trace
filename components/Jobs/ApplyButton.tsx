@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import { Button } from '../ui/button'
 
 export default function ApplyButton() {
   return (
-    <button className="group flex items-center gap-2 rounded-md px-4 py-2 text-sm transition-colors duration-300">
+    <Button className="group flex items-center gap-2 rounded-md px-4 py-2 text-sm transition-colors duration-300">
       <p className="text-blue font-sans font-semibold group-hover:text-blue-700">
         Apply Now
       </p>
@@ -14,6 +15,6 @@ export default function ApplyButton() {
           height={20}
         />
       </figure>
-    </button>
+    </Button>
   )
 }

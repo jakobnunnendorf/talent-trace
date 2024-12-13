@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 export default function Newsletter() {
@@ -19,12 +20,12 @@ export default function Newsletter() {
           placeholder="Your Email"
           className="w-full rounded border border-gray-300 px-4 py-2 focus:border-blue focus:ring-blue"
         />
-        <button
+        <Button
           type="submit"
           className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition"
         >
           Subscribe Now
-        </button>
+        </Button>
       </form>
     </section>
   )

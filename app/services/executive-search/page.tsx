@@ -1,4 +1,5 @@
 import SubHero from '@/components/Header/SubHero'
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 const ExecutiveSearchPage: React.FC = () => {
@@ -154,9 +155,9 @@ const ExecutiveSearchPage: React.FC = () => {
           you find leaders who align with your vision and elevate your
           organization to new heights.
         </p>
-        <button className="hover:bg-green-600 mt-6 rounded bg-green px-6 py-3 font-semibold text-white transition">
+        <Button className="hover:bg-green-600 mt-6 rounded bg-green px-6 py-3 font-semibold text-white transition">
           Find Your Leader
-        </button>
+        </Button>
       </section>
     </div>
   )

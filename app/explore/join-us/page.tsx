@@ -1,4 +1,5 @@
 import SubHero from '@/components/Header/SubHero'
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 const JoinUsPage: React.FC = () => {
@@ -112,12 +113,12 @@ const JoinUsPage: React.FC = () => {
           grow together.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
+          <Button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             View Open Positions
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+          </Button>
+          <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Follow Us on LinkedIn
-          </button>
+          </Button>
         </div>
       </section>
     </div>

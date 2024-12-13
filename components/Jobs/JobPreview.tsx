@@ -1,6 +1,7 @@
 import React from 'react'
 import JobCard from './JobCard'
 import { jobs } from './jobList'
+import { Button } from '../ui/button'
 
 export default function JobPreview() {
   return (
@@ -16,9 +17,9 @@ export default function JobPreview() {
           <JobCard key={index} {...job} />
         ))}
       </ul>
-      <button className="bg-blue mx-auto mt-20 block rounded-xl px-8 py-4 text-white transition-colors duration-300 hover:bg-[#0d7bc7]">
+      <Button className="bg-blue mx-auto mt-20 block rounded-xl px-8 py-4 text-white transition-colors duration-300 hover:bg-[#0d7bc7]">
         Load more listings
-      </button>
+      </Button>
     </div>
   )
 }

@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 
 const PostJobs = () => {
   // TODO: Insert real testimonial
@@ -117,12 +118,12 @@ const PostJobs = () => {
           Let’s help you build a stronger, more capable team.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
+          <Button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Find Talent Now
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+          </Button>
+          <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Speak to a Specialist
-          </button>
+          </Button>
         </div>
         <PostJobForm />
       </section>

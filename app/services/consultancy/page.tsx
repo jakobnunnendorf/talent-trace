@@ -1,4 +1,5 @@
 import SubHero from '@/components/Header/SubHero'
+import { Button } from '@/components/ui/button'
 import React from 'react'
 
 const ConsultancyPage: React.FC = () => {
@@ -172,12 +173,12 @@ const ConsultancyPage: React.FC = () => {
           workflows, we’re here to help.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
+          <Button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Request a Consultation
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+          </Button>
+          <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Speak to Our Experts
-          </button>
+          </Button>
         </div>
       </section>
     </div>

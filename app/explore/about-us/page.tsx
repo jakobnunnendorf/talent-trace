@@ -1,4 +1,5 @@
 import SubHero from '@/components/Header/SubHero'
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import React from 'react'
 
@@ -164,12 +165,12 @@ const AboutUsPage: React.FC = () => {
           partnerships that empower businesses and transform careers.
         </p>
         <div className="mt-6 space-x-4">
-          <button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
+          <Button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
             Find Talent
-          </button>
-          <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+          </Button>
+          <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
             Advance Your Career
-          </button>
+          </Button>
         </div>
       </section>
     </div>

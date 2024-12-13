@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../ui/button'
 
 interface DotProps {
   isActive: boolean
@@ -6,12 +7,12 @@ interface DotProps {
 }
 
 const Dot: React.FC<DotProps> = ({ isActive, onClick }) => (
-  <button
+  <Button
     onClick={onClick}
     className={`from-blue h-4 rounded-full bg-gradient-to-tr to-[#41ADF2] transition-all duration-300 ${
       isActive ? 'w-16' : 'w-4'
     }`}
-  ></button>
+  ></Button>
 )
 
 interface SliderProps {

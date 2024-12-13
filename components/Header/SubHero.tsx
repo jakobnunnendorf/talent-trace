@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Background from '../Hero/Background'
+import { Button } from '../ui/button'
 
 export default function SubHero({
   headline,
@@ -38,14 +39,14 @@ export default function SubHero({
         <p className="mt-4 text-lg">{description}</p>
         <div className="mt-12 flex justify-center space-x-4">
           {primaryButton && (
-            <button className="rounded border-2 border-green bg-green px-6 py-3 text-lg font-semibold text-teal-900">
+            <Button className="rounded border-2 border-green bg-green px-6 py-3 text-lg font-semibold text-teal-900">
               {primaryButton}
-            </button>
+            </Button>
           )}
           {secondaryButton && (
-            <button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+            <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
               {secondaryButton}
-            </button>
+            </Button>
           )}
         </div>
       </div>
