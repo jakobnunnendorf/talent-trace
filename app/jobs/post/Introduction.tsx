@@ -16,7 +16,7 @@ export default function Introduction() {
       <div className="mx-auto grid h-[40vh] max-w-5xl grid-cols-2">
         <Card className="rounded-r-none border-r-0 py-8">
           <CardHeader>
-            <CardTitle>Finding talent doesn't have to be hard</CardTitle>
+            <CardTitle>Finding talent doesn&apos;t have to be hard</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="pb-4">
