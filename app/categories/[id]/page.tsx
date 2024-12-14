@@ -2,6 +2,12 @@ import React from 'react'
 import { Client } from '@notionhq/client'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+import {
+  QueryDatabaseResponse,
+  DatabaseObjectResponse,
+} from '@notionhq/client/build/src/api-endpoints'
+
+// TODO: add correct typing
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -51,22 +57,29 @@ export default async function Page({ params }: { params: { id: string } }) {
   const response = await notion.databases.query({
     database_id: databaseId,
   })
+  const dbEntryWithIdEqualToParamsId = response.results.filter(
+    (entry: any) => entry.id === params.id
+  )[0] as DatabaseObjectResponse
+
+  // Array<PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse>;
 
   return (
     <div className="mx-auto w-1/2 py-48">
       <h1 className="pb-4 text-5xl font-bold">
         Find the best jobs in{' '}
         {
-          response.results.filter((entry: any) => entry.id === params.id)[0]
-            .properties.Category.title[0].plain_text
+          (dbEntryWithIdEqualToParamsId.properties.Category as any).title[0]
+            .plain_text
         }
       </h1>
       <figure className="relative h-96 w-full">
         <Image
           src={
-            response.results.filter((entry) => {
-              return entry.id === params.id
-            })[0].properties.Image.files[0].file.url
+            (
+              response.results.filter((entry) => {
+                return entry.id === params.id
+              })[0] as any
+            ).properties.Image.files[0].file.url
           }
           alt="Blog Post Image"
           fill
@@ -85,12 +98,13 @@ export default async function Page({ params }: { params: { id: string } }) {
         )}
       </div>
       <div className="flex w-full justify-center gap-24 pt-24">
-        {response.results
-          .filter((entry) => entry.id === params.id)[0]
-          .properties.Keywords.multi_select.map((keyword: any) => {
+        {(
+          response.results.filter((entry) => entry.id === params.id)[0] as any
+        ).properties.Keywords.multi_select
+          .map((keyword: any) => {
             return keyword.name
           })
-          .map((keyword) => {
+          .map((keyword: any) => {
             return <Button key={keyword}>{keyword}</Button>
           })}
       </div>
