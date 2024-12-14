@@ -22,8 +22,8 @@ export default function Logo({ scrollDirection }: LogoProps) {
           }`}
         >
           <Image
-            src="/Talent Trace logo.png"
-            alt="Mysterious client Logo"
+            src="/logos/Talent Trace logo.png"
+            alt="Talent Trace Logo"
             fill
             className="rounded-md object-contain"
           />

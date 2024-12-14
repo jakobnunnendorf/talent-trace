@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="my-auto flex flex-col items-center self-center md:my-0 md:self-auto">
             <figure className="mb-2">
               <Image
-                src="/Talent Trace logo.png"
+                src="/logos/Talent Trace logo.png"
                 alt="Talent Trace"
                 width={100}
                 height={100}

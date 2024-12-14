@@ -1,15 +1,17 @@
 import Image from 'next/image'
 import React from 'react'
 
+// TODO pull from notion
+
 export default function Companies() {
   const companies = [
-    '/Oldendorff logo.png',
-    '/RioTinto logo.png',
-    '/BHP logo.avif',
-    '/Vale logo.jpg',
-    '/Glencore logo.png',
-    '/BHP logo.avif',
-    '/Glencore logo.png',
+    '/logos/Oldendorff logo.png',
+    '/logos/RioTinto logo.png',
+    '/logos/BHP logo.avif',
+    '/logos/Vale logo.jpg',
+    '/logos/Glencore logo.png',
+    '/logos/BHP logo.avif',
+    '/logos/Glencore logo.png',
   ]
   return (
     <div className="z-50 w-full overflow-hidden bg-white py-8 pb-0 text-center md:grid md:h-96 md:grid-rows-4 md:py-0 md:pb-8">

@@ -43,7 +43,12 @@ export default function Ship() {
         y: translateY,
       }}
     >
-      <Image src="/ship.png" width={1440} height={968} alt="ship" />
+      <Image
+        src="/stock-images/ship.png"
+        width={1440}
+        height={968}
+        alt="ship"
+      />
     </motion.figure>
   )
 }
