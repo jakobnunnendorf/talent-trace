@@ -25,35 +25,6 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
 
-// Menu items.
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-]
-
 export function AppSidebar() {
   return (
     <Sidebar>
@@ -72,7 +43,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5">
                     <Upload />
                     <span>Upload CV</span>
                   </a>
@@ -87,7 +58,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/jobs/find">
                     <Search />
                     <span>Find a Job</span>
                   </a>
@@ -95,7 +66,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/jobs/post">
                     <UserSearch />
                     <span>Post a Job</span>
                   </a>
@@ -110,7 +81,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/services/executive-search">
                     <BriefcaseBusiness />
                     <span>Executive Search</span>
                   </a>
@@ -118,7 +89,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/services/contingent-search">
                     <Workflow />
                     <span>Contingent Search</span>
                   </a>
@@ -126,7 +97,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/services/consultancy">
                     <ChartLine />
                     <span>Consultancy</span>
                   </a>
@@ -141,7 +112,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/explore/about-us">
                     <Users />
                     <span>About Us</span>
                   </a>
@@ -149,7 +120,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/explore/join-us">
                     <Cake />
                     <span>Join The Team</span>
                   </a>
@@ -157,7 +128,7 @@ export function AppSidebar() {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="/">
+                  <a href="/explore/news">
                     <Newspaper />
                     <span>Latest News</span>
                   </a>
