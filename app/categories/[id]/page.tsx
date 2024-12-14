@@ -116,7 +116,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                   key={keyword}
                   className="rounded-full bg-green text-white"
                 >
-                  {keyword}
+                  <p className="text-wrap text-[12px] md:text-sm">{keyword}</p>
                 </Button>
               )
             })}
