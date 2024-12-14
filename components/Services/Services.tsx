@@ -5,9 +5,9 @@ import Link from 'next/link'
 const imageUrl = '/services.png'
 
 const services = [
-  { href: '/executivesearch', text: 'Executive Search' },
-  { href: '/contingentsearch', text: 'Contingent Search' },
-  { href: '/consultancy', text: 'Consultancy' },
+  { href: '/services/executive-search', text: 'Executive Search' },
+  { href: '/services/contingent-search', text: 'Contingent Search' },
+  { href: '/services/consultancy', text: 'Consultancy' },
 ]
 
 const OurServices = () => {
