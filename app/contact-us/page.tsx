@@ -7,8 +7,8 @@ export default function ContactPage() {
     <div className="">
       {/* Hero Section */}
       <SubHero
-        headline="Let's Connect!"
-        description="Have a question, feedback, or inquiry? We'd love to hear from you. Our
+        headline="Let&apos;s Connect!"
+        description="Have a question, feedback, or inquiry? We&apos;d love to hear from you. Our
           team is here to help you with all your recruitment and HR needs."
       />
 

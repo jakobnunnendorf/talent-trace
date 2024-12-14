@@ -9,7 +9,7 @@ const ContingentSearchPage: React.FC = () => {
       <SubHero
         headline="Contingent Search Services"
         description="Find the Right Talent Without the Upfront Costs
-        With Talent Trace's Contingent Search services, you only pay when the
+        With Talent Trace&#39;s Contingent Search services, you only pay when the
           right candidate is successfully placed. Save time, save resources, and
           focus on growing your business."
         primaryButton="Start Your Search"

@@ -12,7 +12,7 @@ const ExecutiveSearchPage: React.FC = () => {
         description="At <strong>Talent Trace</strong>, we understand that finding the right
           executive talent is critical to the success of your organization.
           Leadership roles demand more than just technical expertise—they
-          require vision, strategy, and cultural alignment. That's why our
+          require vision, strategy, and cultural alignment. That&#39;s why our
           Executive Search services go beyond traditional recruitment to connect
           you with professionals who are not just qualified but are the perfect
           fit for your unique organizational goals."
