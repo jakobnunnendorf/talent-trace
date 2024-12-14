@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 export default function ContactHeader() {
   return (
-    <div className="mb-24 text-center">
+    <div className="mb-24 md:text-center">
       <h2 className="mb-2 font-sans text-4xl font-bold">Contact Us</h2>
-      <h3 className="mb-8 flex items-center justify-center gap-2 text-3xl font-bold opacity-50">
+      <h3 className="mb-8 flex items-center justify-start gap-2 text-3xl font-bold opacity-50 md:justify-center">
         <p>book a consultation</p>
         <figure>
           <Image
@@ -16,7 +16,7 @@ export default function ContactHeader() {
           />
         </figure>
       </h3>
-      <p className="mx-auto w-2/3 font-sans">
+      <p className="mx-auto font-sans md:w-2/3">
         We adopt a holistic approach in recruiting the right candidates for you.
         From the initial step of requisition through to onboarding, we will work
         alongside your team, profiling, consulting and onboarding candidates. We

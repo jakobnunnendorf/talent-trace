@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
   CardFooter,
-} from "@/components/ui/card"
+} from '@/components/ui/card'
 
 interface TestimonialCardProps {
   testimonial: {
@@ -33,19 +33,17 @@ export default function TestimonialCard({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
-      <Card 
-        className="w-[430px] flex-shrink-0 cursor-pointer rounded-lg bg-white shadow-xl"
+      <Card
+        className="flex-shrink-0 cursor-pointer rounded-lg bg-white shadow-xl md:w-[430px]"
         onClick={onClick}
       >
         <CardHeader className="pb-2">
-          <CardTitle className="text-blue text-lg font-semibold">
+          <CardTitle className="text-lg font-semibold text-blue">
             {testimonial.title}
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="font-sans text-sm text-gray-600">
-            {testimonial.text}
-          </p>
+          <p className="font-sans text-sm text-gray-600">{testimonial.text}</p>
         </CardContent>
         <CardFooter className="ml-8">
           <div>

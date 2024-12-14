@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div>
+    <div className="pb-6 md:pb-0">
       <h2 className="text-center font-sans text-3xl font-medium text-gray-900">
         Testimonials From Our Partners
       </h2>

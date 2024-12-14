@@ -93,11 +93,11 @@ export default async function Categories() {
     : []
 
   return (
-    <section className="p-24">
+    <section className="py-12 md:p-24">
       <h2 className="p-6 pb-12 text-center text-4xl">
         Find jobs in your industry
       </h2>
-      <ul className="mx-auto grid w-fit grid-cols-3 grid-rows-4 gap-x-32 gap-y-4">
+      <ul className="mx-auto grid w-fit grid-cols-2 grid-rows-4 px-4 md:grid-cols-3 md:gap-x-32 md:gap-y-4">
         {categoryObjects.map((category, index) => (
           <CategoryIcon
             key={index}

@@ -5,11 +5,11 @@ import ScheduleCall from './ScheduleCall'
 
 export default function ContactUs() {
   return (
-    <div className="min-h-screen bg-white px-4 py-24">
+    <div className="bg-white px-4 md:min-h-screen md:py-24">
       <div className="mx-auto">
         <ContactHeader />
-        <div className=" grid grid-cols-1 gap-24 md:grid-cols-2">
-          <div className=" flex justify-end p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24">
+          <div className="order-2 flex justify-center p-6 md:order-1 md:justify-end">
             <Calendar />
           </div>
           <ScheduleCall />

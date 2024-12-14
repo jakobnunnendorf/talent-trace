@@ -39,7 +39,7 @@ const TestimonialCarousel: React.FC<{ testimonials: Testimonial[] }> = ({
   }
 
   return (
-    <div className="relative px-16">
+    <div className="relative md:px-16">
       <Carousel
         opts={{
           align: 'center',
@@ -49,9 +49,9 @@ const TestimonialCarousel: React.FC<{ testimonials: Testimonial[] }> = ({
         className="relative overflow-hidden"
         setApi={setApi}
       >
-        <CarouselContent className="h-96 py-12">
+        <CarouselContent className="md:h-96 md:py-12">
           {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index} className="basis-[430px]">
+            <CarouselItem key={index} className="md:basis-[430px]">
               <div
                 className={`cursor-pointer transition-all duration-300 ${
                   index === current ? 'scale-105' : 'scale-95 opacity-50'
@@ -59,7 +59,7 @@ const TestimonialCarousel: React.FC<{ testimonials: Testimonial[] }> = ({
                 onClick={() => handleSelect(index)}
               >
                 <Card className="border-none bg-transparent shadow-none">
-                  <CardContent className="p-6">
+                  <CardContent className="md:p-6">
                     <TestimonialCard
                       testimonial={testimonial}
                       isActive={index === current}

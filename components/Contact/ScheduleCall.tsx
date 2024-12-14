@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export default function ScheduleCall() {
   return (
-    <div className="w-96 rounded-lg bg-white p-6">
-      <p className="text-blue mb-2 text-sm">At no extra cost</p>
+    <div className="order-1 w-96 rounded-lg bg-white p-6 md:order-2">
+      <p className="mb-2 text-sm text-blue">At no extra cost</p>
       <h3 className="mb-3 text-4xl font-semibold text-gray-800">
         Schedule a call with us
       </h3>
@@ -15,13 +15,13 @@ export default function ScheduleCall() {
       <div className="grid grid-cols-2 gap-4">
         <Link
           href="/contact"
-          className="border-blue text-blue rounded border px-4 py-2 text-center transition duration-300 hover:bg-blue-600"
+          className="hover:bg-blue-600 rounded border border-blue px-4 py-2 text-center text-blue transition duration-300"
         >
           Find Talent
         </Link>
         <Link
           href="/contact"
-          className="text-blue rounded px-4 py-2 text-center underline underline-offset-4 transition duration-300"
+          className="rounded px-4 py-2 text-center text-blue underline underline-offset-4 transition duration-300"
         >
           Search Jobs
         </Link>

@@ -41,21 +41,23 @@ const newsItems = [
 
 export default function NewsCarousel() {
   return (
-    <section className="flex justify-center py-24">
+    <section className="flex flex-col justify-center md:py-24">
+      <h2 className="pb-6 pt-12 text-center text-4xl md:pl-16 md:text-start">
+        Latest News Stories
+      </h2>
       <Carousel
         opts={{
           align: 'start',
         }}
-        className="w-4/5"
+        className="w-full md:w-4/5"
       >
-        <h2 className="pl-16 text-4xl">Latest News Stories</h2>
-        <CarouselContent className="gap-4 p-16">
+        <CarouselContent className="px-4 md:gap-4 md:p-16">
           {newsItems.map((item, index) => (
             <CarouselItem
               key={index}
               className="overflow-visible md:basis-1/2 lg:basis-1/2"
             >
-              <div className="p-1">
+              <div className="md:p-1">
                 <Card className="shadow-xl">
                   <CardHeader>
                     <h2 className="text-3xl">{item.title}</h2>
@@ -81,8 +83,8 @@ export default function NewsCarousel() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
+        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
       </Carousel>
     </section>
   )
