@@ -5,11 +5,14 @@ export default function CategoryIcon({
   icon,
   categoryName,
   href,
+  image,
 }: {
   icon: string
   categoryName: string
   href: string
+  image: string
 }) {
+  // TODO: add image
   return (
     <Link href={href}>
       <li className="flex flex-col items-center justify-center">

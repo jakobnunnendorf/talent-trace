@@ -6,6 +6,8 @@ import FeaturedPosts from './FeaturedPosts'
 import Newsletter from './Newsletter'
 import NewsCard from './NewsCard'
 
+// TODO: add correct typing
+
 const fetchBlogPosts = async (): Promise<string[]> => {
   const databaseId = '158c4d0ef10880d386f2c94c94a3600b'
   const response = await notion.databases.query({
@@ -64,10 +66,10 @@ const LatestNewsPage: React.FC = async () => {
       imageLink: getCoverImageUrl(postObject),
       title: getNotionProperty(postObject, 'Title'),
       summary: getNotionProperty(postObject, 'Summary'),
-      date: postObject.properties.Date.date.start,
-      blogPostLink: '/explore/news/' + postObject.id,
+      date: (postObject as any).properties.Date.date.start,
+      blogPostLink: '/explore/news/' + (postObject as any).id,
       author: getNotionProperty(postObject, 'Author'),
-      featured: postObject.properties.Featured?.checkbox || false,
+      featured: (postObject as any).properties.Featured?.checkbox || false,
     }
     return post
   })

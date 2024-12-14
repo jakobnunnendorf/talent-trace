@@ -3,6 +3,8 @@ import TestimonialCarousel from './TestimonialCarousel'
 import Header from './Header'
 import { Client } from '@notionhq/client'
 
+// TODO: add correct typing
+
 export interface Testimonial {
   title: string
   text: string
@@ -15,12 +17,12 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY })
 export default async function Testimonials() {
   const fetchTestimonials = async (): Promise<Testimonial[]> => {
     const databaseId = '158c4d0ef1088018abaac79fefdc4d06'
-    const response = await notion.databases.query({
+    const response = (await notion.databases.query({
       database_id: databaseId,
-    })
+    })) as any
 
     const testimonials: Testimonial[] = response.results
-      .map((testimonialEntry) => {
+      .map((testimonialEntry: any) => {
         // Narrow down the type of `testimonialEntry` to PageObjectResponse
         if (!('properties' in testimonialEntry)) {
           return null // Skip if properties do not exist

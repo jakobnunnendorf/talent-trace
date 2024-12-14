@@ -2,65 +2,9 @@ import React from 'react'
 import CategoryIcon from './CategoryIcon'
 import { Client } from '@notionhq/client'
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
+// TODO: add correct typing
 
-// const categories = [
-//   {
-//     src: '/categories/Commodity icon.png',
-//     alt: 'Commodity Trading icon',
-//     text: 'Commodity Trading',
-//   },
-//   {
-//     src: '/categories/shipping icon.png',
-//     alt: 'Shipping icon',
-//     text: 'Shipping',
-//   },
-//   {
-//     src: '/categories/Supply chain icon.png',
-//     alt: 'Supply Chain icon',
-//     text: 'Supply Chain & Procurement',
-//   },
-//   {
-//     src: '/categories/robot icon.png',
-//     alt: 'Robotics icon',
-//     text: 'Robotics',
-//   },
-//   {
-//     src: '/categories/IT Icon.png',
-//     alt: 'IT icon',
-//     text: 'Information Technology',
-//   },
-//   {
-//     src: '/categories/Health icon.png',
-//     alt: 'Healthcare icon',
-//     text: 'Healthcare',
-//   },
-//   {
-//     src: '/categories/Pharma icon.png',
-//     alt: 'Pharmaceutical icon',
-//     text: 'Pharmaceutical',
-//   },
-//   {
-//     src: '/categories/Law icon.png',
-//     alt: 'Legal icon',
-//     text: 'Legal & Compliance',
-//   },
-//   {
-//     src: '/categories/Energy icon.png',
-//     alt: 'Energy icon',
-//     text: 'Energy & Renewable',
-//   },
-//   {
-//     src: '/categories/Media icon.png',
-//     alt: 'Media icon',
-//     text: 'Media & Advertising',
-//   },
-//   {
-//     src: '/categories/Commodity icon.png',
-//     alt: 'Other industries icon',
-//     text: 'Others',
-//   },
-// ]
+const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
 const getImageURL = (post: any, IconOrImage: string): string => {
   try {
@@ -80,11 +24,11 @@ const fetchCategories = async (): Promise<string[]> => {
 }
 
 export default async function Categories() {
-  const response = await fetchCategories()
+  const response = (await fetchCategories()) as any
 
   // Make sure results is an array before mapping
   const categoryObjects = Array.isArray(response.results)
-    ? response.results.map((result) => ({
+    ? response.results.map((result: any) => ({
         categoryName: result.properties['Category'].title[0].plain_text,
         icon: getImageURL(result, 'Icon'),
         image: getImageURL(result, 'Image'),
@@ -98,7 +42,7 @@ export default async function Categories() {
         Find jobs in your industry
       </h2>
       <ul className="mx-auto grid w-fit grid-cols-2 grid-rows-4 px-4 md:grid-cols-3 md:gap-x-32 md:gap-y-4">
-        {categoryObjects.map((category, index) => (
+        {categoryObjects.map((category: any, index: any) => (
           <CategoryIcon
             key={index}
             icon={category.icon}
