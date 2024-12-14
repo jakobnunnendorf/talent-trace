@@ -45,18 +45,6 @@ const extractBlockContents = (blockArray: any) => {
   return blocks
 }
 
-const getCoverImageUrl = (results: any, categoryId: string): string => {
-  try {
-    const categoryEntry = results.filter(
-      (entry: any) => entry.id === categoryId
-    )[0]
-    return categoryEntry.properties.Image?.files[0]?.file?.url || ''
-  } catch (error) {
-    console.warn('Failed to get cover image:', error)
-    return ''
-  }
-}
-
 export default async function Page({ params }: { params: { id: string } }) {
   const blogPost = await fetchCategoryPage(params.id)
   const databaseId = '15bc4d0ef10880f79dbaff488bd59b06'
