@@ -9,7 +9,7 @@ export default function ContactHeader() {
         <p>book a consultation</p>
         <figure>
           <Image
-            src="/right-arrow-gray.png"
+            src="/icons/right-arrow-gray.png"
             alt="arrow"
             width={25}
             height={25}
