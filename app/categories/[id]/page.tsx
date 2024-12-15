@@ -1,5 +1,4 @@
 import React from 'react'
-import { Client } from '@notionhq/client'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import {
@@ -7,50 +6,9 @@ import {
   DatabaseObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
 import SubHero from '@/components/Header/SubHero'
-
+import { returnClassName } from '@/lib/notion/parseMarkdown'
+import { fetchCategoryPage, extractBlockContents } from '@/lib/notion/fetchPage'
 // TODO: add correct typing
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
-
-const fetchCategoryPage = async (pageId: string) => {
-  const response = await notion.blocks.children.list({
-    block_id: pageId,
-    page_size: 50,
-  })
-  return response
-}
-
-const returnClassName = (blockType: string) => {
-  switch (blockType) {
-    case 'heading_1':
-      return 'text-5xl font-bold pt-8 pb-4'
-    case 'heading_2':
-      return 'text-4xl font-bold pt-8 pb-4'
-    case 'heading_3':
-      return 'text-3xl font-bold pt-8 pb-4'
-    case 'heading_4':
-      return 'text-2xl font-bold pt-8 pb-4'
-    case 'paragraph':
-      return 'text-xl pt-3'
-  }
-}
-
-const extractBlockContents = (blockArray: any) => {
-  const blocks = blockArray.map((block: any) => {
-    const blockType = block['type']
-    const content = block[blockType].rich_text
-      .map((element: any) => {
-        return element.plain_text
-      })
-      .join('')
-    return {
-      type: blockType,
-      content: content,
-      className: returnClassName(blockType),
-    }
-  })
-  return blocks
-}
 
 export default async function Page({ params }: { params: { id: string } }) {
   const blogPost = await fetchCategoryPage(params.id)
