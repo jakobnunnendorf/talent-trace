@@ -11,9 +11,11 @@ import Image from 'next/image'
 
 export default function Introduction() {
   return (
-    <section className="w-full bg-gray-100 py-32">
-      <h1 className="pb-16 text-center text-5xl">Why Talent Trace?</h1>
-      <div className="mx-auto grid h-[40vh] max-w-5xl grid-cols-2">
+    <section className="w-full bg-gray-100 md:py-32">
+      <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:text-5xl md:font-normal">
+        Why Talent Trace?
+      </h1>
+      <div className="mx-auto grid h-[40vh] max-w-5xl grid-cols-1 md:grid-cols-2">
         <Card className="rounded-r-none border-r-0 py-8">
           <CardHeader>
             <CardTitle>Finding talent doesn&apos;t have to be hard</CardTitle>

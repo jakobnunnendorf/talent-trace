@@ -29,7 +29,7 @@ const PostJobs = () => {
       <Introduction />
 
       {/* Services Section */}
-      <section className="bg-gray-100 px-6 pb-24">
+      <section className="bg-gray-100 px-6 pb-24 pt-48 md:pt-0">
         <h2 className="text-center text-3xl font-bold">
           Our Talent Acquisition Services
         </h2>
@@ -112,7 +112,7 @@ const PostJobs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue px-6 py-24 text-center text-white">
+      <section className="bg-blue py-24 text-center text-white md:px-6">
         <h2 className="text-3xl font-bold">Ready to Find Your Next Hire?</h2>
         <p className="mt-4 text-lg">
           Let’s help you build a stronger, more capable team.
