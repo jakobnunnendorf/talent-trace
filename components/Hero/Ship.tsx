@@ -37,7 +37,7 @@ export default function Ship() {
 
   return (
     <motion.figure
-      className="absolute -z-40"
+      className="absolute -z-30"
       style={{
         x: translateX,
         y: translateY,

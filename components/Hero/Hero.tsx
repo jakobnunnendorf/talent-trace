@@ -21,19 +21,20 @@ const socialLinks = [
   { icon: <SlPhone />, link: 'tel:+1234567890' },
   { icon: <SlEnvolope />, link: 'mailto:contact@talent-trace.com' },
 ]
-
 export default function Hero() {
   return (
-    <div className="relative grid h-[66vh] grid-rows-6 overflow-hidden md:grid-rows-5 lg:h-screen">
+    <div className="max-xs:h-screen relative grid grid-rows-6 overflow-hidden sm:h-[66vh] md:grid-rows-5 lg:h-screen">
       <Background />
       <Ship />
-      <h1 className="-z-30 hidden bg-gradient-to-b from-white/20 via-white/5 via-40% to-white/0 bg-clip-text text-center text-transparent md:row-start-2 md:block md:text-7xl md:font-extrabold lg:text-10xl">
+      <h1
+        className={`${gradient} max-xs:text-4xl xs:text-5xl -z-40 row-start-2 mb-4 self-end text-center md:block md:text-7xl md:font-extrabold lg:text-10xl`}
+      >
         TALENT TRACE
       </h1>
       <section className="row-span-3 row-start-3 flex flex-col items-center text-white md:row-span-2 md:mx-auto md:w-4/5 md:items-start">
         <article>
-          <p className="text-lg font-bold">Talent Trace</p>
-          <h2 className="font-sans text-5xl font-bold text-[#41ADF2] md:text-6xl">
+          <p className="hidden text-lg font-bold md:block">Talent Trace</p>
+          <h2 className="px-2 font-sans text-5xl font-bold text-[#41ADF2] md:text-6xl">
             Tracing Talent
             <br />
             <span className="text-[#9FDC77]">Paving Careers</span>
@@ -54,3 +55,6 @@ export default function Hero() {
     </div>
   )
 }
+
+const gradient =
+  'bg-gradient-to-b from-white/60 md:from-white/30 lg:from-white/20 lg:via-white/6 lg:via-40% lg:to-white/0 bg-clip-text text-transparent'
