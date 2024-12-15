@@ -15,23 +15,11 @@
   border: blue 1px solid;
 }
 
-/* The translation must be equal to the width of the infinite scroll div */
-.slide-left {
-  animation: slideLeft 15s linear infinite;
-}
 
 .drift-right {
   animation: driftRight 60s linear infinite;
 }
 
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-1250px);
-  }
-}
 
 @keyframes driftRight {
   0% {

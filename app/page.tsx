@@ -1,3 +1,4 @@
+// app/page.tsx
 import Categories from '@/components/Categories/Categories'
 import Companies from '@/components/Companies/Companies'
 import ContactUs from '@/components/Contact/ContactUs'
