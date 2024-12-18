@@ -3,8 +3,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import MainButton from '@/components/Buttons/MainButton'
-
+import MainButton from '@/components/shared/Buttons/MainButton'
+import emailjs from '@emailjs/browser'
+import { useState } from 'react'
+import { toast } from 'sonner'
 import {
   Form,
   FormControl,
@@ -53,22 +55,55 @@ const formSchema = z.object({
 })
 
 export function PostJobForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      jobTitle: '',
-      company: '',
-      location: '',
-      salary: '',
-      description: '',
-      requirements: '',
-      contactEmail: '',
+      jobTitle: 'e.g., Chartering Manager',
+      company: 'e.g., SEA Shipping Company Ltd.',
+      location: 'e.g., Singapore',
+      employmentType: 'fullTime',
+      industry: 'e.g., Maritime',
+      salary: 'e.g., $80,000 - $100,000',
+      description:
+        'e.g., Describe the role and responsibilities, Include key responsibilities, day-to-day activities, and team structure',
+      requirements:
+        'e.g., List required skills, experience, and qualifications',
+      contactEmail: 'e.g., info@seashipping.com',
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    //TODO: add form logic
-    return null
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true)
+    try {
+      const templateParams = {
+        job_title: values.jobTitle,
+        company: values.company,
+        location: values.location,
+        employment_type: values.employmentType,
+        industry: values.industry,
+        salary: values.salary || 'Not specified',
+        description: values.description,
+        requirements: values.requirements,
+        contact_email: values.contactEmail,
+      }
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+
+      toast.success('Job posting submitted successfully!')
+      form.reset()
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      toast.error('Failed to submit job posting. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -282,6 +317,8 @@ export function PostJobForm() {
             <MainButton
               buttonText="Post Job"
               className="mx-auto mb-8 mt-4 block w-64"
+              disabled={isSubmitting}
+              type="submit"
             />
           </div>
         </form>
