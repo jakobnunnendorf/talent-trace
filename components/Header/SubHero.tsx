@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import Background from '../Hero/Background'
 import { Button } from '../ui/button'
 
 export default function SubHero({
@@ -24,7 +23,7 @@ export default function SubHero({
           className="-z-50"
         />
       </figure>
-      <div className="relative z-10 px-6 pb-8 pt-36 text-center text-white md:pb-24 md:pt-48">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-8 pt-36 text-center text-white md:pb-24 md:pt-48">
         <h1 className="text-4xl font-bold">{headline}</h1>
         {description && <p className="mt-4 text-lg">{description}</p>}
         {primaryButton ||
@@ -46,6 +45,3 @@ export default function SubHero({
     </section>
   )
 }
-
-//Get Started Today
-//Request a Consultation
