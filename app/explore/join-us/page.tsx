@@ -4,7 +4,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const JoinUsPage: React.FC = () => {
-  // TODO insert real links
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
