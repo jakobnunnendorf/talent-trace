@@ -3,8 +3,8 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
+import MainButton from '@/components/Buttons/MainButton'
 
-import { Button } from '@/components/ui/button'
 import {
   Form,
   FormControl,
@@ -72,22 +72,22 @@ export function PostJobForm() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl py-16 md:px-4">
+    <div className="mx-auto py-16 md:px-4 lg:w-full lg:max-w-6xl">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-8 text-gray-600"
         >
           <div className="rounded-lg border border-gray-200 bg-white px-10 pt-16 shadow-sm">
-            <div className="mb-6">
+            <div className="text-center">
               <h1 className="text-3xl font-bold">Post a New Job</h1>
               <p className="mt-2 text-gray-600">
                 Fill in the details below to post your job listing
               </p>
             </div>
-            <div className="space-y-16 py-10">
+            <div className="gap-y-8 py-10 lg:grid lg:grid-cols-2 lg:gap-x-28">
               {/* Basic Information Section */}
-              <div>
+              <div className="col-span-2 lg:order-1">
                 <h2 className="mb-4 text-xl font-semibold">
                   Basic Information
                 </h2>
@@ -126,7 +126,7 @@ export function PostJobForm() {
               </div>
 
               {/* Job Details Section */}
-              <div>
+              <div className="lg:order-3">
                 <h2 className="mb-4 text-xl font-semibold">Job Details</h2>
                 <div className="grid gap-6 md:grid-cols-2">
                   <FormField
@@ -204,7 +204,7 @@ export function PostJobForm() {
               </div>
 
               {/* Description Section */}
-              <div>
+              <div className="h-full w-full self-start lg:order-2 lg:row-span-3">
                 <h2 className="mb-8 text-xl font-semibold">Job Description</h2>
                 <div className="space-y-4">
                   <FormField
@@ -253,7 +253,7 @@ export function PostJobForm() {
               </div>
 
               {/* Contact Section */}
-              <div>
+              <div className="lg:order-4">
                 <h2 className="mb-4 text-xl font-semibold">
                   Contact Information
                 </h2>
@@ -279,9 +279,10 @@ export function PostJobForm() {
                 />
               </div>
             </div>
-            <Button type="submit" className="mb-8 w-full">
-              Post Job
-            </Button>
+            <MainButton
+              buttonText="Post Job"
+              className="mx-auto mb-8 mt-4 block w-64"
+            />
           </div>
         </form>
       </Form>
