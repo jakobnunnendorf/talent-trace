@@ -1,15 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import {
-  QueryDatabaseResponse,
-  DatabaseObjectResponse,
-} from '@notionhq/client/build/src/api-endpoints'
 import SubHero from '@/components/Header/SubHero'
-import { returnClassName } from '@/lib/notion/parseMarkdown'
-import { fetchCategoryPage, extractBlockContents } from '@/lib/notion/fetchPage'
-import { fetchCategoryById } from '@/lib/notion'
-// TODO: add correct typing
+import {
+  fetchCategoryPage,
+  extractBlockContents,
+  fetchCategoryById,
+} from '@/lib/notion'
 
 export default async function Page({ params }: { params: { id: string } }) {
   const category = await fetchCategoryById(params.id)
@@ -21,13 +17,14 @@ export default async function Page({ params }: { params: { id: string } }) {
         headline={'Find the best jobs in your industry'}
         description="with Talent Trace"
       />
+      <p className="p-16">{JSON.stringify(category.properties, null, 2)}</p>
       <div className="mx-auto px-4 md:w-1/2 md:px-0">
         <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:pb-4 md:text-start md:text-5xl">
-          {(category.properties.Category as any).title[0].plain_text}
+          {category.properties.Category.title[0].plain_text}
         </h1>
         <figure className="relative h-96 w-full">
           <Image
-            src={(category.properties.Image.files[0] as any).url}
+            src={category.properties.Image.files[0].file.url}
             alt="Blog Post Image"
             fill
             className="rounded-lg object-cover"

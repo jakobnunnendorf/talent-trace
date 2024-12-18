@@ -155,11 +155,84 @@ export const fetchAndFormatNews = async () => {
   })) as NewsPost[]
 }
 
+interface Category {
+  object: 'page'
+  id: string
+  created_time: string
+  last_edited_time: string
+  created_by: {
+    object: 'user'
+    id: string
+  }
+  last_edited_by: {
+    object: 'user'
+    id: string
+  }
+  cover: null
+  icon: null
+  parent: {
+    type: 'database_id'
+    database_id: string
+  }
+  archived: boolean
+  in_trash: boolean
+  properties: {
+    Keywords: {
+      id: string
+      type: 'multi_select'
+      multi_select: Array<{
+        id: string
+        name: string
+        color: string
+      }>
+    }
+    Icon: {
+      id: string
+      type: 'files'
+      files: Array<{
+        name: string
+        type: 'file'
+        file: {
+          url: string
+          expiry_time: string
+        }
+      }>
+    }
+    Text: {
+      id: string
+      type: 'rich_text'
+      rich_text: Array<any>
+    }
+    Image: {
+      id: string
+      type: 'files'
+      files: Array<{
+        name: string
+        type: 'file'
+        file: {
+          url: string
+          expiry_time: string
+        }
+      }>
+    }
+    Category: {
+      id: string
+      type: 'title'
+      title: Array<{
+        plain_text: string
+      }>
+    }
+  }
+}
+
 export const fetchCategoryById = async (categoryId: string) => {
   const response = await notion.databases.query({
     database_id: CATEGORIES_DATABASE_ID,
   })
-  return response.results.find((entry: any) => entry.id === categoryId)
+  const category = response.results.find(
+    (entry: any) => entry.id === categoryId
+  )
+  return category as Category
 }
 
 export const fetchNewsById = async (postId: string) => {
