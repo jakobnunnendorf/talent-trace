@@ -17,7 +17,9 @@ const ExecutiveSearchPage: React.FC = () => {
           you with professionals who are not just qualified but are the perfect
           fit for your unique organizational goals."
         primaryButton="Find Executive"
-        secondaryButton="Contact Us" // TODO: add executive search buttons
+        primaryButtonLink="/jobs/post"
+        secondaryButton="Contact Us"
+        secondaryButtonLink="/contact-us"
       />
 
       {/* Why Choose Us */}
