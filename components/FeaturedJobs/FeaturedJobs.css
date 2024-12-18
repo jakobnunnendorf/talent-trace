@@ -57,7 +57,7 @@
 .preview span.rec-grp-name::after {
   content: 'Featured Jobs';
   font-size: 1.875rem;
-  font-family: __Inter_d65c78;
+  font-family: __Inter_d65c78, Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-align: center;
 }

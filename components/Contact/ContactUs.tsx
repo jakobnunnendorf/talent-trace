@@ -5,7 +5,7 @@ import ScheduleCall from './ScheduleCall'
 
 export default function ContactUs() {
   return (
-    <div className="bg-white px-4 md:min-h-screen md:py-24">
+    <div className="bg-white px-4 md:py-24">
       <div className="mx-auto">
         <ContactHeader />
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-24">
