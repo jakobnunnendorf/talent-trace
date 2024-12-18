@@ -44,7 +44,7 @@ export default async function Testimonials() {
 
   const testimonials = await fetchTestimonials()
   return (
-    <div className="bg-[#FAFAFA] pt-12 md:h-[700px] md:py-16">
+    <div className="bg-[#FAFAFA] py-12 pt-12 md:h-[700px] md:py-16">
       <div className="mx-auto">
         <Header />
         <TestimonialCarousel testimonials={testimonials} />

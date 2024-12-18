@@ -27,7 +27,7 @@ export default async function NewsCarousel() {
   }))
 
   return (
-    <section className="flex flex-col justify-center md:py-24">
+    <section className="flex flex-col justify-center pb-12 md:py-24">
       <h2 className="pb-6 pt-12 text-center text-4xl md:pl-16 md:text-start">
         Latest News Stories
       </h2>
@@ -37,7 +37,7 @@ export default async function NewsCarousel() {
         }}
         className="w-full md:w-4/5"
       >
-        <CarouselContent className="px-4 md:gap-4 md:p-16">
+        <CarouselContent className="px-4 pb-8 md:gap-4 md:p-16">
           {newsItems.map((item, index) => (
             <CarouselItem
               key={index}
