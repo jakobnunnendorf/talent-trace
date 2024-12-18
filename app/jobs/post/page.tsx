@@ -44,7 +44,9 @@ const PostJobs = () => {
         description="From executive leaders to skilled professionals, we connect you with
         candidates who match your vision and drive growth in your organization."
         primaryButton="Get Started Today"
+        primaryButtonLink="#post-job-form"
         secondaryButton="Request a Consultation"
+        secondaryButtonLink="https://calendly.com/jakobnunnendorf/call"
       />
 
       <section className="md:py-12" id="post-job-form">
