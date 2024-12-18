@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { Button } from '../ui/button'
+import { Button } from '@/components/ui/button'
 import { useSidebar } from '@/components/ui/sidebar'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
+
 interface NavBurgerProps {
   scrollDirection: 'up' | 'down'
 }

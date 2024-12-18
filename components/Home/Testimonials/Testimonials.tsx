@@ -3,7 +3,96 @@ import TestimonialCarousel from './TestimonialCarousel'
 import Header from './Header'
 import { Client } from '@notionhq/client'
 
-// TODO: add correct typing
+interface User {
+  object: 'user'
+  id: string
+}
+
+interface RichTextContent {
+  type: 'text'
+  text: {
+    content: string
+    link: null | string
+  }
+  annotations: {
+    bold: boolean
+    italic: boolean
+    strikethrough: boolean
+    underline: boolean
+    code: boolean
+    color: string
+  }
+  plain_text: string
+  href: null | string
+}
+
+interface Properties {
+  Title: {
+    id: string
+    type: 'rich_text'
+    rich_text: RichTextContent[]
+  }
+  Text: {
+    id: string
+    type: 'rich_text'
+    rich_text: RichTextContent[]
+  }
+  Company: {
+    id: string
+    type: 'rich_text'
+    rich_text: RichTextContent[]
+  }
+  Review: {
+    id: string
+    type: 'number'
+    number: number
+  }
+  Position: {
+    id: string
+    type: 'rich_text'
+    rich_text: RichTextContent[]
+  }
+  Picture: {
+    id: string
+    type: 'files'
+    files: any[]
+  }
+  Author: {
+    id: string
+    type: 'title'
+    title: RichTextContent[]
+  }
+}
+
+interface TestimonialPage {
+  object: 'page'
+  id: string
+  created_time: string
+  last_edited_time: string
+  created_by: User
+  last_edited_by: User
+  cover: null
+  icon: null
+  parent: {
+    type: 'database_id'
+    database_id: string
+  }
+  archived: boolean
+  in_trash: boolean
+  properties: Properties
+  url: string
+  public_url: string
+}
+
+interface Response {
+  object: 'list'
+  results: TestimonialPage[]
+  next_cursor: null | string
+  has_more: boolean
+  type: 'page_or_database'
+  page_or_database: Record<string, never>
+  request_id: string
+}
 
 export interface Testimonial {
   title: string
@@ -17,9 +106,9 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY })
 export default async function Testimonials() {
   const fetchTestimonials = async (): Promise<Testimonial[]> => {
     const databaseId = '158c4d0ef1088018abaac79fefdc4d06'
-    const response = (await notion.databases.query({
+    const response = await notion.databases.query({
       database_id: databaseId,
-    })) as any
+    })
 
     const testimonials: Testimonial[] = response.results
       .map((testimonialEntry: any) => {

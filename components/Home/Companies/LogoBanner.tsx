@@ -1,17 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from './slideLeft.module.css'
+import { fetchCompanyLogos } from '@/lib/notion'
 
-export default function LogoBanner() {
-  const companies = [
-    '/logos/Oldendorff logo.png',
-    '/logos/RioTinto logo.png',
-    '/logos/BHP logo.avif',
-    '/logos/Vale logo.jpg',
-    '/logos/Glencore logo.png',
-    '/logos/BHP logo.avif',
-    '/logos/Glencore logo.png',
-  ]
+async function LogoBanner() {
+  const companies = await fetchCompanyLogos()
+
   return (
     <div className="row-start-3 mx-auto flex overflow-hidden py-4 lg:w-[1250px]">
       {[...Array(2)].map((_, listIndex) => (
@@ -24,9 +18,9 @@ export default function LogoBanner() {
               <figure className="relative h-full w-full">
                 <Image
                   className="object-contain"
-                  src={company}
+                  src={company.logo}
                   fill
-                  alt={`Logo of ${company.split('/').pop()?.split('.')[0]}`}
+                  alt={`Logo of ${company.name}`}
                 />
               </figure>
             </li>
@@ -36,3 +30,5 @@ export default function LogoBanner() {
     </div>
   )
 }
+
+export default LogoBanner

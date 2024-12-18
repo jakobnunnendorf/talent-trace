@@ -1,0 +1,57 @@
+TODO: universalise shared components
+TODO: pull partner logos from notion
+TODO: use suspense and skeleton components for all images
+TODO: add bread crumbs to layout 
+TODO: universalise text styles
+TODO: universalise spacing
+TODO: make routes based on keywords not ids
+
+TODO: Verify /categories route works
+TODO: Verify /categories/:id dynamic route works with valid and invalid IDs
+TODO: Verify /contact-us route works
+TODO: Verify ContactForm submits correctly with and without validation errors
+TODO: Verify /explore route works
+TODO: Verify /explore/about-us route works
+TODO: Verify /explore/join-us route works
+TODO: Verify /explore/news route works
+TODO: Verify FeaturedPosts component displays correctly in /explore/news
+TODO: Verify NewsCard component displays correctly
+TODO: Verify Newsletter component functions properly
+TODO: Verify /explore/news/:id dynamic route works with valid and invalid IDs
+TODO: Verify /jobs/find route works
+TODO: Verify /jobs/post route works
+TODO: Verify PostJobForm component submits correctly with success, error, and validation checks
+TODO: Verify Services component on /jobs/post displays correctly
+TODO: Verify /services route works
+TODO: Verify /services/consultancy route works
+TODO: Verify /services/contingent-search route works
+TODO: Verify /services/executive-search route works
+TODO: Verify layout is applied consistently on all pages
+TODO: Verify global styles from globals.css are applied correctly
+TODO: Verify favicon is displayed in the browser tab
+TODO: Verify / (homepage) route works
+TODO: Verify 404 page displays for invalid routes
+TODO: Verify error boundaries for server/client errors are handled gracefully
+TODO: Verify layout for header, footer, and main content on all pages
+TODO: Verify responsive design on mobile, tablet, and desktop
+TODO: Verify SEO meta tags (title, description) are correct for each route
+TODO: Verify accessibility (a11y) compliance using Lighthouse or axe
+TODO: Verify Storybook coverage for key components
+TODO: Verify no unnecessary imports or unused files
+TODO: Run linter (npm run lint) to ensure linting rules are followed
+TODO: Run type-check (npm run type-check) to ensure TypeScript types are correct
+TODO: Run development server (npm run dev) to ensure the app builds without issues
+TODO: Run production build (npm run build) to ensure production build works
+TODO: Run production server (npm start) to check app in production mode
+TODO: Run unit tests (npm run test) to ensure all tests pass
+TODO: Run end-to-end (E2E) tests (if applicable) and ensure no issues
+TODO: Verify storybook builds successfully and all components are displayed
+TODO: Test dynamic routes with valid and invalid IDs for /categories/:id and /explore/news/:id
+TODO: Universalise shared components used across multiple pages
+TODO: Use Suspense and Skeleton components for all images
+TODO: Add breadcrumbs to the layout for better navigation
+TODO: Universalise text styles for consistency across the application
+TODO: Universalise spacing to ensure consistent padding and margins
+TODO: Pull partner logos from Notion or other external sources
+TODO: Verify component imports are organized and remove unused imports
+TODO: Check if all file names follow consistent naming convention

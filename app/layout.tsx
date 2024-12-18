@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import NavBar from '@/components/NavBar/NavBar'
-import Footer from '@/components/Footer/Footer'
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { AppSidebar } from '@/components/app-sidebar'
+import NavBar from '@/components/Layout/NavBar/NavBar'
+import Footer from '@/components/Layout/Footer/Footer'
+import { SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/Layout/NavBar/app-sidebar'
+import { Toaster } from 'sonner'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -38,6 +39,7 @@ export default function RootLayout({
           <main className="relative w-full">{children}</main>
         </SidebarProvider>
         <Footer />
+        <Toaster />
       </body>
     </html>
   )

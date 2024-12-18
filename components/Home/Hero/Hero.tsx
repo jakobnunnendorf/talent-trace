@@ -15,19 +15,21 @@ const IconLink = ({ icon, link }: { icon: React.ReactNode; link: string }) => {
   )
 }
 
-// TODO add real links
 const socialLinks = [
-  { icon: <SlSocialLinkedin />, link: 'https://www.linkedin.com/' },
-  { icon: <SlPhone />, link: 'tel:+1234567890' },
-  { icon: <SlEnvolope />, link: 'mailto:contact@talent-trace.com' },
+  {
+    icon: <SlSocialLinkedin />,
+    link: 'https://www.linkedin.com/company/talent-trace/',
+  },
+  { icon: <SlPhone />, link: 'tel:+6581398239' },
+  { icon: <SlEnvolope />, link: 'mailto:pravin@talent-trace.com' },
 ]
 export default function Hero() {
   return (
-    <div className="max-xs:h-screen relative grid grid-rows-6 overflow-hidden sm:h-[66vh] md:grid-rows-5 lg:h-screen">
+    <div className="relative grid grid-rows-6 overflow-hidden max-xs:h-screen sm:h-[66vh] md:grid-rows-5 lg:h-screen">
       <Background />
       <Ship />
       <h1
-        className={`${gradient} max-xs:text-4xl xs:text-5xl -z-40 row-start-2 mb-4 self-end text-center md:block md:text-7xl md:font-extrabold lg:text-10xl`}
+        className={`${gradient} -z-40 row-start-2 mb-4 self-end text-center max-xs:text-4xl xs:text-5xl md:block md:text-7xl md:font-extrabold lg:text-10xl`}
       >
         TALENT TRACE
       </h1>

@@ -1,7 +1,5 @@
 import React from 'react'
-import LogoBanner from './LogoBanner'
-
-// TODO pull from notion
+import LogoBanner from '@/components/Home/Companies/LogoBanner'
 
 export default function Companies() {
   return (

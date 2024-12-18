@@ -5,6 +5,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY })
 // Database IDs
 const NEWS_DATABASE_ID = '158c4d0ef10880d386f2c94c94a3600b'
 const CATEGORIES_DATABASE_ID = '15bc4d0ef10880f79dbaff488bd59b06'
+const COMPANIES_DATABASE_ID = '160c4d0ef10880779e39d0823c60af3f'
 
 // Helper functions
 export const getCoverImageUrl = (post: any): string => {
@@ -155,87 +156,19 @@ export const fetchAndFormatNews = async () => {
   })) as NewsPost[]
 }
 
-interface Category {
-  object: 'page'
-  id: string
-  created_time: string
-  last_edited_time: string
-  created_by: {
-    object: 'user'
-    id: string
-  }
-  last_edited_by: {
-    object: 'user'
-    id: string
-  }
-  cover: null
-  icon: null
-  parent: {
-    type: 'database_id'
-    database_id: string
-  }
-  archived: boolean
-  in_trash: boolean
-  properties: {
-    Keywords: {
-      id: string
-      type: 'multi_select'
-      multi_select: Array<{
-        id: string
-        name: string
-        color: string
-      }>
-    }
-    Icon: {
-      id: string
-      type: 'files'
-      files: Array<{
-        name: string
-        type: 'file'
-        file: {
-          url: string
-          expiry_time: string
-        }
-      }>
-    }
-    Text: {
-      id: string
-      type: 'rich_text'
-      rich_text: Array<any>
-    }
-    Image: {
-      id: string
-      type: 'files'
-      files: Array<{
-        name: string
-        type: 'file'
-        file: {
-          url: string
-          expiry_time: string
-        }
-      }>
-    }
-    Category: {
-      id: string
-      type: 'title'
-      title: Array<{
-        plain_text: string
-      }>
-    }
-  }
+interface Company {
+  logo: string
+  name: string
 }
 
-export const fetchCategoryById = async (categoryId: string) => {
+export const fetchCompanyLogos = async () => {
   const response = await notion.databases.query({
-    database_id: CATEGORIES_DATABASE_ID,
+    database_id: COMPANIES_DATABASE_ID,
   })
-  const category = response.results.find(
-    (entry: any) => entry.id === categoryId
-  )
-  return category as Category
+
+  return response.results.map((result: any) => ({
+    logo: result.properties['Logo']?.files[0]?.file?.url || '/',
+    name: getNotionProperty(result, 'Name') // Assuming there's a Name property
+  })) as Company[]
 }
 
-export const fetchNewsById = async (postId: string) => {
-  const allPosts = await fetchAllNews()
-  return allPosts.find((entry: any) => entry.id === postId)
-}

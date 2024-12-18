@@ -12,8 +12,8 @@ const services = [
 
 const OurServices = () => {
   return (
-    <div className="px-6 md:h-screen md:p-12">
-      <div className="flex h-full w-full flex-col overflow-hidden rounded-3xl rounded-b-none bg-white md:flex-row md:rounded-b-3xl">
+    <div className="px-6 md:h-screen md:p-12 xl:max-h-[800px]">
+      <div className="mx-auto flex h-full w-full max-w-7xl flex-col overflow-hidden rounded-3xl rounded-b-none bg-white md:flex-row md:rounded-b-3xl xl:max-h-[800px]">
         {/* Image Section */}
         <div className="relative h-48 w-full md:h-auto md:w-1/2">
           <Image
