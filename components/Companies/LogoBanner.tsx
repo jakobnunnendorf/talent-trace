@@ -13,7 +13,7 @@ export default function LogoBanner() {
     '/logos/Glencore logo.png',
   ]
   return (
-    <div className="row-start-3 mx-auto flex py-4 lg:w-[1250px]">
+    <div className="row-start-3 mx-auto flex overflow-hidden py-4 lg:w-[1250px]">
       {[...Array(2)].map((_, listIndex) => (
         <ul key={listIndex} className={`${styles['slide-left']} flex h-full`}>
           {companies.map((company, index) => (
