@@ -47,6 +47,10 @@ const PostJobs = () => {
         secondaryButton="Request a Consultation"
       />
 
+      <section className="py-12" id="post-job-form">
+        <PostJobForm />
+      </section>
+
       {/* Replace Introduction component with TextAndPic */}
       <section className="py-12">
         <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:text-5xl md:font-normal">
@@ -129,13 +133,14 @@ const PostJobs = () => {
         <p className="mt-4 text-lg">
           Let’s help you build a stronger, more capable team.
         </p>
-        <div className="mt-8 space-x-4">
-          <MainButton full buttonText="Find Talent Now" />
-          <MainButton secondary buttonText="Speak to a Specialist" />
+        <div className="mt-8 flex justify-center space-x-4">
+          <MainButton full buttonText="Find Talent Now" link="#post-job-form" />
+          <MainButton
+            link="https://calendly.com/jakobnunnendorf/call"
+            secondary
+            buttonText="Speak to a Specialist"
+          />
         </div>
-      </section>
-      <section className="py-12">
-        <PostJobForm />
       </section>
     </div>
   )
