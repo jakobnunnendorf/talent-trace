@@ -6,72 +6,63 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
-import Image from 'next/image'
-import Link from 'next/link'
-import MainButton from '../Buttons/MainButton'
-import {
-  fetchFeaturedNews,
-  getCoverImageUrl,
-  getNotionProperty,
-} from '@/lib/notion'
+import NewsCard from '@/app/explore/news/NewsCard'
+import { fetchAllNews, getCoverImageUrl, getNotionProperty } from '@/lib/notion'
+
+// Match the interface from FeaturedPosts
+interface NewsItem {
+  imageLink: string
+  title: string
+  summary: string
+  date: string
+  blogPostLink: string
+  author: string
+}
 
 export default async function NewsCarousel() {
-  const posts = await fetchFeaturedNews()
-  const newsItems = posts.map((post: any) => ({
+  const posts = await fetchAllNews()
+  const newsItems: NewsItem[] = posts.map((post: any) => ({
+    imageLink: getCoverImageUrl(post),
     title: getNotionProperty(post, 'Title'),
-    image: getCoverImageUrl(post),
-    description: getNotionProperty(post, 'Summary'),
-    link: '/explore/news/' + post.id,
+    summary: getNotionProperty(post, 'Summary'),
+    date: getNotionProperty(post, 'Date'),
+    blogPostLink: '/explore/news/' + post.id,
+    author: getNotionProperty(post, 'Author'),
   }))
 
   return (
     <section className="flex flex-col justify-center pb-12 md:py-24">
-      <h2 className="pb-6 pt-12 text-center text-4xl md:pl-16 md:text-start">
-        Latest News Stories
-      </h2>
-      <Carousel
-        opts={{
-          align: 'start',
-        }}
-        className="w-full md:w-4/5"
-      >
-        <CarouselContent className="px-4 pb-8 md:gap-4 md:p-16">
-          {newsItems.map((item, index) => (
-            <CarouselItem
-              key={index}
-              className="overflow-visible md:basis-1/2 lg:basis-1/2"
-            >
-              <div className="md:p-1">
-                <Card className="shadow-xl">
-                  <CardHeader>
-                    <h2 className="text-3xl">{item.title}</h2>
-                  </CardHeader>
-                  <CardContent className="p-6">
-                    <AspectRatio ratio={16 / 9} className="bg-muted">
-                      <Image
-                        src={item.image}
-                        alt={`Photo for ${item.title}`}
-                        fill
-                        className="h-full w-full rounded-md object-cover"
-                      />
-                    </AspectRatio>
-                    <p>{item.description}</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Link href={item.link} className="mx-auto">
-                      <MainButton buttonText="Read More" />
-                    </Link>
-                  </CardFooter>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
-        <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
-      </Carousel>
+      <div className="mx-auto w-full md:w-4/5">
+        <h2 className="pb-6 pt-12 text-center text-4xl md:pl-16 md:text-start">
+          Latest News Stories
+        </h2>
+        <Carousel
+          opts={{
+            align: 'start',
+          }}
+          className=""
+        >
+          <CarouselContent className="px-4 pb-8 md:gap-4 md:p-16">
+            {newsItems.map((item, index) => (
+              <CarouselItem
+                key={index}
+                className="overflow-visible md:basis-1/2 lg:basis-1/2"
+              >
+                <NewsCard
+                  imageLink={item.imageLink}
+                  title={item.title}
+                  summary={item.summary}
+                  date={item.date}
+                  blogPostLink={item.blogPostLink}
+                  author={item.author}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2" />
+          <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2" />
+        </Carousel>
+      </div>
     </section>
   )
 }

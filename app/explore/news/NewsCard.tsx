@@ -18,14 +18,15 @@ export default function NewsCard({
   author: string
 }) {
   return (
-    <div className="overflow-hidden rounded bg-white shadow-lg">
-      <Image
-        src={imageLink}
-        alt={imageLink}
-        width={500}
-        height={500}
-        className="h-48 w-full object-cover"
-      />
+    <div className="grid h-96 grid-rows-4 overflow-hidden rounded bg-white shadow-lg lg:aspect-[12/9] lg:h-auto lg:grid-rows-3">
+      <figure className="relative row-span-2 h-full">
+        <Image
+          src={imageLink}
+          alt={imageLink}
+          fill
+          className="w-full object-cover"
+        />
+      </figure>
       <div className="p-4">
         <h3 className="text-xl font-bold">
           <Link href={blogPostLink}>{title}</Link>
