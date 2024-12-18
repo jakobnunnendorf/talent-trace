@@ -47,16 +47,16 @@ const PostJobs = () => {
         secondaryButton="Request a Consultation"
       />
 
-      <section className="py-12" id="post-job-form">
+      <section className="md:py-12" id="post-job-form">
         <PostJobForm />
       </section>
 
       {/* Replace Introduction component with TextAndPic */}
-      <section className="py-12">
+      <section className="md:py-12">
         <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:text-5xl md:font-normal">
           Why Talent Trace?
         </h1>
-        <div className="mx-auto w-2/3 lg:h-[32rem]">
+        <div className="mx-auto px-8 lg:h-[32rem] lg:w-2/3">
           <TextAndPic
             title="Finding talent doesn't have to be hard"
             text={`Finding the right talent doesn't have to be a challenge. At Talent Trace, we specialize in matching your organization with candidates who not only meet your technical requirements but also align with your goals, values, and culture.
@@ -73,9 +73,9 @@ const PostJobs = () => {
         <h2 className="text-center text-3xl font-bold">
           Our Talent Acquisition Services
         </h2>
-        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 px-8 md:grid-cols-2">
           {serviceCards.map((card, index) => (
-            <Card key={index} className="rounded bg-white p-6 shadow-lg">
+            <Card key={index} className="rounded-lg bg-white p-6 shadow-lg">
               <CardHeader>
                 <h3 className="text-2xl font-bold">{card.title}</h3>
               </CardHeader>
@@ -95,7 +95,7 @@ const PostJobs = () => {
       {/* How It Works Section */}
       <section className="py-12">
         <h2 className="text-center text-3xl font-bold">How It Works</h2>
-        <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
+        <ol className="mx-auto mt-8 max-w-3xl space-y-6 px-8 text-lg">
           <li>
             <strong>1. Share Your Hiring Needs:</strong> Tell us about the role,
             skills, and experience you’re looking for. Our team will craft a
@@ -117,7 +117,7 @@ const PostJobs = () => {
 
       {/* Testimonial Section */}
       <section className="py-12">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-3xl px-8 text-center">
           <blockquote className="text-xl italic">
             &quot;Talent Trace helped us find an executive leader who
             transformed our business operations. Their professionalism and

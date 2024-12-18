@@ -34,12 +34,12 @@ export default function SubHero({
         {primaryButton || secondaryButton ? (
           <div className="mt-12 flex justify-center space-x-4">
             {primaryButton && (
-              <Button className="rounded border-2 border-green bg-green px-6 py-3 text-lg font-semibold text-teal-900 hover:bg-teal-900 hover:text-green">
+              <Button className="rounded border-2 border-green bg-green px-1 py-3 text-lg font-semibold text-teal-900 hover:bg-teal-900 hover:text-green md:px-6">
                 <Link href={primaryButtonLink || '#'}>{primaryButton}</Link>
               </Button>
             )}
             {secondaryButton && (
-              <Button className="rounded border-2 border-white bg-transparent px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
+              <Button className="rounded border-2 border-white bg-transparent px-1 py-3 font-semibold transition hover:bg-white hover:text-blue md:px-6">
                 <Link href={secondaryButtonLink || '#'}>{secondaryButton}</Link>
               </Button>
             )}

@@ -107,7 +107,7 @@ export function PostJobForm() {
   }
 
   return (
-    <div className="mx-auto py-16 md:px-4 lg:w-full lg:max-w-6xl">
+    <div className="mx-auto md:px-4 md:py-16 lg:w-full lg:max-w-6xl">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -120,7 +120,7 @@ export function PostJobForm() {
                 Fill in the details below to post your job listing
               </p>
             </div>
-            <div className="gap-y-8 py-10 lg:grid lg:grid-cols-2 lg:gap-x-28">
+            <div className="space-y-8 py-10 lg:grid lg:grid-cols-2 lg:gap-x-28">
               {/* Basic Information Section */}
               <div className="col-span-2 lg:order-1">
                 <h2 className="mb-4 text-xl font-semibold">
