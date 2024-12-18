@@ -1,5 +1,6 @@
 import SubHero from '@/components/Header/SubHero'
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 import React from 'react'
 
 const JoinUsPage: React.FC = () => {
@@ -114,10 +115,22 @@ const JoinUsPage: React.FC = () => {
         </p>
         <div className="mt-6 space-x-4">
           <Button className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition">
-            View Open Positions
+            <Link
+              href="https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apply now
+            </Link>
           </Button>
           <Button className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue">
-            Follow Us on LinkedIn
+            <Link
+              href="https://www.linkedin.com/company/talent-trace/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Follow Us on LinkedIn
+            </Link>
           </Button>
         </div>
       </section>
