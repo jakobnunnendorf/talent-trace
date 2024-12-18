@@ -8,19 +8,12 @@ import {
 import SubHero from '@/components/Header/SubHero'
 import { returnClassName } from '@/lib/notion/parseMarkdown'
 import { fetchCategoryPage, extractBlockContents } from '@/lib/notion/fetchPage'
+import { fetchCategoryById } from '@/lib/notion'
 // TODO: add correct typing
 
 export default async function Page({ params }: { params: { id: string } }) {
+  const category = await fetchCategoryById(params.id)
   const blogPost = await fetchCategoryPage(params.id)
-  const databaseId = '15bc4d0ef10880f79dbaff488bd59b06'
-  const response = await notion.databases.query({
-    database_id: databaseId,
-  })
-  const dbEntryWithIdEqualToParamsId = response.results.filter(
-    (entry: any) => entry.id === params.id
-  )[0] as DatabaseObjectResponse
-
-  // Array<PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse>;
 
   return (
     <section>
@@ -30,20 +23,11 @@ export default async function Page({ params }: { params: { id: string } }) {
       />
       <div className="mx-auto px-4 md:w-1/2 md:px-0">
         <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:pb-4 md:text-start md:text-5xl">
-          {
-            (dbEntryWithIdEqualToParamsId.properties.Category as any).title[0]
-              .plain_text
-          }
+          {(category.properties.Category as any).title[0].plain_text}
         </h1>
         <figure className="relative h-96 w-full">
           <Image
-            src={
-              (
-                response.results.filter((entry) => {
-                  return entry.id === params.id
-                })[0] as any
-              ).properties.Image.files[0].file.url
-            }
+            src={(category.properties.Image.files[0] as any).url}
             alt="Blog Post Image"
             fill
             className="rounded-lg object-cover"
@@ -62,22 +46,9 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
         <div className="grid w-full grid-cols-3 items-center justify-center gap-8 py-8 md:flex md:justify-start md:gap-8 md:pb-24 md:pt-12">
           <p className="col-span-3 font-bold">Keywords: &nbsp;</p>
-          {(
-            response.results.filter((entry) => entry.id === params.id)[0] as any
-          ).properties.Keywords.multi_select
-            .map((keyword: any) => {
-              return keyword.name
-            })
-            .map((keyword: any) => {
-              return (
-                <Button
-                  key={keyword}
-                  className="rounded-full bg-green text-white"
-                >
-                  <p className="text-wrap text-[12px] md:text-sm">{keyword}</p>
-                </Button>
-              )
-            })}
+          {category.properties.Keywords.multi_select.map((keyword: any) => {
+            return keyword.name
+          })}
         </div>
       </div>
     </section>

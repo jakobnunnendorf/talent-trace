@@ -9,37 +9,23 @@ import {
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import MainButton from '../Buttons/MainButton'
+import {
+  fetchFeaturedNews,
+  getCoverImageUrl,
+  getNotionProperty,
+} from '@/lib/notion'
 
-const newsItems = [
-  {
-    title: 'Shipping Container Shortage and the Problems in Maritime Logistics',
-    image: '/news-images/news1.jpeg',
-    description:
-      'The COVID-19 pandemic brought about a number of disruptions to the global supply chain, affecting shipping and logistics.',
-  },
-  {
-    title:
-      'Labour Shortage Singapore & its Link to Rising Prices of Commodities',
-    image: '/news-images/news2.jpg',
-    description:
-      'One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a giant insect.',
-  },
-  {
-    title: 'Recruitment Trends in 2021 for Hiring and Talent Acquisition',
-    image: '/news-images/news3.png',
-    description:
-      'Recruitment trends in 2021 have evolved on a global scale, adapting to the challenges posed by the pandemic.',
-  },
-  {
-    title: 'Employment in COVID-19: The Impact of Coronavirus in Singapore',
-    image: '/news-images/news4.jpg',
-    description:
-      'Nearly 20,000 people lost their jobs in the first quarter of the pandemic, highlighting the urgent need for support.',
-  },
-]
+export default async function NewsCarousel() {
+  const posts = await fetchFeaturedNews()
+  const newsItems = posts.map((post: any) => ({
+    title: getNotionProperty(post, 'Title'),
+    image: getCoverImageUrl(post),
+    description: getNotionProperty(post, 'Summary'),
+    link: '/explore/news/' + post.id,
+  }))
 
-export default function NewsCarousel() {
   return (
     <section className="flex flex-col justify-center md:py-24">
       <h2 className="pb-6 pt-12 text-center text-4xl md:pl-16 md:text-start">
@@ -74,9 +60,9 @@ export default function NewsCarousel() {
                     <p>{item.description}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button className="mx-auto bg-blue shadow-sm">
-                      Read More
-                    </Button>
+                    <Link href={item.link} className="mx-auto">
+                      <MainButton buttonText="Read More" />
+                    </Link>
                   </CardFooter>
                 </Card>
               </div>
