@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function ContactHeader() {
   return (
-    <div className="mb-24 md:text-center">
+    <div className="mb-12 md:mb-24 md:text-center">
       <h2 className="mb-2 font-sans text-4xl font-bold">Contact Us</h2>
       <h3 className="mb-8 flex items-center justify-start gap-2 text-3xl font-bold opacity-50 md:justify-center">
         <p>book a consultation</p>
