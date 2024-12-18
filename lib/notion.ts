@@ -1,13 +1,20 @@
 import { Client } from '@notionhq/client'
 
+// ======================
+// Notion Client Setup
+// ======================
 const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
+// ======================
 // Database IDs
+// ======================
 const NEWS_DATABASE_ID = '158c4d0ef10880d386f2c94c94a3600b'
 const CATEGORIES_DATABASE_ID = '15bc4d0ef10880f79dbaff488bd59b06'
 const COMPANIES_DATABASE_ID = '160c4d0ef10880779e39d0823c60af3f'
 
-// Helper functions
+// ======================
+// Helper Functions
+// ======================
 export const getCoverImageUrl = (post: any): string => {
   try {
     return post.properties['Cover image']?.files[0]?.file?.url || ''
@@ -66,7 +73,9 @@ export const extractBlockContents = (blockArray: any) => {
   return blocks
 }
 
-// Fetch functions
+// ======================
+// News Fetch Functions
+// ======================
 export const fetchNewsPost = async (pageId: string) => {
   const response = await notion.blocks.children.list({
     block_id: pageId,
@@ -96,51 +105,16 @@ export const fetchAllNews = async () => {
   return response.results
 }
 
-export const fetchCategoryPage = async (pageId: string) => {
-  const response = await notion.blocks.children.list({
-    block_id: pageId,
-    page_size: 50,
-  })
-  return response
-}
-
-export const fetchCategory = async (categoryId: string) => {
-  const response = await notion.databases.query({
-    database_id: CATEGORIES_DATABASE_ID,
-  })
-  return response.results.filter((entry: any) => entry.id === categoryId)[0]
-}
-
-// Add these interfaces
-export interface CategoryObject {
-  categoryName: string
-  icon: string
-  image: string
-  id: string
-}
-
-export interface NewsPost {
-  imageLink: string
-  title: string
-  summary: string
-  date: string
-  blogPostLink: string
-  author: string
-  featured: boolean
-}
-
-// Add these functions
-export const fetchCategories = async () => {
-  const response = await notion.databases.query({
-    database_id: CATEGORIES_DATABASE_ID,
-  })
-
-  return response.results.map((result: any) => ({
-    categoryName: result.properties['Category'].title[0].plain_text,
-    icon: result.properties['Icon']?.files[0]?.file?.url || '',
-    image: result.properties['Image']?.files[0]?.file?.url || '',
-    id: result.id,
-  })) as CategoryObject[]
+export const fetchNewsById = async (pageId: string) => {
+  try {
+    const response = await notion.pages.retrieve({
+      page_id: pageId,
+    })
+    return response
+  } catch (error) {
+    console.error('Error fetching news by ID:', error)
+    throw error
+  }
 }
 
 export const fetchAndFormatNews = async () => {
@@ -156,11 +130,42 @@ export const fetchAndFormatNews = async () => {
   })) as NewsPost[]
 }
 
-interface Company {
-  logo: string
-  name: string
+// ======================
+// Category Fetch Functions
+// ======================
+export const fetchCategoryPage = async (pageId: string) => {
+  const response = await notion.blocks.children.list({
+    block_id: pageId,
+    page_size: 50,
+  })
+  return response
 }
 
+export const fetchCategoryByPageId = async (categoryId: string) => {
+  const response = await notion.databases.query({
+    database_id: CATEGORIES_DATABASE_ID,
+  })
+  return response.results.filter(
+    (entry: any) => entry.id === categoryId
+  )[0] as CategoryEntry
+}
+
+export const fetchCategories = async () => {
+  const response = await notion.databases.query({
+    database_id: CATEGORIES_DATABASE_ID,
+  })
+
+  return response.results.map((result: any) => ({
+    categoryName: result.properties['Category'].title[0].plain_text,
+    icon: result.properties['Icon']?.files[0]?.file?.url || '',
+    image: result.properties['Image']?.files[0]?.file?.url || '',
+    id: result.id,
+  })) as CategoryObject[]
+}
+
+// ======================
+// Company Fetch Functions
+// ======================
 export const fetchCompanyLogos = async () => {
   const response = await notion.databases.query({
     database_id: COMPANIES_DATABASE_ID,
@@ -168,7 +173,6 @@ export const fetchCompanyLogos = async () => {
 
   return response.results.map((result: any) => ({
     logo: result.properties['Logo']?.files[0]?.file?.url || '/',
-    name: getNotionProperty(result, 'Name') // Assuming there's a Name property
+    name: getNotionProperty(result, 'Name'),
   })) as Company[]
 }
-

@@ -4,11 +4,11 @@ import SubHero from '@/components/Header/SubHero'
 import {
   fetchCategoryPage,
   extractBlockContents,
-  fetchCategoryById,
+  fetchCategoryByPageId,
 } from '@/lib/notion'
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const category = await fetchCategoryById(params.id)
+  const category = await fetchCategoryByPageId(params.id)
   const blogPost = await fetchCategoryPage(params.id)
 
   return (
@@ -17,7 +17,6 @@ export default async function Page({ params }: { params: { id: string } }) {
         headline={'Find the best jobs in your industry'}
         description="with Talent Trace"
       />
-      <p className="p-16">{JSON.stringify(category.properties, null, 2)}</p>
       <div className="mx-auto px-4 md:w-1/2 md:px-0">
         <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:pb-4 md:text-start md:text-5xl">
           {category.properties.Category.title[0].plain_text}
