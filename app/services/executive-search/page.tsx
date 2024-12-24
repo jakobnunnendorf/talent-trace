@@ -2,9 +2,37 @@ import MainButton from '@/components/Buttons/MainButton'
 import SubHero from '@/components/Header/SubHero'
 import { Button } from '@/components/ui/button'
 import React from 'react'
+import FeatureGrid from '@/components/shared/sections/FeatureGrid'
 
 const ExecutiveSearchPage: React.FC = () => {
-  // TODO: add real success stories
+  const whyChooseUsFeatures = [
+    {
+      title: 'A Proven Network of Top Talent',
+      description:
+        'We have cultivated a vast network of highly-skilled and experienced professionals from diverse industries, enabling us to connect you with exceptional leaders who can bring innovation and success to your organization.',
+    },
+    {
+      title: 'Tailored to Your Needs',
+      description:
+        'Every organization is different. We tailor our search strategies to your specific needs, ensuring that every candidate aligns with your culture, goals, and vision.',
+    },
+    {
+      title: 'Beyond the Resume',
+      description:
+        'Our holistic approach includes in-depth candidate evaluations, leadership assessments, and cultural fit analysis to ensure the candidate thrives in your organization.',
+    },
+    {
+      title: 'Confidentiality Guaranteed',
+      description:
+        'We operate with the highest level of confidentiality, ensuring your search process remains secure and professional.',
+    },
+    {
+      title: 'Streamlined and Efficient',
+      description:
+        'Hiring the right leader is time-sensitive. Our expert recruiters ensure you get the best candidates without unnecessary delays.',
+    },
+  ]
+
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
@@ -23,58 +51,13 @@ const ExecutiveSearchPage: React.FC = () => {
         secondaryButtonLink="/contact-us"
       />
 
-      {/* Why Choose Us */}
-      <section className="px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">
-          Why Choose Talent Trace?
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Your Partner in Leadership Recruitment
-        </p>
-        <div className="mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">
-              A Proven Network of Top Talent
-            </h3>
-            <p className="mt-2">
-              We have cultivated a vast network of highly-skilled and
-              experienced professionals from diverse industries, enabling us to
-              connect you with exceptional leaders who can bring innovation and
-              success to your organization.
-            </p>
-          </div>
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Tailored to Your Needs</h3>
-            <p className="mt-2">
-              Every organization is different. We tailor our search strategies
-              to your specific needs, ensuring that every candidate aligns with
-              your culture, goals, and vision.
-            </p>
-          </div>
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Beyond the Resume</h3>
-            <p className="mt-2">
-              Our holistic approach includes in-depth candidate evaluations,
-              leadership assessments, and cultural fit analysis to ensure the
-              candidate thrives in your organization.
-            </p>
-          </div>
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Confidentiality Guaranteed</h3>
-            <p className="mt-2">
-              We operate with the highest level of confidentiality, ensuring
-              your search process remains secure and professional.
-            </p>
-          </div>
-          <div className="rounded bg-white p-6 shadow-lg">
-            <h3 className="text-2xl font-bold">Streamlined and Efficient</h3>
-            <p className="mt-2">
-              Hiring the right leader is time-sensitive. Our expert recruiters
-              ensure you get the best candidates without unnecessary delays.
-            </p>
-          </div>
-        </div>
-      </section>
+      <FeatureGrid
+        title="Why Choose Talent Trace?"
+        subtitle="Your Partner in Leadership Recruitment"
+        features={whyChooseUsFeatures}
+        columns={3}
+        bgColor="white"
+      />
 
       {/* Our Process */}
       <section className="bg-gray-100 px-6 py-12">
