@@ -15,7 +15,9 @@ const ConsultancyPage: React.FC = () => {
           results.
         "
         primaryButton="Request a Consultation"
+        primaryButtonLink="https://calendly.com/jakobnunnendorf/call"
         secondaryButton="Explore Our Services"
+        secondaryButtonLink="/#service-card"
       />
 
       {/* Introduction Section */}

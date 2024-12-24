@@ -16,11 +16,15 @@ const LatestNewsPage: React.FC = async () => {
         description="Explore insights, industry trends, and company updates from the world
           of recruitment, HR, and beyond."
         primaryButton="Read Our Blog"
+        primaryButtonLink="/explore/news/#latest-blog"
         secondaryButton="Subscribe for Updates"
+        secondaryButtonLink="/explore/news/#subscribe-newsletter"
       />
 
       <BlogPostGrid heading="Featured Insights" posts={featuredPosts} />
-      <BlogPostGrid heading="Latest Blog Posts" posts={regularPosts} bg />
+      <div id="latest-blog">
+        <BlogPostGrid heading="Latest Blog Posts" posts={regularPosts} bg />
+      </div>
 
       <SubscribeToNewsLetter />
     </div>
