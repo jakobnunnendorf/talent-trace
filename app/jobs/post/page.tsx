@@ -1,6 +1,6 @@
 import React from 'react'
-import { PostJobForm } from './PostJobForm'
-import SubHero from '@/components/Header/SubHero'
+import { PostJobForm } from '../../../components/Jobs/Post/PostJobForm'
+import SubHero from '@/components/shared/Header/SubHero'
 import TextAndPic from '@/components/shared/ContentCards/TextAndPic'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import MainButton from '@/components/shared/Buttons/MainButton'

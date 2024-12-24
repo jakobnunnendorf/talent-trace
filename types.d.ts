@@ -153,6 +153,12 @@ declare global {
     plain_text: string
     href: null | string
   }
+
+  interface TextSection {
+    heading: string
+    paragraphs?: string[]
+    bulletPoints?: string[]
+  }
 }
 
 // This export is necessary to make the file a module

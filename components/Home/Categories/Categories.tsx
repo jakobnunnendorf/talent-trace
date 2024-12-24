@@ -16,7 +16,6 @@ export default async function Categories() {
             key={index}
             icon={category.icon}
             categoryName={category.categoryName}
-            image={category.image}
             href={`/categories/${category.id}`}
           />
         ))}

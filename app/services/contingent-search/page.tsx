@@ -1,4 +1,4 @@
-import SubHero from '@/components/Header/SubHero'
+import SubHero from '@/components/shared/Header/SubHero'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 

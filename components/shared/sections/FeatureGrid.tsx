@@ -27,7 +27,7 @@ export default function FeatureGrid({
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">{subtitle}</p>
       )}
       <div
-        className={`${'grid-rows-' + features.length.toString()} mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : ''}`}
+        className={`${'grid-rows-' + (features.length / columns).toString()} mx-auto mt-8 grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : ''}`}
       >
         {features.map((feature, index) => (
           <div key={index} className="h-full rounded bg-white p-6 shadow-lg">

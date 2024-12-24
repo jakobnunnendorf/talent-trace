@@ -34,7 +34,7 @@ export default function CTASection({
         {secondaryButton && (
           <Button
             onClick={secondaryButton.onClick}
-            className="rounded border-2 border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-blue"
+            className="rounded border-white bg-transparent px-6 py-3 font-bold underline underline-offset-2 transition hover:bg-white hover:text-blue"
           >
             <Link href={secondaryButton.href || ''}>
               {secondaryButton.text}

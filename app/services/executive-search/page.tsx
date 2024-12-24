@@ -1,5 +1,5 @@
-import MainButton from '@/components/Buttons/MainButton'
-import SubHero from '@/components/Header/SubHero'
+import MainButton from '@/components/shared/Buttons/MainButton'
+import SubHero from '@/components/shared/Header/SubHero'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import FeatureGrid from '@/components/shared/sections/FeatureGrid'
@@ -144,7 +144,7 @@ const ExecutiveSearchPage: React.FC = () => {
         <MainButton
           buttonText="Find Your Leader"
           className="mx-auto mt-6"
-          href="/jobs/find"
+          link="/jobs/find"
         />
       </section>
     </div>
