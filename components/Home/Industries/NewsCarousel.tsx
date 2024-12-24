@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import NewsCard from '@/app/explore/news/NewsCard'
+import NewsCard from '@/components/Explore/News/NewsCard'
 import { fetchAllNews, getCoverImageUrl, getNotionProperty } from '@/lib/notion'
 
 // Match the interface from FeaturedPosts
