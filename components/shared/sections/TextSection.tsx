@@ -5,11 +5,13 @@ export default function TextSection({
   paragraphs,
   bulletPoints,
   bg,
+  ol,
 }: {
   heading: string
   paragraphs?: string[]
   bulletPoints?: string[]
   bg?: boolean
+  ol?: boolean
 }) {
   return (
     <section className={`${bg ? 'bg-gray-100' : null} px-6 py-12`}>
@@ -19,11 +21,20 @@ export default function TextSection({
           {paragraph}
         </p>
       ))}
-      <ul className="mx-auto mt-6 max-w-3xl list-inside list-disc text-lg">
-        {bulletPoints?.map((bulletPoint, index) => (
-          <li key={index}>{bulletPoint}</li>
+      {bulletPoints &&
+        (ol ? (
+          <ol className="mx-auto mt-6 max-w-3xl list-inside list-decimal space-y-6 px-8 text-lg">
+            {bulletPoints.map((bulletPoint, index) => (
+              <li key={index}>{bulletPoint}</li>
+            ))}
+          </ol>
+        ) : (
+          <ul className="mx-auto mt-6 max-w-3xl list-inside list-disc space-y-6 px-8 text-lg">
+            {bulletPoints.map((bulletPoint, index) => (
+              <li key={index}>{bulletPoint}</li>
+            ))}
+          </ul>
         ))}
-      </ul>
     </section>
   )
 }
