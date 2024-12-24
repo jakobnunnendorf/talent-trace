@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <Companies />
+      <Companies />
       <FeaturedJobs />
       <Categories />
       <Services />
       <Testimonials />
       <NewsCarousel />
-      <ContactUs /> */}
+      <ContactUs />
     </main>
   )
 }
