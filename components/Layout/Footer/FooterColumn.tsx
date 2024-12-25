@@ -13,8 +13,8 @@ interface FooterColumnProps {
 
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
   return (
-    <div className="flex w-full justify-center">
-      <div className="mx-auto flex w-fit flex-col md:mx-0">
+    <div className="flex w-full md:justify-center">
+      <div className="flex w-fit flex-col md:mx-0">
         <div className="mb-1 gap-y-2 font-semibold">{title}</div>
         <ul className="mt-4 flex flex-col gap-4">
           {links.map((link, index) => (

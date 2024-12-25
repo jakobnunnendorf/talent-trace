@@ -21,40 +21,66 @@ const Footer: React.FC = () => {
           <Socials dark />
         </div>
       </div>
-      <div className="mx-auto grid max-w-7xl grid-cols-2 grid-rows-2 gap-4 pb-6 pt-4 md:grid-cols-4 md:grid-rows-1">
-        <FooterColumn title="For Candidates" links={candidateLinks} />
-        <FooterColumn title="For Employers" links={employerLinks} />
-        <FooterColumn title="Other" links={otherLinks} />
-        <FooterColumn title="Legal" links={legalLinks} />
+      <div className="mx-auto grid w-fit max-w-7xl grid-cols-2 grid-rows-2 gap-4 pb-6 pt-4 md:w-auto md:grid-cols-5 md:grid-rows-1">
+        {footerSections.map((section, index) => {
+          return (
+            <FooterColumn
+              key={index}
+              title={section.title}
+              links={section.links}
+            />
+          )
+        })}
       </div>
       <Copyright />
     </footer>
   )
 }
 
-const candidateLinks = [
-  { href: '#', text: 'Job Opportunities' },
-  { href: '#', text: 'Browse Categories' },
-  { href: '#', text: 'Upload CV' },
-]
-
-const employerLinks = [
-  { href: '#', text: 'Browse Candidates' },
-  { href: '#', text: 'Employer Dashboard' },
-  { href: '#', text: 'Add Job' },
-]
-
-const otherLinks = [
-  { href: '#', text: 'About Us' },
-  { href: '#', text: 'Executive Search' },
-  { href: '#', text: 'Contingency Search' },
-  { href: '#', text: 'News' },
-  { href: '#', text: 'Contact Us' },
-]
-
-const legalLinks = [
-  { href: '#', text: 'Privacy Policy' },
-  { href: '#', text: 'Terms and Conditions' },
+const footerSections = [
+  {
+    title: 'For Candidates',
+    links: [
+      { href: '/jobs/find', text: 'Job Opportunities' },
+      { href: '/#job-categories', text: 'Browse Categories' },
+      {
+        href: 'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
+        text: 'Upload CV',
+      },
+    ],
+  },
+  {
+    title: 'For Employers',
+    links: [
+      { href: '/jobs/post', text: 'Post Job' },
+      { href: '/services/executive-search', text: 'Schedule Consultation' },
+      { href: '/services/contingent-search', text: 'Send Us A Message' },
+      { href: '/services/consultancy', text: 'Consultancy' },
+    ],
+  },
+  {
+    title: 'Explore',
+    links: [
+      { href: '/explore/about-us', text: 'About Us' },
+      { href: '/explore/news', text: 'News' },
+      { href: '/explore/contact-us', text: 'Contact Us' },
+    ],
+  },
+  {
+    title: 'Contact Us',
+    links: [
+      { href: '/explore/about-us', text: 'About Us' },
+      { href: '/explore/news', text: 'News' },
+      { href: '/explore/contact-us', text: 'Contact Us' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { href: '#', text: 'Privacy Policy' },
+      { href: '#', text: 'Terms and Conditions' },
+    ],
+  },
 ]
 
 export default Footer

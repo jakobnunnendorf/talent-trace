@@ -6,7 +6,7 @@ export default async function Categories() {
   const categoryObjects = await fetchCategories()
 
   return (
-    <section className="py-12 md:p-24">
+    <section id='job-categories' className="py-12 md:p-24">
       <h2 className="p-6 pb-12 text-center text-4xl">
         Find jobs in your industry
       </h2>

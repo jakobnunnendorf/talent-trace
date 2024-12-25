@@ -24,7 +24,7 @@ export default function NewsCard({
       <figure className="relative row-span-3">
         <Image
           src={imageLink}
-          alt={imageLink}
+          alt={title}
           fill
           className="w-full object-cover"
           placeholder="blur"

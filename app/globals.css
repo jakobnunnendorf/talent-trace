@@ -15,11 +15,9 @@
   border: blue 1px solid;
 }
 
-
 .drift-right {
   animation: driftRight 60s linear infinite;
 }
-
 
 @keyframes driftRight {
   0% {
@@ -161,4 +159,8 @@
   .duration-300 {
     transition-duration: 300ms;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
