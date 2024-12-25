@@ -1,5 +1,6 @@
 import React, { ForwardRefExoticComponent, RefAttributes } from 'react'
-import { MapPin, Clock, Phone, Mail, LucideProps } from 'lucide-react'
+import { MapPin, Clock, Phone, Mail, LucideProps, Linkedin } from 'lucide-react'
+import Link from 'next/link'
 
 interface ContactInfo {
   icon: ForwardRefExoticComponent<
@@ -7,11 +8,16 @@ interface ContactInfo {
   >
   type: string
   info: string
+  link?: string
 }
-
 const contactInformation: ContactInfo[] = [
-  { icon: Mail, type: 'Email', info: 'support@talenttrace.com' },
-  { icon: Phone, type: 'Phone', info: '+65 8139 8239' },
+  {
+    icon: Mail,
+    type: 'Email',
+    info: 'pravin@talent-trace.com',
+    link: 'mailto:pravin@talent-trace.com',
+  },
+  { icon: Phone, type: 'Phone', info: '+6581398239', link: 'tel:+6581398239' },
   {
     icon: Clock,
     type: 'Office Hours',
@@ -22,7 +28,26 @@ const contactInformation: ContactInfo[] = [
     type: 'Singapore (Headquarters)',
     info: '[Insert Address]',
   },
+  {
+    icon: Linkedin,
+    type: 'LinkedIn',
+    info: 'Talent Trace',
+    link: 'https://www.linkedin.com/company/talent-trace/',
+  },
 ]
+
+function ContactInfo({ info }: { info: ContactInfo }) {
+  if (!info.link) {
+    return <p className="mt-1">{info.info}</p>
+  }
+  return (
+    <Link href={info.link}>
+      <p className="mt-1 underline underline-offset-2 hover:text-blue">
+        {info.info}
+      </p>
+    </Link>
+  )
+}
 
 export default function ContactInformation() {
   return (
@@ -33,7 +58,7 @@ export default function ContactInformation() {
             <info.icon className="h-6 w-6 text-blue" />
             <div>
               <h3 className="font-semibold">{info.type}</h3>
-              <p className="mt-1">{info.info}</p>
+              <ContactInfo info={info} />
             </div>
           </div>
         )

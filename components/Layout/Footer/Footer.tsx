@@ -53,8 +53,8 @@ const footerSections = [
     title: 'For Employers',
     links: [
       { href: '/jobs/post', text: 'Post Job' },
-      { href: '/services/executive-search', text: 'Schedule Consultation' },
-      { href: '/services/contingent-search', text: 'Send Us A Message' },
+      { href: '/services/executive-search', text: 'Executive Search' },
+      { href: '/services/contingent-search', text: 'Contingent Search' },
       { href: '/services/consultancy', text: 'Consultancy' },
     ],
   },
@@ -69,9 +69,11 @@ const footerSections = [
   {
     title: 'Contact Us',
     links: [
-      { href: '/explore/about-us', text: 'About Us' },
-      { href: '/explore/news', text: 'News' },
-      { href: '/explore/contact-us', text: 'Contact Us' },
+      {
+        href: 'https://calendly.com/jakobnunnendorf/call',
+        text: 'Schedule a Call',
+      },
+      { href: '/contact-us', text: 'Send us a Message' },
     ],
   },
   {
