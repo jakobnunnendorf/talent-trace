@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function ScheduleCall() {
   return (
-    <div className="order-1 w-96 rounded-lg bg-white p-6 md:order-2">
+    <div className="order-1 w-96 rounded-lg bg-white py-6 md:order-2">
       <p className="mb-2 text-sm text-blue">At no extra cost</p>
       <h3 className="mb-3 text-4xl font-semibold text-gray-800">
         Schedule a call with us

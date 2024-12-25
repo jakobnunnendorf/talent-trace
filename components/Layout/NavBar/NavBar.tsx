@@ -32,7 +32,7 @@ export default function NavBar() {
 
   return (
     <header
-      className={`z-50 grid w-full ${scrollDirection === 'down' ? 'grid-cols-1' : 'grid-cols-2'} items-center px-8 py-4 md:grid-cols-3`}
+      className={`z-50 grid w-full ${scrollDirection === 'down' ? 'grid-cols-1' : 'grid-cols-2 bg-white/10 backdrop-blur-2xl md:bg-transparent md:backdrop-blur-0'} items-center px-8 py-4 md:grid-cols-3 md:py-7`}
     >
       <div
         className={`transform transition-all duration-700 ease-in-out ${

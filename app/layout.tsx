@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Talent Trace',
-  description: 'Tracing Talent Paving Careers', 
+  description: 'Tracing Talent Paving Careers',
 }
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
-          <header className="fixed z-50 w-full py-7">
+          <header className="fixed z-50 w-full">
             <NavBar />
           </header>
           <main className="relative w-full">{children}</main>
