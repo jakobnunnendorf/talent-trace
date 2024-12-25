@@ -25,13 +25,31 @@ export default function TextSection({
         (ol ? (
           <ol className="mx-auto mt-6 max-w-3xl list-inside list-decimal space-y-6 px-8 text-lg">
             {bulletPoints.map((bulletPoint, index) => (
-              <li key={index}>{bulletPoint}</li>
+              <li key={index}>
+                {bulletPoint.includes(':') ? (
+                  <>
+                    <strong>{bulletPoint.split(':')[0]}</strong>:
+                    {bulletPoint.split(':')[1]}
+                  </>
+                ) : (
+                  bulletPoint
+                )}
+              </li>
             ))}
           </ol>
         ) : (
           <ul className="mx-auto mt-6 max-w-3xl list-inside list-disc space-y-6 px-8 text-lg">
             {bulletPoints.map((bulletPoint, index) => (
-              <li key={index}>{bulletPoint}</li>
+              <li key={index}>
+                {bulletPoint.includes(':') ? (
+                  <>
+                    <strong>{bulletPoint.split(':')[0]}</strong>:
+                    {bulletPoint.split(':')[1]}
+                  </>
+                ) : (
+                  bulletPoint
+                )}
+              </li>
             ))}
           </ul>
         ))}
