@@ -1,23 +1,11 @@
 import React from 'react'
+import Script from 'next/script'
+import './mailchimp.css' // Adjust the path if the CSS file is placed elsewhere
 
 export default function MailchimpForm() {
   return (
-    <div id="mc_embed_shell" className="mx-auto w-full md:w-[600px] md:pt-4">
-      {/* Mailchimp CSS */}
-      <link
-        href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-      <style type="text/css">{`
-        #mc_embed_signup {
-          clear: left;
-          font: 14px Helvetica, Arial, sans-serif;
-        }
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-      `}</style>
-      <div id="mc_embed_signup" className="mx-auto">
+    <div id="mc_embed_shell">
+      <div id="mc_embed_signup">
         <form
           action="https://bluewater-studios.us17.list-manage.com/subscribe/post?u=a23157a3ec7acfa777db561e5&amp;id=7ff19df7c5&amp;f_id=00eee1e0f0"
           method="post"
@@ -28,7 +16,7 @@ export default function MailchimpForm() {
           noValidate
         >
           <div id="mc_embed_signup_scroll">
-            <h2></h2>
+            <h2>Subscribe to Our Newsletter</h2>
             <div className="indicates-required">
               <span className="asterisk">*</span> indicates required
             </div>
@@ -64,7 +52,7 @@ export default function MailchimpForm() {
               aria-hidden="true"
               style={{ position: 'absolute', left: '-5000px' }}
             >
-              {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
+              {/* Prevent bot signups */}
               <input
                 type="text"
                 name="b_a23157a3ec7acfa777db561e5_7ff19df7c5"
@@ -79,7 +67,6 @@ export default function MailchimpForm() {
                   id="mc-embedded-subscribe"
                   className="button"
                   value="Subscribe"
-                  style={{ backgroundColor: '#70CB34' }}
                 />
                 <p style={{ margin: '0 auto' }}>
                   <a
@@ -92,7 +79,21 @@ export default function MailchimpForm() {
                         backgroundColor: 'transparent',
                         borderRadius: '4px',
                       }}
-                    ></span>
+                    >
+                      <img
+                        className="refferal_badge"
+                        src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                        alt="Intuit Mailchimp"
+                        style={{
+                          width: '220px',
+                          height: '40px',
+                          display: 'flex',
+                          padding: '2px 0',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      />
+                    </span>
                   </a>
                 </p>
               </div>
@@ -100,12 +101,13 @@ export default function MailchimpForm() {
           </div>
         </form>
       </div>
-      {/* Mailchimp JS */}
-      <script
-        type="text/javascript"
+
+      {/* Asynchronous MailChimp validation script */}
+      <Script
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-      ></script>
-      <script type="text/javascript">{`
+        strategy="lazyOnload"
+      />
+      <Script id="mc-validate-init" strategy="lazyOnload">{`
         (function($) {
           window.fnames = new Array();
           window.ftypes = new Array();
@@ -118,7 +120,7 @@ export default function MailchimpForm() {
           fnames[6]='COMPANY'; ftypes[6]='text';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
-      `}</script>
+      `}</Script>
     </div>
   )
 }
