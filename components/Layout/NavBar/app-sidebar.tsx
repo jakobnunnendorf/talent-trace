@@ -1,9 +1,8 @@
 import {
-  Calendar,
-  Home,
   Inbox,
+  Phone,
+  Home,
   Search,
-  Settings,
   UserSearch,
   Workflow,
   BriefcaseBusiness,
@@ -144,7 +143,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="https://calendly.com/jakobnunnendorf/call">
-                    <Users />
+                    <Phone />
                     <span>Schedule a Call</span>
                   </a>
                 </SidebarMenuButton>
@@ -152,7 +151,7 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
                   <a href="/contact-us">
-                    <Cake />
+                    <Inbox />
                     <span>Send us a Message</span>
                   </a>
                 </SidebarMenuButton>
