@@ -144,7 +144,7 @@ const ExecutiveSearchPage: React.FC = () => {
         <MainButton
           buttonText="Find Your Leader"
           className="mx-auto mt-6"
-          link="/jobs/find"
+          link="/jobs/post"
         />
       </section>
     </div>
