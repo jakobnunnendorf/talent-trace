@@ -155,7 +155,7 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" className="w-full">
+        <Button type="submit" className="w-full bg-green text-white">
           Send Message
         </Button>
       </form>

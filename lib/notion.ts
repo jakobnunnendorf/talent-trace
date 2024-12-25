@@ -11,6 +11,7 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY })
 const NEWS_DATABASE_ID = '158c4d0ef10880d386f2c94c94a3600b'
 const CATEGORIES_DATABASE_ID = '15bc4d0ef10880f79dbaff488bd59b06'
 const COMPANIES_DATABASE_ID = '160c4d0ef10880779e39d0823c60af3f'
+const FAQ_DATABASE_ID = '167c4d0ef10880809e21fc104f5e9609'
 
 // ======================
 // Helper Functions
@@ -177,4 +178,26 @@ export const fetchCompanyLogos = async () => {
     logo: result.properties['Logo']?.files[0]?.file?.url || '/',
     name: getNotionProperty(result, 'Name'),
   })) as Company[]
+}
+
+// ======================
+// FAQ Fetch Functions
+// ======================
+export const fetchFAQs = async () => {
+  const response = await notion.databases.query({
+    database_id: FAQ_DATABASE_ID,
+  })
+
+  return response.results
+    .map((result: any) => ({
+      question: getNotionProperty(result, 'Question'),
+      answer: getNotionProperty(result, 'Answer'),
+    }))
+    .reverse() as FAQItem[]
+}
+
+// Add this type at the top of the file with other types
+export type FAQItem = {
+  question: string
+  answer: string
 }
