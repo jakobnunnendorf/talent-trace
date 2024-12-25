@@ -6,7 +6,7 @@ import Socials from '@/components/shared/Buttons/Socials'
 
 export default function Hero() {
   return (
-    <div className="relative grid grid-rows-6 overflow-hidden max-xs:h-screen sm:h-[66vh] md:grid-rows-5 lg:h-screen">
+    <div className="relative grid grid-rows-5 overflow-hidden max-xs:h-screen sm:h-[66vh] md:grid-rows-5 lg:h-screen">
       <Background />
       <Ship />
       <h1
