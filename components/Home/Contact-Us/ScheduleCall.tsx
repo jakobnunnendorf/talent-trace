@@ -14,13 +14,13 @@ export default function ScheduleCall() {
       </p>
       <div className="grid grid-cols-2 gap-4">
         <Link
-          href="/contact"
+          href="/jobs/post"
           className="hover:bg-blue-600 rounded border border-blue px-4 py-2 text-center text-blue transition duration-300"
         >
           Find Talent
         </Link>
         <Link
-          href="/contact"
+          href="/jobs/find"
           className="rounded px-4 py-2 text-center text-blue underline underline-offset-4 transition duration-300"
         >
           Search Jobs
