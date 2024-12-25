@@ -3,14 +3,18 @@ import {
   fetchNewsPost,
   getCoverImageUrl,
   extractBlockContents,
-  fetchAllNews,
   fetchNewsById,
 } from '@/lib/notion'
 import Image from 'next/image'
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const blogPost = await fetchNewsPost(params.id)
-  const currentPost = await fetchNewsById(params.id)
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const newsId = (await params).id
+  const blogPost = await fetchNewsPost(newsId)
+  const currentPost = await fetchNewsById(newsId)
 
   return (
     <div className="mx-auto md:w-1/2">

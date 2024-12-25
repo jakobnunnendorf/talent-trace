@@ -5,8 +5,13 @@ import { fetchCategoryByPageId } from '@/lib/notion'
 import Keywords from '@/components/Home/Categories/Page/Keywords'
 import CoverImage from '@/components/shared/Header/CoverImage'
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const category = await fetchCategoryByPageId(params.id)
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const pageId = (await params).id
+  const category = await fetchCategoryByPageId(pageId)
 
   return (
     <div className="mx-auto px-4 md:w-1/2 md:px-0">
@@ -17,7 +22,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         src={category.properties.Image.files[0].file.url}
         alt={`${category.properties.Category.title[0].plain_text} Image`}
       />
-      <NotionPageContentBlocks pageId={params.id} />
+      <NotionPageContentBlocks pageId={pageId} />
       <Keywords keywords={category.properties.Keywords.multi_select} />
     </div>
   )
