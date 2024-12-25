@@ -24,10 +24,10 @@ const ConsultancyPage: React.FC = () => {
       <section className="px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Introduction</h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          At <strong>Talent Trace</strong>, we go beyond recruitment. Our
-          comprehensive consultancy services are designed to help businesses and
-          professionals in industries such as commodity trading, shipping,
-          robotics, and IT thrive in today&apos;s competitive landscape.
+          At Talent Trace, we go beyond recruitment. Our comprehensive
+          consultancy services are designed to help businesses and professionals
+          in industries such as commodity trading, shipping, robotics, and IT
+          thrive in today&apos;s competitive landscape.
         </p>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
           From market research to employee engagement, we deliver actionable

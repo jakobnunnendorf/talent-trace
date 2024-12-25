@@ -85,24 +85,24 @@ const ContingentSearchPage: React.FC = () => {
         <h2 className="text-center text-3xl font-bold">How It Works</h2>
         <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
           <li>
-            <strong>1. Share Your Hiring Needs:</strong> Tell us about the role
-            and ideal candidate profile. We’ll tailor a recruitment plan
-            specifically for your organization.
+            1. Share Your Hiring Needs: Tell us about the role and ideal
+            candidate profile. We’ll tailor a recruitment plan specifically for
+            your organization.
           </li>
           <li>
-            <strong>2. Search and Screen:</strong> We tap into our network and
-            use advanced sourcing tools to identify top candidates. Every
-            potential hire undergoes rigorous screening and evaluation.
+            2. Search and Screen: We tap into our network and use advanced
+            sourcing tools to identify top candidates. Every potential hire
+            undergoes rigorous screening and evaluation.
           </li>
           <li>
-            <strong>3. Interview and Hire:</strong> You receive a shortlist of
-            qualified candidates ready for interviews. We’ll assist you
-            throughout the selection process to ensure a seamless experience.
+            3. Interview and Hire: You receive a shortlist of qualified
+            candidates ready for interviews. We’ll assist you throughout the
+            selection process to ensure a seamless experience.
           </li>
           <li>
-            <strong>4. Pay Only for Results:</strong> Once the perfect candidate
-            is placed and a contract is signed, we collect our fee—no surprises,
-            no upfront costs.
+            4. Pay Only for Results: Once the perfect candidate is placed and a
+            contract is signed, we collect our fee—no surprises, no upfront
+            costs.
           </li>
         </ol>
       </section>

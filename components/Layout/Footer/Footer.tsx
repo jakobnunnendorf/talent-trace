@@ -2,17 +2,26 @@ import React from 'react'
 import FooterColumn from './FooterColumn'
 import Copyright from './Copyright'
 import Socials from '@/components/shared/Buttons/Socials'
-import Logo from '../NavBar/Logo'
+import Image from 'next/image'
+
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-100 pt-6">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 grid-rows-3 gap-4 pb-6 md:grid-cols-5 md:grid-rows-1">
-        <div className="col-span-2 flex flex-col items-start md:col-span-1">
-          <div className="my-auto flex flex-col items-center self-center md:my-0 md:self-auto">
-            <Logo />
-            <Socials dark />
-          </div>
+    <footer className="bg-gray-100">
+      <div className="mx-auto h-fit border-b">
+        <div className="flex h-fit items-center justify-center gap-8 self-center">
+          {/* <Logo /> */}
+          <figure className="">
+            <Image
+              src="/logos/Talent Trace logo.png"
+              height={150}
+              width={150}
+              alt="Talent Trace Logo"
+            />
+          </figure>
+          <Socials dark />
         </div>
+      </div>
+      <div className="mx-auto grid max-w-7xl grid-cols-2 grid-rows-2 gap-4 pb-6 pt-4 md:grid-cols-4 md:grid-rows-1">
         <FooterColumn title="For Candidates" links={candidateLinks} />
         <FooterColumn title="For Employers" links={employerLinks} />
         <FooterColumn title="Other" links={otherLinks} />

@@ -38,7 +38,7 @@ const ExecutiveSearchPage: React.FC = () => {
       {/* Hero Section */}
       <SubHero
         headline="Executive Search Services"
-        description="At <strong>Talent Trace</strong>, we understand that finding the right
+        description="At Talent Trace, we understand that finding the right
           executive talent is critical to the success of your organization.
           Leadership roles demand more than just technical expertise—they
           require vision, strategy, and cultural alignment. That&#39;s why our
@@ -69,29 +69,29 @@ const ExecutiveSearchPage: React.FC = () => {
         </p>
         <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
           <li>
-            <strong>1. Understanding Your Needs:</strong> We start with an
-            in-depth consultation to understand your leadership requirements,
-            growth objectives, and company culture.
+            1. Understanding Your Needs: We start with an in-depth consultation
+            to understand your leadership requirements, growth objectives, and
+            company culture.
           </li>
           <li>
-            <strong>2. Extensive Research and Outreach:</strong> Our team
-            conducts thorough market research and taps into our exclusive
-            network to identify high-potential candidates.
+            2. Extensive Research and Outreach: Our team conducts thorough
+            market research and taps into our exclusive network to identify
+            high-potential candidates.
           </li>
           <li>
-            <strong>3. In-Depth Candidate Assessments:</strong> Every candidate
-            goes through rigorous evaluations, including leadership capability
-            assessments, reference checks, and interviews.
+            3. In-Depth Candidate Assessments: Every candidate goes through
+            rigorous evaluations, including leadership capability assessments,
+            reference checks, and interviews.
           </li>
           <li>
-            <strong>4. Shortlist and Recommendations:</strong> We provide a
-            carefully curated list of top candidates, complete with detailed
-            profiles and insights.
+            4. Shortlist and Recommendations: We provide a carefully curated
+            list of top candidates, complete with detailed profiles and
+            insights.
           </li>
           <li>
-            <strong>5. Final Selection and Support:</strong> We assist you
-            throughout interviews, negotiations, and onboarding, ensuring a
-            smooth and successful transition.
+            5. Final Selection and Support: We assist you throughout interviews,
+            negotiations, and onboarding, ensuring a smooth and successful
+            transition.
           </li>
         </ol>
       </section>

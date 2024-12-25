@@ -27,7 +27,7 @@ export default function ProcessSteps({
       <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
         {steps.map((step, index) => (
           <li key={index}>
-            <strong>{`${index + 1}. ${step.title}`}</strong> {step.description}
+            {`${index + 1}. ${step.title}`} {step.description}
           </li>
         ))}
       </ol>
