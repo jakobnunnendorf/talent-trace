@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 interface LogoProps {
-  scrollDirection: 'up' | 'down'
+  scrollDirection?: 'up' | 'down'
 }
 
 export default function Logo({ scrollDirection }: LogoProps) {

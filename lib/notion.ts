@@ -26,15 +26,17 @@ export const getCoverImageUrl = (post: any): string => {
 
 export const getNotionProperty = (post: any, propertyName: string): string => {
   try {
-    const property = post.properties[propertyName]
-    if (property.title) {
-      return property.title[0]?.plain_text || ''
+    const property = post?.properties?.[propertyName]
+    if (!property) return ''
+
+    if (property.title?.[0]?.plain_text) {
+      return property.title[0].plain_text
     }
-    if (property.rich_text) {
-      return property.rich_text[0]?.plain_text || ''
+    if (property.rich_text?.[0]?.plain_text) {
+      return property.rich_text[0].plain_text
     }
-    if (property.select) {
-      return property.select?.name || ''
+    if (property.select?.name) {
+      return property.select.name
     }
     return ''
   } catch (error) {

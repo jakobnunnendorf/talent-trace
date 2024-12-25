@@ -2,27 +2,8 @@ import React from 'react'
 import Background from './Background'
 import Ship from './Ship'
 import CTALink from './CTALink'
-import { SlEnvolope, SlSocialLinkedin, SlPhone } from 'react-icons/sl'
-import Link from 'next/link'
+import Socials from '@/components/shared/Buttons/Socials'
 
-const IconLink = ({ icon, link }: { icon: React.ReactNode; link: string }) => {
-  return (
-    <li className="group flex items-center justify-center rounded-full border border-white p-2 text-2xl opacity-50 hover:border-blue hover:bg-blue hover:opacity-100 hover:shadow-xl">
-      <Link className="group-hover:text-white" href={link}>
-        {icon}
-      </Link>
-    </li>
-  )
-}
-
-const socialLinks = [
-  {
-    icon: <SlSocialLinkedin />,
-    link: 'https://www.linkedin.com/company/talent-trace/',
-  },
-  { icon: <SlPhone />, link: 'tel:+6581398239' },
-  { icon: <SlEnvolope />, link: 'mailto:pravin@talent-trace.com' },
-]
 export default function Hero() {
   return (
     <div className="relative grid grid-rows-6 overflow-hidden max-xs:h-screen sm:h-[66vh] md:grid-rows-5 lg:h-screen">
@@ -47,11 +28,7 @@ export default function Hero() {
             <CTALink text="Search Jobs" primary={true} link="/jobs/find" />
             <CTALink text="Find Talent" primary={false} link="/jobs/post" />
           </div>
-          <ul className="flex justify-center gap-4 px-1 py-8 md:justify-start md:py-6">
-            {socialLinks.map((link, index) => (
-              <IconLink key={index} icon={link.icon} link={link.link} />
-            ))}
-          </ul>
+          <Socials />
         </nav>
       </section>
     </div>
