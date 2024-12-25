@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
+import MailchimpForm from './MailChimpForm'
 
 export default function SubscribeToNewsLetter() {
   return (
@@ -9,24 +10,7 @@ export default function SubscribeToNewsLetter() {
         Subscribe to our newsletter for expert insights and the latest updates
         from Talent Trace.
       </p>
-      <form className="mx-auto mt-8 flex max-w-md flex-col items-center space-y-4">
-        <input
-          type="text"
-          placeholder="Your Name"
-          className="w-full rounded border border-gray-300 px-4 py-2 focus:border-blue focus:ring-blue"
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-full rounded border border-gray-300 px-4 py-2 focus:border-blue focus:ring-blue"
-        />
-        <Button
-          type="submit"
-          className="hover:bg-green-600 rounded bg-green px-6 py-3 font-semibold text-white transition"
-        >
-          Subscribe Now
-        </Button>
-      </form>
+      <MailchimpForm />
     </section>
   )
 }
