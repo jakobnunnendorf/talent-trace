@@ -23,7 +23,7 @@ export default function TextSection({
       ))}
       {bulletPoints &&
         (ol ? (
-          <ol className="mx-auto mt-6 max-w-3xl list-none space-y-6 px-8 text-lg">
+          <ol className="mx-auto mt-6 max-w-3xl list-decimal space-y-6 px-8 text-lg">
             {bulletPoints.map((bulletPoint, index) => (
               <li key={index}>
                 {bulletPoint.includes(':') ? (

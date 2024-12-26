@@ -27,7 +27,7 @@ const ContingentSearchPage: React.FC = () => {
         bgColor="gray"
       />
 
-      <TextSection {...process} bg />
+      <TextSection {...process} bg ol />
 
       <TextSection {...targetAudience} />
 

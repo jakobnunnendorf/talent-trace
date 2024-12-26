@@ -36,10 +36,10 @@ export const contingentContent = {
   process: {
     heading: 'How It Works',
     bulletPoints: [
-      "1. Share Your Hiring Needs: Tell us about the role and ideal candidate profile. We'll tailor a recruitment plan specifically for your organization.",
-      '2. Search and Screen: We tap into our network and use advanced sourcing tools to identify top candidates. Every potential hire undergoes rigorous screening and evaluation.',
-      "3. Interview and Hire: You receive a shortlist of qualified candidates ready for interviews. We'll assist you throughout the selection process to ensure a seamless experience.",
-      '4. Pay Only for Results: Once the perfect candidate is placed and a contract is signed, we collect our fee—no surprises, no upfront costs.',
+      "Share Your Hiring Needs: Tell us about the role and ideal candidate profile. We'll tailor a recruitment plan specifically for your organization.",
+      'Search and Screen: We tap into our network and use advanced sourcing tools to identify top candidates. Every potential hire undergoes rigorous screening and evaluation.',
+      "Interview and Hire: You receive a shortlist of qualified candidates ready for interviews. We'll assist you throughout the selection process to ensure a seamless experience.",
+      'Pay Only for Results: Once the perfect candidate is placed and a contract is signed, we collect our fee—no surprises, no upfront costs.',
     ],
   },
   targetAudience: {
