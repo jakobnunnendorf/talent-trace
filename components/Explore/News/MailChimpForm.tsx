@@ -3,6 +3,7 @@ import Script from 'next/script'
 import './mailchimp.css' // Adjust the path if the CSS file is placed elsewhere
 
 export default function MailchimpForm() {
+  // change to Pravins mailchimp
   return (
     <div id="mc_embed_shell">
       <div id="mc_embed_signup">
@@ -17,9 +18,6 @@ export default function MailchimpForm() {
         >
           <div id="mc_embed_signup_scroll">
             <h2>Subscribe to Our Newsletter</h2>
-            <div className="indicates-required">
-              <span className="asterisk">*</span> indicates required
-            </div>
             <div className="mc-field-group">
               <label htmlFor="mce-EMAIL">
                 Email Address <span className="asterisk">*</span>
@@ -67,35 +65,8 @@ export default function MailchimpForm() {
                   id="mc-embedded-subscribe"
                   className="button"
                   value="Subscribe"
+                  style={{ backgroundColor: '#70CB34' }}
                 />
-                <p style={{ margin: '0 auto' }}>
-                  <a
-                    href="http://eepurl.com/i0OBQM"
-                    title="Mailchimp - email marketing made easy and fun"
-                  >
-                    <span
-                      style={{
-                        display: 'inline-block',
-                        backgroundColor: 'transparent',
-                        borderRadius: '4px',
-                      }}
-                    >
-                      <img
-                        className="refferal_badge"
-                        src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                        alt="Intuit Mailchimp"
-                        style={{
-                          width: '220px',
-                          height: '40px',
-                          display: 'flex',
-                          padding: '2px 0',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                        }}
-                      />
-                    </span>
-                  </a>
-                </p>
               </div>
             </div>
           </div>
