@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostJobForm } from '../../../components/Jobs/Post/PostJobForm'
+import { ConsultationForm } from '../../../components/Jobs/Post/ConsultationForm'
 import SubHero from '@/components/shared/Header/SubHero'
 import TextAndPic from '@/components/shared/ContentCards/TextAndPic'
 import FeatureGrid from '@/components/shared/sections/FeatureGrid'
@@ -24,7 +24,7 @@ const PostJobs = () => {
       />
 
       <section className="md:py-12" id="post-job-form">
-        <PostJobForm />
+        <ConsultationForm />
       </section>
 
       {/* Replace Introduction component with TextAndPic */}
