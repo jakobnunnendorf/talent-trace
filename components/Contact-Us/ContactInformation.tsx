@@ -26,7 +26,7 @@ const contactInformation: ContactInfo[] = [
   {
     icon: MapPin,
     type: 'Singapore (Headquarters)',
-    info: '[Insert Address]',
+    info: 'Keppel Bay Tower, 1 Harbourfront Avenue, #13-20, S098632',
   },
   {
     icon: Linkedin,

@@ -78,8 +78,8 @@ const PrivacyPolicyPage: React.FC = () => {
         heading="Contact Us"
         paragraphs={[
           'If you have any questions about this Privacy Policy, please contact us at:',
-          'Email: privacy@talent-trace.com',
-          'Address: [Insert Address]',
+          'Email: pravin@talent-trace.com',
+          'Address: Keppel Bay Tower, 1 Harbourfront Avenue, #13-20, S098632',
         ]}
       />
     </div>
