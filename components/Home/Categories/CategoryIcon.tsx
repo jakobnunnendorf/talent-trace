@@ -13,7 +13,7 @@ export default function CategoryIcon({
   href: string
 }) {
   return (
-    <Link href={href}>
+    <Link href={href} prefetch>
       <li className="flex flex-col items-center justify-center">
         <div className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-lg p-4 hover:border hover:border-green hover:shadow-md">
           <Suspense
