@@ -112,7 +112,7 @@ const ExecutiveSearchPage: React.FC = () => {
         </ul>
       </section>
 
-      {/* Success Stories */}
+      {/* Success Stories TODO: insert real */}
       <section className="bg-gray-100 px-6 py-12">
         <h2 className="text-center text-3xl font-bold">Success Stories</h2>
         <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">

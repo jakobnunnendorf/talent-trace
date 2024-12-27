@@ -10,7 +10,9 @@ export default function SubscribeToNewsLetter() {
         Subscribe to our newsletter for expert insights and the latest updates
         from Talent Trace.
       </p>
-      <MailchimpForm />
+      <div className="md:mx-auto md:mt-8 md:w-1/2">
+        <MailchimpForm />
+      </div>
     </section>
   )
 }
