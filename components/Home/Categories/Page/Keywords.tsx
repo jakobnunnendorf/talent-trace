@@ -15,7 +15,7 @@ export default function Keywords({ keywords }: { keywords: Keyword[] }) {
         return (
           <Badge
             key={keyword.id}
-            className="h-full bg-green text-black hover:bg-blue hover:text-white active:bg-blue active:text-white"
+            className="h-full bg-green text-center text-white hover:bg-blue active:bg-blue active:text-white"
           >
             {keyword.name}
           </Badge>

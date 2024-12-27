@@ -4,7 +4,8 @@ import NotionPageContentBlocks from '@/components/Home/Categories/Page/NotionPag
 import { fetchCategoryByPageId } from '@/lib/notion'
 import Keywords from '@/components/Home/Categories/Page/Keywords'
 import CoverImage from '@/components/shared/Header/CoverImage'
-
+import MainButton from '@/components/shared/Buttons/MainButton'
+import Link from 'next/link'
 export default async function Page({
   params,
 }: {
@@ -29,6 +30,17 @@ export default async function Page({
       <CoverImage src={imageUrl} alt={`${title} Image`} />
       <NotionPageContentBlocks pageId={pageId} />
       <Keywords keywords={keywords} />
+      <Link
+        href='link="https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5"'
+        className="mx-auto my-16 flex w-full flex-col justify-around rounded-xl bg-green py-4 md:my-8 md:w-4/5 md:flex-row md:py-8"
+      >
+        <h2 className="text-center text-2xl font-bold text-white">
+          Ready to take the next step?
+        </h2>
+        <h2 className="text-center text-2xl font-bold text-white underline underline-offset-4">
+          Apply now.
+        </h2>
+      </Link>
     </div>
   )
 }
