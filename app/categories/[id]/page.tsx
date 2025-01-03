@@ -27,7 +27,7 @@ export default async function Page({
       <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:pb-4 md:text-start md:text-5xl">
         {title}
       </h1>
-      <CoverImage src={imageUrl} alt={`${title} Image`} />
+      <CoverImage src={imageUrl} alt={`${title} Image ${imageUrl}`} />
       <NotionPageContentBlocks pageId={pageId} />
       <Keywords keywords={keywords} />
       <Link
