@@ -15,7 +15,9 @@ const ContingentSearchPage: React.FC = () => {
         headline="Contingent Search Services"
         description="Find the Right Talent Without the Upfront Costs. With Talent Trace's Contingent Search services, you only pay when the right candidate is successfully placed. Save time, save resources, and focus on growing your business."
         primaryButton="Start Your Search"
-        secondaryButton="Learn More About Contingent Search"
+        primaryButtonLink="/jobs/post"
+        secondaryButton="Refer a Friend"
+        secondaryButtonLink="mailto:?subject=Talent%20Trace%20Contingent%20Search%20Referral&body=I%20thought%20you%20might%20be%20interested%20in%20Talent%20Trace's%20Contingent%20Search%20services.%20They%20offer%20no-upfront-cost%20recruitment%20solutions.%20Learn%20more%20at%3A%20https%3A%2F%2Ftalent-trace.com%2Fservices%2Fcontingent-search"
       />
 
       <TextSection {...introduction} />

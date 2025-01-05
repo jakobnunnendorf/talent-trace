@@ -18,9 +18,9 @@ const ConsultancyPage: React.FC = () => {
         headline="Consultancy Services Tailored to Your Success"
         description="Transforming Challenges into Opportunities. Our bespoke consultancy services empower businesses across industries to streamline operations, enhance productivity, and achieve measurable results."
         primaryButton="Request a Consultation"
-        primaryButtonLink="https://calendly.com/jakobnunnendorf/call"
-        secondaryButton="Explore Our Services"
-        secondaryButtonLink="/#service-card"
+        primaryButtonLink="contact-us"
+        secondaryButton="Refer a Friend"
+        secondaryButtonLink="mailto:?subject=Talent%20Trace%20Consultancy%20Services%20Referral&body=I%20thought%20you%20might%20be%20interested%20in%20Talent%20Trace's%20Consultancy%20Services.%20They%20offer%20expert%20guidance%20on%20HR%20and%20recruitment%20strategy.%20Learn%20more%20at%3A%20https%3A%2F%2Ftalent-trace.com%2Fservices%2Fconsultancy"
       />
 
       <TextSection {...introduction} />
@@ -48,7 +48,7 @@ const ConsultancyPage: React.FC = () => {
         description="Take the first step toward operational excellence. Whether you need market insights, employee engagement strategies, or streamlined workflows, we're here to help."
         primaryButton={{
           text: 'Request a Consultation',
-          href: 'https://calendly.com/jakobnunnendorf/call',
+          href: 'contact-us',
         }}
         secondaryButton={{ text: 'Speak to Our Experts', href: '/contact-us' }}
       />

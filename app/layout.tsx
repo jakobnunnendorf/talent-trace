@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import NavBar from '@/components/Layout/NavBar/NavBar'
 import Footer from '@/components/Layout/Footer/Footer'
@@ -31,6 +32,11 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <Script
+          src="https://code.jquery.com/jquery-3.6.0.min.js"
+          strategy="afterInteractive"
+          id="jquery"
+        />
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <header className="fixed z-50 w-full">

@@ -70,7 +70,7 @@ const footerSections = [
     title: 'Contact Us',
     links: [
       {
-        href: 'https://calendly.com/jakobnunnendorf/call',
+        href: 'contact-us',
         text: 'Schedule a Call',
       },
       { href: '/contact-us', text: 'Send us a Message' },

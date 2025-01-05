@@ -76,7 +76,7 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
   const contactLinks = [
     {
       title: 'Schedule a Call',
-      relativePath: 'https://calendly.com/jakobnunnendorf/call',
+      relativePath: 'contact-us',
       description:
         'Book a consultation call with one of our recruitment specialists.',
       isExternal: true,

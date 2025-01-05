@@ -1,5 +1,5 @@
 import React from 'react'
-import { SlEnvolope, SlSocialLinkedin, SlPhone } from 'react-icons/sl'
+import { SlEnvolope, SlSocialLinkedin, SlPhone, SlShare } from 'react-icons/sl'
 import Link from 'next/link'
 
 const IconLink = ({
@@ -30,6 +30,10 @@ export default function Socials({ dark }: { dark?: boolean }) {
     },
     { icon: <SlPhone />, link: 'tel:+6581398239' },
     { icon: <SlEnvolope />, link: 'mailto:pravin@talent-trace.com' },
+    {
+      icon: <SlShare />,
+      link: 'mailto:?subject=Talent%20Trace%20Referral&body=I%20thought%20you%20might%20be%20interested%20in%20checking%20out%20Talent%20Trace%20for%20your%20recruitment%20needs.%20Visit%20them%20at%3A%20https%3A%2F%2Ftalent-trace.com',
+    },
   ]
   return (
     <ul className="flex justify-center gap-4 px-1 py-8 md:justify-start md:py-6">

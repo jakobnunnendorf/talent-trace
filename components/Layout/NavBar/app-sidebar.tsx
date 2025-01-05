@@ -142,7 +142,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="https://calendly.com/jakobnunnendorf/call">
+                  <a href="contact-us">
                     <Phone />
                     <span>Schedule a Call</span>
                   </a>

@@ -20,7 +20,7 @@ const PostJobs = () => {
         primaryButton="Get Started Today"
         primaryButtonLink="#post-job-form"
         secondaryButton="Request a Consultation"
-        secondaryButtonLink="https://calendly.com/jakobnunnendorf/call"
+        secondaryButtonLink="contact-us"
       />
 
       <section className="md:py-12" id="post-job-form">
@@ -72,7 +72,7 @@ const PostJobs = () => {
         }}
         secondaryButton={{
           text: 'Speak to a Specialist',
-          href: 'https://calendly.com/jakobnunnendorf/call',
+          href: 'contact-us',
         }}
       />
     </div>
