@@ -76,10 +76,9 @@ export default function NavLinks({ scrollDirection }: NavLinksProps) {
   const contactLinks = [
     {
       title: 'Schedule a Call',
-      relativePath: 'contact-us',
+      relativePath: '/jobs/post#post-job-form',
       description:
         'Book a consultation call with one of our recruitment specialists.',
-      isExternal: true,
     },
     {
       title: 'Send us a Message',

@@ -142,7 +142,7 @@ export function AppSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton asChild>
-                  <a href="contact-us">
+                  <a href="/jobs/post#post-job-form">
                     <Phone />
                     <span>Schedule a Call</span>
                   </a>
