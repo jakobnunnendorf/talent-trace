@@ -4,8 +4,8 @@ import NotionPageContentBlocks from '@/components/Home/Categories/Page/NotionPag
 import { fetchCategoryByPageId } from '@/lib/notion'
 import Keywords from '@/components/Home/Categories/Page/Keywords'
 import CoverImage from '@/components/shared/Header/CoverImage'
-import MainButton from '@/components/shared/Buttons/MainButton'
 import Link from 'next/link'
+
 export default async function Page({
   params,
 }: {
@@ -21,7 +21,7 @@ export default async function Page({
     category?.properties?.Image?.files?.[0]?.file?.url ||
     '/placeholder-image.png' // Use a placeholder image if missing
   const keywords = category?.properties?.Keywords?.multi_select || []
-
+  console.log(imageUrl)
   return (
     <div className="mx-auto px-4 md:w-1/2 md:px-0 lg:pb-8">
       <h1 className="pb-8 pt-16 text-center text-3xl font-bold md:pb-4 md:text-start md:text-5xl">
