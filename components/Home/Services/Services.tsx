@@ -73,7 +73,7 @@ const ServiceLink: React.FC<ServiceLinkProps> = ({ href, text }) => {
   return (
     <Link
       href={href}
-      className="border border-[#41ADF2] px-4 py-2 text-center text-[#41ADF2] shadow transition-colors hover:bg-[#41ADF2] hover:text-white md:text-start"
+      className="border border-blue px-4 py-2 text-center text-blue shadow transition-colors hover:bg-blue hover:text-white md:text-start"
     >
       {text}
     </Link>

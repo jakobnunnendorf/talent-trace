@@ -17,10 +17,10 @@ export default function Hero() {
       <section className="row-span-3 row-start-3 flex flex-col items-center text-white md:row-span-2 md:mx-auto md:w-4/5 md:items-start">
         <article>
           <p className="hidden text-lg font-bold md:block">Talent Trace</p>
-          <h2 className="px-2 font-sans text-5xl font-bold text-[#41ADF2] md:text-6xl">
+          <h2 className="px-2 font-sans text-5xl font-bold text-blue md:text-6xl">
             Tracing Talent
             <br />
-            <span className="text-[#9FDC77]">Paving Careers</span>
+            <span className="text-green">Paving Careers</span>
           </h2>
         </article>
         <nav className="my-8 text-white">
