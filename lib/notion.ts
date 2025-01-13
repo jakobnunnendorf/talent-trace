@@ -174,6 +174,8 @@ export const fetchCompanyLogos = async () => {
     database_id: COMPANIES_DATABASE_ID,
   })
 
+  console.log('Notion API Response:', response)
+
   return response.results.map((result: any) => ({
     logo: result.properties['Logo']?.files[0]?.file?.url || '/',
     name: getNotionProperty(result, 'Name'),
