@@ -38,7 +38,7 @@ const formSchema = z.object({
   phone: z.string().min(8, {
     message: 'Please enter a valid phone number.',
   }),
-  serviceType: z.enum(
+  service_type: z.enum(
     ['postJob', 'contingentSearch', 'executiveSearch', 'consultancy', 'other'],
     {
       required_error: 'Please select a service type.',
@@ -57,7 +57,7 @@ export function ConsultationForm() {
       company: '',
       email: '',
       phone: '',
-      serviceType: 'postJob',
+      service_type: 'postJob',
       message: '',
     },
   })
@@ -66,11 +66,11 @@ export function ConsultationForm() {
     setIsSubmitting(true)
     try {
       const templateParams = {
-        name: values.name,
+        fullName: values.name,
         company: values.company,
         email: values.email,
         phone: values.phone,
-        service_type: values.serviceType,
+        service_type: values.service_type,
         message: values.message || 'No additional message',
       }
 
@@ -175,7 +175,7 @@ export function ConsultationForm() {
               <div>
                 <FormField
                   control={form.control}
-                  name="serviceType"
+                  name="service_type"
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>What would you like to discuss?</FormLabel>

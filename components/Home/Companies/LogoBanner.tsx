@@ -5,7 +5,6 @@ import { fetchCompanyLogos } from '@/lib/notion'
 
 async function LogoBanner() {
   const companies = await fetchCompanyLogos()
-  console.log(JSON.stringify(companies))
 
   return (
     <div className="row-span-2 row-start-3 mx-auto flex overflow-hidden py-4 lg:w-[1250px]">

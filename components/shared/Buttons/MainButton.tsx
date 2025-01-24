@@ -33,7 +33,8 @@ export default function MainButton({
           : 'hover:bg-green-600 border-2 border-green bg-green'
       } text-white ${className}`}
     >
-      <Link href={link || '#'}>{buttonText}</Link>
+      {link && <Link href={link || '#'}>{buttonText}</Link>}
+      {!link && <p>{buttonText}</p>}
     </Button>
   )
 }

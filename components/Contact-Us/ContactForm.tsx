@@ -21,6 +21,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { toast } from 'sonner'
+import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -30,8 +33,8 @@ const formSchema = z.object({
     message: 'Please enter a valid email address.',
   }),
   phone: z.string().optional(),
-  subject: z.string({
-    required_error: 'Please select a subject.',
+  service_type: z.string({
+    required_error: 'Please select a service type.',
   }),
   message: z.string().min(10, {
     message: 'Message must be at least 10 characters.',
@@ -49,9 +52,34 @@ export function ContactForm() {
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
-    // Handle form submission
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true)
+    try {
+      const templateParams = {
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        service_type: values.service_type,
+        message: values.message || 'No additional message',
+      }
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+
+      toast.success('Contact request submitted successfully!')
+      form.reset()
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      toast.error('Failed to submit request. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -108,7 +136,7 @@ export function ContactForm() {
 
           <FormField
             control={form.control}
-            name="subject"
+            name="service_type"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Subject</FormLabel>
@@ -155,7 +183,11 @@ export function ContactForm() {
           )}
         />
 
-        <Button type="submit" className="w-full bg-green text-white">
+        <Button
+          type="submit"
+          className="w-full bg-green text-white"
+          disabled={isSubmitting}
+        >
           Send Message
         </Button>
       </form>

@@ -4,7 +4,6 @@ import { fetchCategories } from '@/lib/notion'
 
 export default async function Categories() {
   const categoryObjects = await fetchCategories()
-  console.log(JSON.stringify(categoryObjects))
   return (
     <section id="job-categories" className="py-12 md:p-24">
       <h2 className="p-6 pb-12 text-center text-4xl">
