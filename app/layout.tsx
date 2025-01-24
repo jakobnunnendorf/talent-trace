@@ -8,6 +8,7 @@ import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/Layout/NavBar/app-sidebar'
 import { Toaster } from 'sonner'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -46,6 +47,7 @@ export default function RootLayout({
           <main className="relative w-full">
             {children}
             <Analytics />
+            <SpeedInsights />
           </main>
         </SidebarProvider>
         <Footer />
