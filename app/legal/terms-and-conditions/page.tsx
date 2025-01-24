@@ -65,7 +65,7 @@ const TermsAndConditionsPage: React.FC = () => {
         heading="Contact Information"
         paragraphs={[
           'If you have any questions about these Terms and Conditions, please contact us at:',
-          'Email: legal@talent-trace.com',
+          'Email: pravin@talent-trace.com',
           'Address: [Insert Address]',
         ]}
       />
