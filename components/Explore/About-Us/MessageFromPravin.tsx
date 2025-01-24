@@ -23,7 +23,7 @@ export default function MessageFromPravin() {
         </div>
         <figure className="flex items-center justify-center">
           <Image
-            src="/explore/about-us/pravin.png"
+            src="/explore/about-us/Pravin.png"
             width={300}
             height={300}
             alt="Pravin Nyanes"
