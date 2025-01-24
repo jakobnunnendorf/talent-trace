@@ -1,7 +1,7 @@
 export const howToJoinSteps = [
   'Share Your Hiring Needs: Tell us about the role, skills, and experience you’re looking for. Our team will craft a tailored recruitment strategy.',
   'Candidate Screening and Shortlisting: We leverage our extensive network and advanced tools to screen, evaluate, and present the top candidates that match your requirements.',
-  'Final Selection: You choose the best fit from our curated shortlist. We&apos;ll assist in managing interviews, negotiations, and onboarding to ensure a smooth hiring process.',
+  "Final Selection: You choose the best fit from our curated shortlist. We'll assist in managing interviews, negotiations, and onboarding to ensure a smooth hiring process.",
 ]
 
 interface Feature {
