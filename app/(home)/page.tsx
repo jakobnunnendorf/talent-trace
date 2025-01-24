@@ -7,7 +7,6 @@ import NewsCarousel from '@/components/Home/Industries/NewsCarousel'
 import Services from '@/components/Home/Services/Services'
 import Testimonials from '@/components/Home/Testimonials/Testimonials'
 
-export const revalidate = 10
 
 export default function Home() {
   return (
