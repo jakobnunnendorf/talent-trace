@@ -7,6 +7,7 @@ import Footer from '@/components/Layout/Footer/Footer'
 import { SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/Layout/NavBar/app-sidebar'
 import { Toaster } from 'sonner'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
