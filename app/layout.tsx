@@ -43,7 +43,10 @@ export default function RootLayout({
           <header className="fixed z-50 w-full">
             <NavBar />
           </header>
-          <main className="relative w-full">{children}</main>
+          <main className="relative w-full">
+            {children}
+            <Analytics />
+          </main>
         </SidebarProvider>
         <Footer />
         <Toaster />
