@@ -62,18 +62,23 @@ const footerSections = [
     title: 'Explore',
     links: [
       { href: '/explore/about-us', text: 'About Us' },
+      { href: '/explore/join-us', text: 'Join the team' },
       { href: '/explore/news', text: 'News' },
-      { href: '/explore/contact-us', text: 'Contact Us' },
     ],
   },
   {
     title: 'Contact Us',
     links: [
       {
-        href: 'contact-us',
+        href: '/jobs/post#post-job-form',
         text: 'Schedule a Call',
       },
       { href: '/contact-us', text: 'Send us a Message' },
+      {
+      text: 'Upload CV',
+      href:
+        'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
+    },
     ],
   },
   {
