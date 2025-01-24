@@ -7,7 +7,7 @@ import NewsCarousel from '@/components/Home/Industries/NewsCarousel'
 import Services from '@/components/Home/Services/Services'
 import Testimonials from '@/components/Home/Testimonials/Testimonials'
 
-export const revalidate = 3
+export const revalidate = 3000
 
 export default function Home() {
   return (
@@ -22,3 +22,4 @@ export default function Home() {
     </main>
   )
 }
+///categories/15bc4d0e-f108-8006-8459-db946e2c998f
