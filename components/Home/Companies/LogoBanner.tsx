@@ -11,7 +11,8 @@ async function LogoBanner() {
       {[...Array(2)].map((_, listIndex) => (
         <ul key={listIndex} className={`${styles['slide-left']} flex h-full`}>
           {companies.map((company, index) => {
-            console.log(`Company logo link:${company.logo}`)
+            console.log(`Company logo data: ${JSON.stringify(company)}`)
+            console.log(`Company logo link: ${company.logo}`)
             return (
               <li
                 key={`${listIndex}-${index}`}
