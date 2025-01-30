@@ -12,6 +12,12 @@ async function LogoBanner() {
         <ul key={listIndex} className={`${styles['slide-left']} flex h-full`}>
           {companies.map((company, index) => {
             console.log(`Company logo data: ${JSON.stringify(company)}`)
+            /* 
+            Company logo data: {
+            "logo":"https://prod-files-secure.s3.us-west-2.amazonaws.com/aca80ab9-1a90-4ec5-83d3-d44b3d86983d/d03e9f75-682f-48b7-b019-eb2bda92e50b/Glencore_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667QSVQEC2%2F20250130%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250130T014612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHzOosL7jS0FBwaaNmpIytEb0AAwZV6beu3o1LDDTrB1AiEAi0VU938iYRCXr3K20D5LFVem%2FGhDykG7faHLSDG0j2oqiAQImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGViANr57h%2F7Y7TuaCrcA%2Flar3OgA0nzJLAEWMD9Ifc2IiOMz5QTZi%2BubADXD2NODjk3x%2FQ4ZtLjaUHEqNU%2FeoCa67R%2Bp%2Fj1MyWHw18jxCCcqF%2FZYRI13eb44ri5XFfwrneN8HdCJcoyB8PxPKnqHvJGKWRBUGqA0Oms9uQ5oN%2FeSpvlaSUXXo6yYvup5bQPc1h4JrPfaI96wAN8UuMu2YPM%2FTEpjAx2zWASXVfd6oY%2BtS1o7MrJVCwKXVF%2BKta3Mqh5quNGKvKRufB%2FrFuyxMg2Fw8RUjHjanbjT2lS%2FNK1gnfA69Gdn7azg599hFAeqbzNDux%2F%2BfrROHLmC76q4eVFNromWCsef70FZuUHQccBayb4mVv3jDzncM9KYXvr0%2F7kEqwLgvDw9nOsAvT0B7%2BDLzu9TZ7gNi0s6yyC7Tfv6ClS%2BcMZfuITVyF1A9C1NBgVDDKnKv918aX0%2FY2ZZ0Rq1sf7h%2BxrH%2BSREEiztnoYgVEQsQscx988%2FoymDCbq5b20L4GRWJqYDGxOVNqmXujE7UptBT1pXEjPwSHi1jkXuvMk6K%2FD9biLcEAfrFq8X3tePwIrFdqPisH6Jl1ARkSKuO5drkUPGRPsG39byEy3lUintcb0jAWBrylzSRgrolDLvr0Co%2B63tE%2FlMOCX67wGOqUBTp51r7B1y7MpesmJeI%2F1ov%2BGDGO%2Fgmgqdh%2BRreJkvjkMV4rWgJs4IBg7cwlY4D1d62cMtH9AKYH%2BXs0Gx3gAjD6j%2F4sq0D3iPmnKfOtU%2FRQ31i9R4BCI3MdDO%2FfXKNWli17E5S2hJ7%2Fu%2F7utyksjEv8GqLfUUp3NUlew7cKahP%2FGeqPNF0GbDz%2FaSGSBmqTd13X3ZRGsejJ9YSw3pjsQm1%2B0roia&X-Amz-Signature=837db0fde9a1f26f8e1ba835c038d261905478e44256365c91f6e385386fec4f&X-Amz-SignedHeaders=host&x-id=GetObject",
+            "name":""
+            }
+            */
             console.log(`Company logo link: ${company.logo}`)
             return (
               <li
@@ -21,7 +27,7 @@ async function LogoBanner() {
                 <figure className="relative h-full w-full overflow-hidden rounded-lg">
                   <Image
                     className="object-contain"
-                    src={company.logo}
+                    src="https://prod-files-secure.s3.us-west-2.amazonaws.com/aca80ab9-1a90-4ec5-83d3-d44b3d86983d/d03e9f75-682f-48b7-b019-eb2bda92e50b/Glencore_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667QSVQEC2%2F20250130%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250130T014612Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHzOosL7jS0FBwaaNmpIytEb0AAwZV6beu3o1LDDTrB1AiEAi0VU938iYRCXr3K20D5LFVem%2FGhDykG7faHLSDG0j2oqiAQImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDGViANr57h%2F7Y7TuaCrcA%2Flar3OgA0nzJLAEWMD9Ifc2IiOMz5QTZi%2BubADXD2NODjk3x%2FQ4ZtLjaUHEqNU%2FeoCa67R%2Bp%2Fj1MyWHw18jxCCcqF%2FZYRI13eb44ri5XFfwrneN8HdCJcoyB8PxPKnqHvJGKWRBUGqA0Oms9uQ5oN%2FeSpvlaSUXXo6yYvup5bQPc1h4JrPfaI96wAN8UuMu2YPM%2FTEpjAx2zWASXVfd6oY%2BtS1o7MrJVCwKXVF%2BKta3Mqh5quNGKvKRufB%2FrFuyxMg2Fw8RUjHjanbjT2lS%2FNK1gnfA69Gdn7azg599hFAeqbzNDux%2F%2BfrROHLmC76q4eVFNromWCsef70FZuUHQccBayb4mVv3jDzncM9KYXvr0%2F7kEqwLgvDw9nOsAvT0B7%2BDLzu9TZ7gNi0s6yyC7Tfv6ClS%2BcMZfuITVyF1A9C1NBgVDDKnKv918aX0%2FY2ZZ0Rq1sf7h%2BxrH%2BSREEiztnoYgVEQsQscx988%2FoymDCbq5b20L4GRWJqYDGxOVNqmXujE7UptBT1pXEjPwSHi1jkXuvMk6K%2FD9biLcEAfrFq8X3tePwIrFdqPisH6Jl1ARkSKuO5drkUPGRPsG39byEy3lUintcb0jAWBrylzSRgrolDLvr0Co%2B63tE%2FlMOCX67wGOqUBTp51r7B1y7MpesmJeI%2F1ov%2BGDGO%2Fgmgqdh%2BRreJkvjkMV4rWgJs4IBg7cwlY4D1d62cMtH9AKYH%2BXs0Gx3gAjD6j%2F4sq0D3iPmnKfOtU%2FRQ31i9R4BCI3MdDO%2FfXKNWli17E5S2hJ7%2Fu%2F7utyksjEv8GqLfUUp3NUlew7cKahP%2FGeqPNF0GbDz%2FaSGSBmqTd13X3ZRGsejJ9YSw3pjsQm1%2B0roia&X-Amz-Signature=837db0fde9a1f26f8e1ba835c038d261905478e44256365c91f6e385386fec4f&X-Amz-SignedHeaders=host&x-id=GetObject"
                     fill
                     alt={`${company.name} Logo`}
                     placeholder="blur"
