@@ -1,6 +1,7 @@
 /* The translation must be equal to the width of the infinite scroll div */
 .slide-left {
   animation: slideLeft 15s linear infinite;
+  display: flex; /* Ensure items are in a row */
 }
 
 @keyframes slideLeft {
@@ -8,6 +9,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1250px);
+    transform: translateX(-100%); /* Translate by 100% of its own width */
   }
 }
