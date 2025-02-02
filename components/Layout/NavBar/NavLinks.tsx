@@ -12,11 +12,11 @@ import {
 import { cn } from '@/lib/utils'
 import { links } from './navlinkData'
 
-interface NavLinksProps {
+export default function NavLinks({
+  scrollDirection,
+}: {
   scrollDirection: 'up' | 'down'
-}
-
-export default function NavLinks({ scrollDirection }: NavLinksProps) {
+}) {
   const visibilityClass =
     scrollDirection === 'down'
       ? 'invisible w-0 scale-x-0 opacity-0'
