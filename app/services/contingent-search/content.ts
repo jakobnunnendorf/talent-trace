@@ -2,35 +2,19 @@ export const whyChooseUsFeatures = [
   {
     title: 'No Upfront Costs',
     description:
-      'Say goodbye to hefty retainers or upfront recruitment fees. With Contingent Search, you only pay when a candidate is successfully placed in your organization.',
+      'With us, you only pay when we successfully place a candidate. Our "no placement, no fee" approach means there’s no financial risk for you and an easier choice for companies for complex approval process.',
   },
   {
-    title: 'Efficient and Targeted Process',
+    title: 'Great for Non-Specialized or Early-Career Roles',
     description:
-      'Our team of experts uses a strategic and data-driven approach to identify the best candidates for your role, ensuring a faster and more precise hiring process.',
-  },
-  {
-    title: 'Access to a Robust Talent Pool',
-    description:
-      'Leverage our extensive network of highly qualified candidates to find the perfect fit for your team.',
-  },
-  {
-    title: 'Dedicated Support',
-    description:
-      'We manage every step of the process, from sourcing to onboarding, so you can focus on running your business.',
-  },
-  {
-    title: 'Cost-Effective and Risk-Free',
-    description:
-      'Avoid unnecessary expenses and pay only for results, ensuring a smart allocation of your recruitment budget.',
+      'Whether you need to fill an entry-level position or a mid-level role, contingent search is a smart choice for finding capable talent. It’s quick, straightforward, and perfect for roles that don’t require niche expertise or long hiring cycles.',
   },
 ]
 
 export const contingentContent = {
   introduction: {
-    heading: 'What is Contingent Search?',
     paragraphs: [
-      'Contingent Search offers a risk-free recruitment model that eliminates upfront fees, ensuring you only pay when the right candidate is successfully hired. Ideal for junior to mid-level roles, this service combines flexibility and efficiency to meet your hiring needs without overextending your budget.',
+      'At Talent Trace, we know that every hiring need is different. If you’re looking to fill a role quickly without upfront costs, our contingent search service is the perfect fit. It’s a simple, flexible, and efficient way to connect with talented candidates while keeping things easy and stress-free.',
     ],
   },
   process: {

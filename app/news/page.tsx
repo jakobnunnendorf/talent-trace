@@ -1,6 +1,6 @@
 import React from 'react'
 import SubHero from '@/components/shared/Header/SubHero'
-import BlogPostGrid from '../../../components/Explore/News/BlogPostGrid'
+import BlogPostGrid from '../../components/Explore/News/BlogPostGrid'
 import { fetchAndFormatNews } from '@/lib/notion'
 import SubscribeToNewsLetter from '@/components/Explore/News/SubscribeToNewsLetter'
 

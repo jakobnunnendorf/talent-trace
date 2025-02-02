@@ -3,35 +3,59 @@ import SubHero from '@/components/shared/Header/SubHero'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import FeatureGrid from '@/components/shared/sections/FeatureGrid'
+import ComparisonTable from '@/components/shared/ComparisonTable'
 
 const ExecutiveSearchPage: React.FC = () => {
   const whyChooseUsFeatures = [
     {
-      title: 'A Proven Network of Top Talent',
+      title: 'Premium Service with Success Guarantee',
       description:
-        'We have cultivated a vast network of highly-skilled and experienced professionals from diverse industries, enabling us to connect you with exceptional leaders who can bring innovation and success to your organization.',
+        'With our retained search model, you receive top-tier service and a 100% success guarantee, all at a cost lower than contingent recruitment. You get focused, personalized attention and a seamless hiring experience.',
     },
     {
-      title: 'Tailored to Your Needs',
+      title: 'We Cover the Extras',
       description:
-        'Every organization is different. We tailor our search strategies to your specific needs, ensuring that every candidate aligns with your culture, goals, and vision.',
+        "Worried about job posting costs? Don't be. We cover all the expenses for job ads and outreach, so you don't have to. This means you can focus on what matters—finding the right person—while we handle the rest.",
     },
     {
-      title: 'Beyond the Resume',
+      title: 'Full Commitment, No Guesswork',
       description:
-        'Our holistic approach includes in-depth candidate evaluations, leadership assessments, and cultural fit analysis to ensure the candidate thrives in your organization.',
+        "With us, you're not just another project. We take the time to understand your needs and take full accountability for everything—from interviewing every applicant to proactively reaching out to top talent. You'll only meet the candidates we know are a perfect fit.",
     },
     {
-      title: 'Confidentiality Guaranteed',
+      title: 'We Make It Simple',
       description:
-        'We operate with the highest level of confidentiality, ensuring your search process remains secure and professional.',
+        'Instead of sorting through stacks of resumes, we save you time by presenting only the best five candidates for the role. This focused approach ensures you meet top-tier talent without wasting time on unsuitable matches.',
+      bullets: [
+        'Engagement Fee: To kickstart your search and prioritize your needs.',
+        "Progress Fee: Ensures we're hitting milestones and staying on track.",
+        'Completion Fee: Paid only when we successfully place the right candidate.',
+      ],
     },
     {
-      title: 'Streamlined and Efficient',
+      title: 'A Proven Partner',
       description:
-        'Hiring the right leader is time-sensitive. Our expert recruiters ensure you get the best candidates without unnecessary delays.',
+        "With a 100% success rate, we've consistently delivered results for every client we've worked with. We also go beyond recruitment, providing insights on market salaries, industry trends, and talent availability, so you're equipped with everything you need to make informed decisions.",
     },
   ]
+
+  const comparisonData = {
+    title: 'Contingent Search vs. Retained Executive Search',
+    headers: ['Aspect', 'Contingent Search', 'Retained Executive Search'],
+    rows: [
+      ['Fees', 'Higher', 'Lower'],
+      ['Payment Model', 'Lump Sum', 'Divided into 2 parts'],
+      ['Commitment', 'Non-exclusive', 'Exclusive'],
+      ['Candidate Quality', 'Volume-focused', 'Quality-focused'],
+      ['Specialization', 'Generalist', 'Specialized'],
+      ['Recruiter Focus', 'Divided', 'Dedicated'],
+      ['Market Insights', 'Limited', 'Comprehensive'],
+      ['Time Efficiency', 'Extended', 'Streamlined'],
+      ['Guarantee', 'None', '100% Success'],
+      ['Services', 'Limited', 'Comprehensive'],
+      ['Best For', 'High-volume roles', 'Executive roles'],
+    ],
+  }
 
   return (
     <div className="bg-gray-50 text-gray-800">
@@ -53,7 +77,7 @@ const ExecutiveSearchPage: React.FC = () => {
 
       <FeatureGrid
         title="Why Choose Talent Trace?"
-        subtitle="Your Partner in Leadership Recruitment"
+        subtitle="At Talent Trace, we've designed our retained executive search to deliver a premium service that's surprisingly more cost-effective than traditional contingent recruitment. And the best part? We've never failed to place the right candidate for our clients."
         features={whyChooseUsFeatures}
         columns={3}
         bgColor="white"
@@ -62,74 +86,45 @@ const ExecutiveSearchPage: React.FC = () => {
       {/* Our Process */}
       <section className="bg-gray-100 px-6 py-12">
         <h2 className="text-center text-3xl font-bold">
-          Our Comprehensive Process
+          Why Retained Search Makes Sense
         </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          How We Deliver Exceptional Talent
+          When you partner with Talent Trace, you&apos;re not just getting a
+          recruitment service—you&apos;re getting a team that&apos;s invested in
+          your success. We offer premium service, guaranteed results, and lower
+          costs than contingent recruitment, all while making the process as
+          smooth and stress-free as possible.
         </p>
-        <ol className="mx-auto mt-8 max-w-3xl space-y-6 text-lg">
-          <li>
-            1. Understanding Your Needs: We start with an in-depth consultation
-            to understand your leadership requirements, growth objectives, and
-            company culture.
-          </li>
-          <li>
-            2. Extensive Research and Outreach: Our team conducts thorough
-            market research and taps into our exclusive network to identify
-            high-potential candidates.
-          </li>
-          <li>
-            3. In-Depth Candidate Assessments: Every candidate goes through
-            rigorous evaluations, including leadership capability assessments,
-            reference checks, and interviews.
-          </li>
-          <li>
-            4. Shortlist and Recommendations: We provide a carefully curated
-            list of top candidates, complete with detailed profiles and
-            insights.
-          </li>
-          <li>
-            5. Final Selection and Support: We assist you throughout interviews,
-            negotiations, and onboarding, ensuring a smooth and successful
-            transition.
-          </li>
-        </ol>
       </section>
+
+      <section className="px-6 py-12">
+        <h2 className="mt-8 text-center text-3xl font-bold">
+          Let&apos;s Work Together
+        </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
+          If you&apos;re looking for a smarter, more human way to hire,
+          let&apos;s talk. At Talent Trace, we&apos;re here to save you time,
+          money, and effort while helping you secure the talent you need to
+          grow. Reach out today and let&apos;s get started.
+        </p>
+      </section>
+
+      <ComparisonTable
+        title={comparisonData.title}
+        headers={comparisonData.headers}
+        rows={comparisonData.rows}
+      />
 
       {/* Who We Serve */}
       <section className="px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">Who We Serve</h2>
+        <h2 className="text-center text-3xl font-bold">
+          Why Retained Executive Search?
+        </h2>
         <p className="mx-auto mt-4 max-w-3xl text-center text-lg">
-          Our Executive Search services are ideal for organizations seeking to
-          fill high-impact roles such as:
-        </p>
-        <ul className="mx-auto mt-6 max-w-3xl list-inside list-disc text-lg">
-          <li>Chief Executive Officers (CEOs)</li>
-          <li>Chief Financial Officers (CFOs)</li>
-          <li>Chief Operating Officers (COOs)</li>
-          <li>Directors and Senior Managers</li>
-          <li>Specialized Leadership Positions</li>
-        </ul>
-      </section>
-
-      {/* Success Stories TODO: insert real */}
-      <section className="bg-gray-100 px-6 py-12">
-        <h2 className="text-center text-3xl font-bold">Success Stories</h2>
-        <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          &quot;Talent Trace connected us with a visionary CEO who transformed
-          our operations within the first six months. Their personalized
-          approach and industry insights made all the difference.&quot;
-        </blockquote>
-        <p className="mt-4 text-center font-bold">
-          – [Name], [Title], [Company Name]
-        </p>
-        <blockquote className="mx-auto mt-6 max-w-3xl text-center text-lg italic">
-          &quot;We were struggling to find a CFO with both financial acumen and
-          leadership skills. Talent Trace delivered exactly what we needed—and
-          faster than we expected!&quot;
-        </blockquote>
-        <p className="mt-4 text-center font-bold">
-          – [Name], [Title], [Company Name]
+          Retained search offers premium quality at a lower cost, covering job
+          posting expenses and delivering exceptional results with a 100%
+          success rate. Contact Talent Trace today to learn how we can transform
+          your hiring process!
         </p>
       </section>
 
@@ -137,8 +132,8 @@ const ExecutiveSearchPage: React.FC = () => {
       <section className="bg-blue px-6 py-12 text-center text-white">
         <h2 className="text-3xl font-bold">Start Your Search Today</h2>
         <p className="mt-4 text-lg">
-          Don’t settle for anything less than the best. Let Talent Trace help
-          you find leaders who align with your vision and elevate your
+          Don&apos;t settle for anything less than the best. Let Talent Trace
+          help you find leaders who align with your vision and elevate your
           organization to new heights.
         </p>
         <MainButton
