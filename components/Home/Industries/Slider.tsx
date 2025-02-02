@@ -27,7 +27,7 @@ export default function Slider({
   totalCards,
 }: SliderProps) {
   return (
-    <ul className="flex gap-4">
+    <ul className="mx-auto flex w-4/5 gap-4 overflow-hidden md:w-fit">
       {[...Array(totalCards)].map((_, index) => (
         <li key={index}>
           <Dot
