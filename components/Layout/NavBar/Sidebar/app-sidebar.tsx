@@ -25,7 +25,12 @@ import Logo from '@/components/shared/Logo'
 import { useState } from 'react'
 import { NavLink } from '../navlinkData'
 
-// Map titles to icons
+interface NestedLinkProps {
+  section: NavLink
+  expandedSections: Record<string, boolean>
+  toggleSection: (sectionTitle: string) => void
+}
+
 const iconMap: Record<string, LucideIcon> = {
   Home: Home,
   Jobs: UserSearch,
@@ -34,7 +39,11 @@ const iconMap: Record<string, LucideIcon> = {
   'Contact Us': Phone,
 }
 
-const linkStyle = 'font-bold text-xl text-black'
+const styles = {
+  link: 'font-bold text-xl text-black',
+  subLink: 'text-lg font-bold opacity-80',
+  nestedContent: 'overflow-hidden transition-all duration-200',
+}
 
 export function AppSidebar() {
   const [expandedSections, setExpandedSections] = useState<
@@ -73,6 +82,8 @@ export function AppSidebar() {
 }
 
 function TopLink({ section }: { section: NavLink }) {
+  const Icon = iconMap[section.title]
+
   return (
     <div className="mt-8">
       <SidebarGroupContent>
@@ -80,9 +91,8 @@ function TopLink({ section }: { section: NavLink }) {
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
               <Link href={section.relativePath}>
-                {iconMap[section.title] &&
-                  React.createElement(iconMap[section.title])}
-                <span className={linkStyle}>{section.title}</span>
+                {Icon && <Icon />}
+                <span className={styles.link}>{section.title}</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -96,33 +106,26 @@ function NestedLink({
   section,
   expandedSections,
   toggleSection,
-}: {
-  section: NavLink
-  expandedSections: Record<string, boolean>
-  toggleSection: (sectionTitle: string) => void
-}) {
-  if (!section.subLinks) {
-    return null
-  }
-  console.log(JSON.stringify(section, null, 2))
+}: NestedLinkProps) {
+  if (!section.subLinks) return null
+
+  const Icon = iconMap[section.title]
+  const isExpanded = expandedSections[section.title]
+
   return (
     <div className="mt-8">
       <SidebarGroupLabel
         onClick={() => toggleSection(section.title)}
-        className={`${linkStyle} flex items-center gap-2`}
+        className={`${styles.link} flex items-center gap-2`}
       >
-        {iconMap[section.title] && React.createElement(iconMap[section.title])}
+        {Icon && <Icon />}
         {section.title}
         <ChevronDown
-          className={`h-4 w-4 transition-transform ${
-            expandedSections[section.title] ? 'rotate-180' : ''
-          }`}
+          className={`h-4 w-4 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
         />
       </SidebarGroupLabel>
       <SidebarGroupContent
-        className={`overflow-hidden transition-all duration-200 ${
-          expandedSections[section.title] ? 'max-h-96' : 'max-h-0'
-        }`}
+        className={`${styles.nestedContent} ${isExpanded ? 'max-h-96' : 'max-h-0'}`}
       >
         <SidebarMenu className="mt-4">
           {Object.entries(section.subLinks).map(([title, subLink]) => (
@@ -135,7 +138,7 @@ function NestedLink({
                     rel: 'noopener noreferrer',
                   })}
                 >
-                  <span className="text-lg font-bold opacity-80">{title}</span>
+                  <span className={styles.subLink}>{title}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
