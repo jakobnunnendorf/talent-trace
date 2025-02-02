@@ -3,6 +3,7 @@ import Background from './Background'
 import Ship from './Ship'
 import CTALink from './CTALink'
 import Socials from '@/components/shared/Buttons/Socials'
+import Logo from '@/components/Layout/NavBar/Logo'
 
 export default function Hero() {
   return (
@@ -16,7 +17,9 @@ export default function Hero() {
       </h1>
       <section className="row-span-3 row-start-3 flex flex-col items-center text-white md:row-span-2 md:mx-auto md:w-4/5 md:items-start">
         <article>
-          <p className="hidden text-lg font-bold md:block">Talent Trace</p>
+          <p className="hidden text-lg font-bold text-transparent md:block">
+            Talent Trace
+          </p>
           <h2 className="px-2 font-sans text-5xl font-bold text-blue md:text-6xl">
             Tracing Talent
             <br />

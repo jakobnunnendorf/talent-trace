@@ -8,24 +8,26 @@ interface LogoProps {
 
 export default function Logo({ scrollDirection }: LogoProps) {
   return (
-    <Link href="/" className="">
+    <Link href="/">
       <div
-        className={`relative transition-all duration-700 ease-in-out ${
+        className={`transition-all duration-700 ease-in-out ${
           scrollDirection === 'up'
-            ? 'mx-auto md:w-32'
-            : 'border-blue md:ml-auto md:w-64 md:scale-150 md:rounded-l-full md:border-r-0 md:px-12'
+            ? 'relative mr-auto w-36 md:w-48'
+            : 'border-blue md:w-64 md:scale-150 md:rounded-l-full md:border-r-0 md:px-12'
         } h-14`}
       >
         <div
-          className={`relative h-full ${
-            scrollDirection === 'up' ? 'md:w-full' : 'md:mx-auto md:w-24'
+          className={`h-48 ${
+            scrollDirection === 'up'
+              ? 'absolute md:w-full'
+              : 'md:mx-auto md:w-36'
           }`}
         >
           <Image
             src="/logos/Talent Trace logo.png"
             alt="Talent Trace Logo"
-            fill
-            className="rounded-md object-contain"
+            height={500}
+            width={500}
           />
         </div>
       </div>
