@@ -1,8 +1,8 @@
 'use client'
+
 import React, { useEffect, useState } from 'react'
 import Logo from '../../shared/Logo'
 import NavLinks from './NavLinks'
-import UploadCV from './UploadCV'
 import NavBurger from './NavBurger'
 import { useSidebar } from '@/components/ui/sidebar'
 
@@ -32,12 +32,12 @@ export default function NavBar() {
 
   return (
     <header
-      className={`z-50 grid w-full ${scrollDirection === 'down' ? 'grid-cols-1' : 'grid-cols-2 bg-white/10 backdrop-blur-2xl md:bg-transparent md:backdrop-blur-0'} items-center px-8 py-4 md:grid-cols-3 md:py-7`}
+      className={`z-50 w-full ${scrollDirection === 'down' ? 'grid-cols-1' : 'grid grid-cols-2 bg-white/10 backdrop-blur-2xl md:bg-transparent md:backdrop-blur-0'} items-center px-8 py-4 md:grid-cols-4 md:py-7`}
     >
       <div
-        className={`transform transition-all duration-700 ease-in-out ${
+        className={`flex transform items-center transition-all duration-700 ease-in-out md:col-start-2 ${
           scrollDirection === 'down'
-            ? 'hidden md:block md:translate-x-1/2'
+            ? 'fixed right-1/2 top-12 hidden w-fit translate-x-1/2 md:block'
             : 'translate-x-0 gap-4'
         }`}
       >
@@ -51,13 +51,7 @@ export default function NavBar() {
           scrollDirection === 'down' ? 'md:-translate-x-1/2' : 'translate-x-0'
         }`}
       >
-        {!isMobile ? (
-          <UploadCV scrollDirection={scrollDirection} />
-        ) : scrollDirection === 'up' ? (
-          <NavBurger scrollDirection={scrollDirection} />
-        ) : (
-          <UploadCV scrollDirection={scrollDirection} />
-        )}
+        {isMobile && scrollDirection === 'up' ? <NavBurger /> : null}
       </div>
     </header>
   )

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               alt="Talent Trace Logo"
             />
           </figure>
-          <Socials dark />
+          <Socials color="black" />
         </div>
       </div>
       <div className="mx-auto grid w-fit max-w-7xl grid-cols-2 grid-rows-2 gap-4 pb-6 pt-4 md:w-auto md:grid-cols-5 md:grid-rows-1">
@@ -69,16 +69,11 @@ const footerSections = [
   {
     title: 'Contact Us',
     links: [
-      {
-        href: '/jobs/post#post-job-form',
-        text: 'Schedule a Call',
-      },
       { href: '/contact-us', text: 'Send us a Message' },
       {
-      text: 'Upload CV',
-      href:
-        'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
-    },
+        text: 'Upload CV',
+        href: 'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
+      },
     ],
   },
   {

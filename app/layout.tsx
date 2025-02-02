@@ -9,6 +9,7 @@ import { AppSidebar } from '@/components/Layout/NavBar/Sidebar/app-sidebar'
 import { Toaster } from 'sonner'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import ActionButtons from '@/components/Layout/ActionButtons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,6 +44,7 @@ export default function RootLayout({
           <AppSidebar />
           <header className="fixed z-50 w-full">
             <NavBar />
+            <ActionButtons />
           </header>
           <main className="relative w-full">
             {children}

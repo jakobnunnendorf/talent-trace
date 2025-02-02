@@ -11,29 +11,36 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 import { links } from './navlinkData'
-
+import { useRouter } from 'next/navigation'
 export default function NavLinks({
   scrollDirection,
 }: {
   scrollDirection: 'up' | 'down'
 }) {
+  const router = useRouter()
   const visibilityClass =
     scrollDirection === 'down'
       ? 'invisible w-0 scale-x-0 opacity-0'
       : 'visible w-fit scale-x-100 opacity-100'
 
-  const menuItemClass = `h-fit w-fit whitespace-nowrap transition-opacity duration-700 ease-in-out ${
+  const menuItemClass = `transition-opacity duration-700 ease-in-out ${
     scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
   }`
 
   return (
     <NavigationMenu className={visibilityClass}>
-      <NavigationMenuList className="items-center justify-between gap-12 rounded-full bg-blue/80 px-8 py-4 text-center text-white underline-offset-[6px] shadow-xl backdrop-blur-md transition-all duration-700 ease-in-out">
+      <NavigationMenuList className="gap-12 text-center text-white underline-offset-[6px] backdrop-blur-md transition-all duration-700 ease-in-out">
         {Object.values(links).map((link) => (
-          <NavigationMenuItem key={link.title} className={menuItemClass}>
+          <NavigationMenuItem
+            key={link.title}
+            className={`flex h-16 min-w-28 items-center justify-center rounded-full bg-blue/80 px-4 py-4 ${menuItemClass}`}
+          >
             {link.subLinks ? (
               <>
-                <NavigationMenuTrigger className="bg-transparent text-sm hover:bg-blue/90">
+                <NavigationMenuTrigger
+                  onClick={() => router.push(link.relativePath)}
+                  className="bg-transparent text-sm hover:bg-blue/90"
+                >
                   {link.title}
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -52,11 +59,13 @@ export default function NavLinks({
                 </NavigationMenuContent>
               </>
             ) : (
-              <Link href={link.relativePath} legacyBehavior passHref>
-                <NavigationMenuLink className="text-sm hover:text-white/80">
-                  {link.title}
-                </NavigationMenuLink>
-              </Link>
+              <div>
+                <Link href={link.relativePath} legacyBehavior passHref>
+                  <NavigationMenuLink className="my-auto text-sm hover:text-white/80">
+                    {link.title}
+                  </NavigationMenuLink>
+                </Link>
+              </div>
             )}
           </NavigationMenuItem>
         ))}

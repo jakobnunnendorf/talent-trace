@@ -12,7 +12,26 @@ export interface SubLink {
 }
 
 export const links: Record<string, NavLink> = {
-  Home: { title: 'Home', relativePath: '/', subLinks: null },
+  Home: {
+    title: 'Home',
+    relativePath: '/',
+    subLinks: {
+      'About Us': {
+        relativePath: '/explore/about-us',
+        description: 'Learn more about our company, mission, and values.',
+      },
+      'Join the Team': {
+        relativePath: '/explore/join-us',
+        description:
+          'Explore career opportunities and become part of our team.',
+      },
+      'Latest News': {
+        relativePath: '/explore/news',
+        description:
+          'Stay updated with our latest company news, insights, and industry trends.',
+      },
+    },
+  },
   Jobs: { title: 'Jobs', relativePath: '/jobs', subLinks: null },
   Services: {
     title: 'Services',
@@ -35,35 +54,10 @@ export const links: Record<string, NavLink> = {
       },
     },
   },
-  Explore: {
-    title: 'Explore',
-    relativePath: '/explore',
-    subLinks: {
-      'About Us': {
-        relativePath: '/explore/about-us',
-        description: 'Learn more about our company, mission, and values.',
-      },
-      'Join the Team': {
-        relativePath: '/explore/join-us',
-        description:
-          'Explore career opportunities and become part of our team.',
-      },
-      'Latest News': {
-        relativePath: '/explore/news',
-        description:
-          'Stay updated with our latest company news, insights, and industry trends.',
-      },
-    },
-  },
   Contact: {
     title: 'Contact Us',
     relativePath: '/contact-us',
     subLinks: {
-      'Schedule a Call': {
-        relativePath: '/jobs/post#post-job-form',
-        description:
-          'Book a consultation call with one of our recruitment specialists.',
-      },
       'Send us a Message': {
         relativePath: '/contact-us',
         description: 'Get in touch with our team through our contact form.',

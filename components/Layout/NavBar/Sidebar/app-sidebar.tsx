@@ -20,6 +20,7 @@ import Logo from '@/components/shared/Logo'
 import { useState } from 'react'
 import NestedLink from './NestedLink'
 import TopLink from './TopLink'
+import Image from 'next/image'
 
 export const iconMap: Record<string, LucideIcon> = {
   Home: Home,
@@ -49,14 +50,18 @@ export function AppSidebar() {
   }
 
   const handleLinkClick = () => {
-    console.log('handleLinkClick')
     toggleSidebar()
   }
 
   return (
     <Sidebar>
-      <div className="pb-4 pt-12">
-        <Logo />
+      <div className="mx-auto w-36 pb-4 pt-12">
+        <Image
+          src="/logos/Talent Trace logo.png"
+          alt="Talent Trace Logo"
+          height={500}
+          width={500}
+        />
       </div>
       <SidebarContent>
         {Object.values(links).map((section) => (
