@@ -11,9 +11,9 @@ const Jobs = () => {
         headline="Jobs"
         description="Explore our job listings and find your dream career."
         primaryButton="Find Jobs"
-        primaryButtonLink="/jobs/find"
+        primaryButtonLink="/jobs#rec_job_listing_div"
         secondaryButton="Post a free Job"
-        secondaryButtonLink="/jobs/post"
+        secondaryButtonLink="/jobs#post-job-form"
       />
       <section className="py-0 lg:mx-auto lg:max-w-6xl">
         <ZohoJobs />
