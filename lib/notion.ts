@@ -127,7 +127,7 @@ export const fetchAndFormatNews = async () => {
     title: getNotionProperty(postObject, 'Title'),
     summary: getNotionProperty(postObject, 'Summary'),
     date: postObject.properties.Date.date.start,
-    blogPostLink: '/explore/news/' + postObject.id,
+    blogPostLink: '/news/' + postObject.id,
     author: getNotionProperty(postObject, 'Author'),
     featured: postObject.properties.Featured?.checkbox || false,
   })) as NewsPost[]
@@ -173,7 +173,6 @@ export const fetchCompanyLogos = async () => {
   const response = await notion.databases.query({
     database_id: COMPANIES_DATABASE_ID,
   })
-
 
   return response.results.map((result: any) => ({
     logo: result.properties['Logo']?.files[0]?.file?.url || '/',
