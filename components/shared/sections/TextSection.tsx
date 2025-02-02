@@ -7,15 +7,15 @@ export default function TextSection({
   bg,
   ol,
 }: {
-  heading: string
   paragraphs?: string[]
   bulletPoints?: string[]
+  heading?: string
   bg?: boolean
   ol?: boolean
 }) {
   return (
     <section className={`${bg ? 'bg-gray-100' : null} px-6 py-12`}>
-      <h2 className="text-center text-3xl font-bold">{heading}</h2>
+      {heading && <h2 className="text-center text-3xl font-bold">{heading}</h2>}
       {paragraphs?.map((paragraph, index) => (
         <p key={index} className="mx-auto mt-4 max-w-3xl text-center text-lg">
           {paragraph}

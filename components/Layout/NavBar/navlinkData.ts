@@ -17,16 +17,16 @@ export const links: Record<string, NavLink> = {
     relativePath: '/',
     subLinks: {
       'About Us': {
-        relativePath: '/explore/about-us',
+        relativePath: '/about-us',
         description: 'Learn more about our company, mission, and values.',
       },
       'Join the Team': {
-        relativePath: '/explore/join-us',
+        relativePath: '/join-us',
         description:
           'Explore career opportunities and become part of our team.',
       },
       'Latest News': {
-        relativePath: '/explore/news',
+        relativePath: '/news',
         description:
           'Stay updated with our latest company news, insights, and industry trends.',
       },
