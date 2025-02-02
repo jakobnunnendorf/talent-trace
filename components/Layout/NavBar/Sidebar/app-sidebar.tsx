@@ -9,7 +9,12 @@ import {
   Newspaper,
   Phone,
 } from 'lucide-react'
-import { Sidebar, SidebarContent, SidebarGroup } from '@/components/ui/sidebar'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  useSidebar,
+} from '@/components/ui/sidebar'
 import { links } from '../navlinkData'
 import Logo from '@/components/shared/Logo'
 import { useState } from 'react'
@@ -34,12 +39,18 @@ export function AppSidebar() {
   const [expandedSections, setExpandedSections] = useState<
     Record<string, boolean>
   >({})
+  const { toggleSidebar } = useSidebar()
 
   const toggleSection = (sectionTitle: string) => {
     setExpandedSections((prev) => ({
       ...prev,
       [sectionTitle]: !prev[sectionTitle],
     }))
+  }
+
+  const handleLinkClick = () => {
+    console.log('handleLinkClick')
+    toggleSidebar()
   }
 
   return (
@@ -55,9 +66,10 @@ export function AppSidebar() {
                 section={section}
                 expandedSections={expandedSections}
                 toggleSection={toggleSection}
+                onLinkClick={handleLinkClick}
               />
             ) : (
-              <TopLink section={section} />
+              <TopLink section={section} onLinkClick={handleLinkClick} />
             )}
           </SidebarGroup>
         ))}

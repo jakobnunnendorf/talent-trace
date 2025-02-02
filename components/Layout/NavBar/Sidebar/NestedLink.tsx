@@ -17,12 +17,14 @@ interface NestedLinkProps {
   section: NavLink
   expandedSections: Record<string, boolean>
   toggleSection: (sectionTitle: string) => void
+  onLinkClick: () => void
 }
 
 export default function NestedLink({
   section,
   expandedSections,
   toggleSection,
+  onLinkClick,
 }: NestedLinkProps) {
   if (!section.subLinks) return null
 
@@ -50,6 +52,7 @@ export default function NestedLink({
               <SidebarMenuButton asChild>
                 <Link
                   href={subLink.relativePath}
+                  onClick={onLinkClick}
                   {...(subLink.isExternal && {
                     target: '_blank',
                     rel: 'noopener noreferrer',
