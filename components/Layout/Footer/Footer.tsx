@@ -61,9 +61,9 @@ const footerSections = [
   {
     title: 'Explore',
     links: [
-      { href: '/explore/about-us', text: 'About Us' },
-      { href: '/explore/join-us', text: 'Join the team' },
-      { href: '/explore/news', text: 'News' },
+      { href: '/about-us', text: 'About Us' },
+      { href: '/join-us', text: 'Join the team' },
+      { href: '/news', text: 'News' },
     ],
   },
   {

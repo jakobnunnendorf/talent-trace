@@ -26,7 +26,7 @@ export default async function NewsCarousel() {
     title: getNotionProperty(post, 'Title'),
     summary: getNotionProperty(post, 'Summary'),
     date: getNotionProperty(post, 'Date'),
-    blogPostLink: '/explore/news/' + post.id,
+    blogPostLink: '/news/' + post.id,
     author: getNotionProperty(post, 'Author'),
   }))
 
