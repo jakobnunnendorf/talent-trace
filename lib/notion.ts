@@ -61,19 +61,20 @@ export const returnClassName = (blockType: string) => {
   }
 }
 
-export const extractBlockContents = (blockArray: any) => {
-  const blocks = blockArray.map((block: any) => {
+export function extractBlockContents(blocks: any[]) {
+  return blocks.map((block) => {
     const blockType = block['type']
-    const content = block[blockType].rich_text
-      .map((element: any) => element.plain_text)
-      .join('')
+    const content =
+      block[blockType]?.rich_text
+        ?.map((element: any) => element.plain_text)
+        ?.join('') || '' // Fallback to empty string if any step fails
+
     return {
       type: blockType,
-      content: content,
+      content,
       className: returnClassName(blockType),
     }
   })
-  return blocks
 }
 
 // ======================
