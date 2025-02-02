@@ -34,18 +34,22 @@ export default function SubHero({
         {primaryButton || secondaryButton ? (
           <div className="mt-12 grid grid-cols-1 grid-rows-2 gap-2 md:grid-cols-2 md:grid-rows-1 md:gap-4">
             {primaryButton && (
-              <Link href={primaryButtonLink || '#'}>
-                <Button className="ml-auto w-full max-w-sm rounded border-2 border-green bg-green px-1 py-3 text-lg font-semibold text-teal-900 hover:bg-teal-900 hover:text-green md:px-6">
+              <Button
+                asChild
+                className="ml-auto w-full max-w-sm rounded border-2 border-green bg-green px-1 py-3 text-lg font-semibold text-teal-900 hover:bg-teal-900 hover:text-green md:px-6"
+              >
+                <Link href={primaryButtonLink || '#'}>
                   {primaryButton}
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             )}
             {secondaryButton && (
-              <Link href={secondaryButtonLink || '#'}>
-                <Button className="mr-auto w-full max-w-sm rounded border-2 border-white bg-transparent px-1 py-3 font-semibold transition hover:bg-white hover:text-blue md:px-6">
-                  {secondaryButton}
-                </Button>
-              </Link>
+              <Button
+                asChild
+                className="mr-auto w-full max-w-sm rounded border-2 border-white bg-transparent px-1 py-3 font-semibold transition hover:bg-white hover:text-blue md:px-6"
+              >
+                <Link href={secondaryButtonLink || '#'}>{secondaryButton}</Link>
+              </Button>
             )}
           </div>
         ) : null}
