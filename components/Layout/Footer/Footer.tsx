@@ -41,7 +41,7 @@ const footerSections = [
   {
     title: 'For Candidates',
     links: [
-      { href: '/jobs/find', text: 'Job Opportunities' },
+      { href: '/jobs#rec_job_listing_div', text: 'Job Opportunities' },
       { href: '/#job-categories', text: 'Browse Categories' },
       {
         href: 'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
@@ -52,7 +52,7 @@ const footerSections = [
   {
     title: 'For Employers',
     links: [
-      { href: '/jobs/post', text: 'Post Job' },
+      { href: '/jobs#post-job-form', text: 'Post Job' },
       { href: '/services/executive-search', text: 'Executive Search' },
       { href: '/services/contingent-search', text: 'Contingent Search' },
       { href: '/services/consultancy', text: 'Consultancy' },

@@ -13,8 +13,11 @@ export default function ServicesLayout({
       <CTASection
         title="Let’s Build the Future Together"
         description="At Talent Trace, we’re passionate about building successful partnerships that empower businesses and transform careers."
-        primaryButton={{ text: 'Find Talent', href: '/jobs/post' }}
-        secondaryButton={{ text: 'Advance Your Career', href: '/jobs/find' }}
+        primaryButton={{ text: 'Find Talent', href: '/jobs#post-job-form' }}
+        secondaryButton={{
+          text: 'Advance Your Career',
+          href: '/jobs#rec_job_listing_div',
+        }}
       />
     </section>
   )
