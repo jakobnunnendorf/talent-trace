@@ -42,8 +42,13 @@ export default function TestimonialCard({
             {testimonial.title}
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="font-sans text-sm text-gray-600">{testimonial.text}</p>
+        <CardContent className="max-h-36 overflow-scroll">
+          {testimonial.text.split('\n').map((line, index) => (
+            <p key={index} className="font-sans text-sm text-gray-600">
+              <br />
+              {line}
+            </p>
+          ))}
         </CardContent>
         <CardFooter className="ml-8">
           <div>
