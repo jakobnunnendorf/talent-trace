@@ -1,0 +1,53 @@
+/* Desktop/larger screens */
+@media (min-width: 769px) {
+  .jobBoard.embed_jobs_head {
+    /* border: red 6px solid; */
+    background-color: transparent;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+  }
+
+  .jobBoard .embed_jobs_head2 {
+    /* border: blue 6px solid; */
+    border-radius: 10px;
+    background-color: white;
+    margin: 0;
+    width: fit-content;
+    padding: 60px 40px;
+  }
+
+  .jobBoard .rec-group .rec-job-info {
+    /* border: green 1px solid; */
+    min-height: 200px;
+    min-width: 200px;
+    padding-top: 30px;
+  }
+  .jobBoard .rec-group .rec-job-title {
+    margin-bottom: 20px;
+  }
+
+  .jobBoard .rec-group .rec-job-info:nth-child(n + 5) {
+    display: none;
+  }
+  .jobBoard.jobBoard.embed_jobs_with_style_1 .rec_filter_cls {
+    display: none;
+  }
+  .jobBoard .rec-grp-cnt {
+    display: none;
+  }
+  .jobBoard .rec-grp-drop {
+    display: none;
+  }
+
+  .jobBoard span.rec-grp-name::after {
+    content: 'Featured Jobs';
+    font-size: 1.875rem;
+    font-family: __Inter_d65c78, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-align: center;
+  }
+  .jobBoard span.rec-grp-name {
+    font-size: 0;
+  }
+}

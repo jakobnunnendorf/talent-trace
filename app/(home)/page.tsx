@@ -2,12 +2,12 @@
 import Categories from '@/components/Home/Categories/Categories'
 import Companies from '@/components/Home/Companies/Companies'
 import ContactUs from '@/components/Home/Contact-Us/ContactUs'
-import FeaturedJobs from '@/components/Jobs/FeaturedJobs/FeaturedJobs'
+import FeaturedJobs from '@/components/Home/FeaturedJobs/FeaturedJobs'
 import NewsCarousel from '@/components/Home/Industries/NewsCarousel'
 import Services from '@/components/Home/Services/Services'
 import Testimonials from '@/components/Home/Testimonials/Testimonials'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3000
 
 export default function Home() {
   return (

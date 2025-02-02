@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Logo from './Logo'
+import Logo from '../../shared/Logo'
 import NavLinks from './NavLinks'
 import UploadCV from './UploadCV'
 import NavBurger from './NavBurger'

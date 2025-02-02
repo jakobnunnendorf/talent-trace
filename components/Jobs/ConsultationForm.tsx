@@ -100,7 +100,7 @@ export function ConsultationForm() {
         >
           <div className="rounded-lg border border-gray-200 bg-white px-10 pt-16 shadow-sm">
             <div className="text-center">
-              <h1 className="text-3xl font-bold">Request a Consultation</h1>
+              <h1 className="text-3xl font-bold">Post a free Job</h1>
               <p className="mt-2 text-gray-600">
                 Fill in your details below and we&apos;ll get back to you
                 shortly
