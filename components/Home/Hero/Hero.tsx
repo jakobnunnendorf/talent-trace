@@ -3,7 +3,6 @@ import Background from './Background'
 import Ship from './Ship'
 import CTALink from './CTALink'
 import Socials from '@/components/shared/Buttons/Socials'
-import Logo from '@/components/Layout/NavBar/Logo'
 
 export default function Hero() {
   return (

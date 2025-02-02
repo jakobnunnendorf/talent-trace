@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               alt="Talent Trace Logo"
             />
           </figure>
-          <Socials dark />
+          <Socials color="black" />
         </div>
       </div>
       <div className="mx-auto grid w-fit max-w-7xl grid-cols-2 grid-rows-2 gap-4 pb-6 pt-4 md:w-auto md:grid-cols-5 md:grid-rows-1">
