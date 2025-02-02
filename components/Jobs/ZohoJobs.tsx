@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Script from 'next/script'
+import './ZohoJobs.css'
 
 // Declare the type for the rec_embed_js object
 declare global {
@@ -19,7 +20,7 @@ declare global {
   }
 }
 
-const ZohoRecruitWidget = () => {
+const ZohoJobs = () => {
   useEffect(() => {
     // Create and inject the stylesheet
     const link = document.createElement('link')
@@ -50,20 +51,22 @@ const ZohoRecruitWidget = () => {
   }
 
   return (
-    <div className="embed_jobs_head embed_jobs_with_style_3 ">
-      <div className="embed_jobs_head2 mt-24">
-        <h1 className="pb-8 pt-24 text-center text-3xl md:pt-48">Find Jobs</h1>
-        <div className="embed_jobs_head3">
-          <div id="rec_job_listing_div"></div>
-          <Script
-            src="https://static.zohocdn.com/recruit/embed_careers_site/javascript/v1.1/embed_jobs.js"
-            onLoad={initializeWidget}
-            strategy="afterInteractive"
-          />
+    <section className="rounded-lg bg-white md:mt-24">
+      <div className="embed_jobs_head embed_jobs_with_style_3 jobBoard">
+        <div className="embed_jobs_head2">
+          <h1 className="mt-8 pb-8 text-center text-3xl md:mt-0">Find Jobs</h1>
+          <div className="embed_jobs_head3">
+            <div id="rec_job_listing_div"></div>
+            <Script
+              src="https://static.zohocdn.com/recruit/embed_careers_site/javascript/v1.1/embed_jobs.js"
+              onLoad={initializeWidget}
+              strategy="afterInteractive"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
-export default ZohoRecruitWidget
+export default ZohoJobs
