@@ -10,6 +10,7 @@ interface FeatureGridProps {
   title: string
   subtitle?: string
   features: Feature[]
+  summary?: string
   columns?: 2 | 3
   bgColor?: 'white' | 'gray'
 }
@@ -18,6 +19,7 @@ export default function FeatureGrid({
   title,
   subtitle,
   features,
+  summary,
   columns = 2,
   bgColor = 'white',
 }: FeatureGridProps) {
@@ -50,6 +52,9 @@ export default function FeatureGrid({
           </Card>
         ))}
       </div>
+      {summary && (
+        <p className="mx-auto mt-16 max-w-3xl text-center text-lg">{summary}</p>
+      )}
     </section>
   )
 }

@@ -1,54 +1,49 @@
-export const features = [
-  {
-    title: 'Proven Expertise',
-    description:
-      'Years of experience delivering recruitment solutions across industries.',
-  },
-  {
-    title: 'Tailored Approach',
-    description: 'Customized strategies designed to meet unique client needs.',
-  },
-  {
-    title: 'Global Reach',
-    description: 'A network of talent and opportunities that spans the globe.',
-  },
-  {
-    title: 'Commitment to Excellence',
-    description:
-      'Ensuring satisfaction for both employers and candidates through our dedicated service.',
-  },
-]
-
 export const textSections: TextSection[] = [
   {
     heading: 'Who We Are',
     paragraphs: [
-      'Talent Trace is a specialized talent search and selection consulting firm headquartered in Singapore. With a global reach, we deliver exceptional recruitment and HR solutions to Government Bodies, Multi-National Corporations (MNCs), and Small-Medium Enterprises (SMEs)',
-      'At Talent Trace, we don’t just fill roles—we redefine the recruitment landscape. By integrating methodologies inspired by management consulting, we bring precision, strategy, and innovation to every search process. Our mission is to connect top-tier talent with the organizations that need them most, no matter how remote or challenging the requirement.',
+      'At Talent Trace, our mission is to create meaningful connections that drive success. Based in Singapore with a global reach, we collaborate with businesses to identify the talent they need to thrive.',
+      "For us, recruitment goes beyond merely filling positions. It's about understanding the heartbeat of businesses and the ambitions of people. By blending strategic insights with an innovative approach, we excel in matching exceptional talent with opportunities they are destined for. We make your business successful through people. We don't just focus on what the business needs; we also focus on the candidates' aspirations to ensure there is a mutual fit. Each search represents a chance to make an impact, and we are dedicated to transforming challenges into success stories.",
     ],
   },
   {
-    heading: 'Our Unique Approach',
+    heading: 'Mission Statement',
     paragraphs: [
-      'We have trained our consultants—fondly known as Talent Tracers—to operate with deep expertise in business mechanics, equipping them to envision and identify outstanding candidates in even the most niche markets. By blending technology, strategy, and personalized service, we ensure that every placement is aligned with your goals and values.',
-    ],
-    bulletPoints: [
-      'Innovative Search Methodologies: Combining data-driven insights with consulting expertise.',
-      'Global Talent Access: Sourcing exceptional professionals, even in remote or specialized industries.',
-      'Personalized Recruitment Solutions: Tailored to your business needs for a seamless experience.',
+      "At Talent Trace, our mission is simple but powerful: to help organizations grow and succeed by connecting them with amazing talent. We're all about building meaningful partnerships and offering recruitment solutions that are personal, caring, and filled with integrity. It's not just about finding the right match; its about fostering growth and success for both businesses and individuals.",
     ],
   },
   {
     heading: 'Our Vision',
     paragraphs: [
-      'At Talent Trace, our vision is to be the one-stop HR consultancy for employers, offering comprehensive services that drive organizational success.',
+      'Our vision is to see organizations flourish by securing the perfect talent, while empowering candidates with opportunities that truly match their dreams. We aspire to be globally recognized for our heartfelt, human approach to recruitment, where every connection has a positive impact.',
     ],
-    bulletPoints: [
-      'Recruitment: Finding the perfect fit for your team.',
-      'Payroll Solutions: Simplifying payroll processes with accuracy and compliance.',
-      'Training: Empowering employees with the skills they need to succeed.',
-      'Human Resource Consulting: Strategic guidance for workforce management.',
-      'Corporate Administration Services: Supporting businesses with seamless operational services.',
-    ],
+  },
+]
+
+export const features = [
+  {
+    title: 'Generous Bonuses',
+    description:
+      "There's no cap on how much you can earn—your hard work directly reflects in your rewards.",
+  },
+  {
+    title: 'Freedom to Succeed',
+    description:
+      "If you're a top performer, you'll enjoy the trust and autonomy to do things your way, without constant meetings or micromanagement.",
+  },
+  {
+    title: 'Make an Impact',
+    description:
+      'Join a company that stands for something bigger in recruitment—integrity, a human touch, and meaningful connections.',
+  },
+  {
+    title: 'Plenty of Time for You',
+    description:
+      "We know life outside of work matters, too. That's why we offer generous leave to help you recharge and focus on what's important.",
+  },
+  {
+    title: 'A Clear Path to Growth',
+    description:
+      "For those who excel, there's an opportunity to grow into a partner role and help shape the future of Talent Trace.",
   },
 ]
