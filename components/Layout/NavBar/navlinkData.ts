@@ -1,11 +1,11 @@
-interface NavLink {
+export interface NavLink {
   title: string
   relativePath: string
   subLinks?: Record<string, SubLink> | null
   isExternal?: boolean
 }
 
-interface SubLink {
+export interface SubLink {
   relativePath: string
   description: string
   isExternal?: boolean
