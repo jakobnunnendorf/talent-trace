@@ -24,25 +24,18 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar'
-import { links } from './navlinkData'
+import { links } from '../navlinkData'
 import Link from 'next/link'
 import Logo from '@/components/shared/Logo'
 import { useState } from 'react'
 
-// Map of paths to icons
+// Map titles to icons
 const iconMap: Record<string, LucideIcon> = {
-  '/': Home,
-  '/jobs': UserSearch,
-  '/services/executive-search': BriefcaseBusiness,
-  '/services/contingent-search': Workflow,
-  '/services/consultancy': ChartLine,
-  '/explore/about-us': Users,
-  '/explore/join-us': Cake,
-  '/explore/news': Newspaper,
-  '/jobs/post#post-job-form': Phone,
-  '/contact-us': Inbox,
-  'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5':
-    Upload,
+  Home: Home,
+  Jobs: UserSearch,
+  Services: BriefcaseBusiness,
+  Explore: Newspaper,
+  'Contact Us': Phone,
 }
 
 export function AppSidebar() {
