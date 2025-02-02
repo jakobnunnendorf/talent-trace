@@ -1,29 +1,54 @@
 import React from 'react'
-import { SlEnvolope, SlSocialLinkedin, SlPhone, SlShare } from 'react-icons/sl'
+import {
+  SlEnvolope,
+  SlSocialLinkedin,
+  SlPhone,
+  SlShare,
+  SlBriefcase,
+} from 'react-icons/sl'
 import Link from 'next/link'
 
-const IconLink = ({
+export const IconLink = ({
   icon,
   link,
-  dark,
+  color,
+  size,
 }: {
   icon: React.ReactNode
-  link: string
-  dark?: boolean
+  link?: string
+  color?: string
+  size?: string
+  vertical?: boolean
 }) => {
   return (
     <li
-      className={`${dark ? 'border-black' : 'border-white'} group flex items-center justify-center rounded-full border p-2 text-2xl opacity-50 hover:border-blue hover:bg-blue hover:opacity-100 hover:shadow-xl`}
+      className={`${color ? `bg-${color} text-white opacity-100` : 'border border-white text-white opacity-50'} ${size ? `p-${size}` : ''} group flex items-center justify-center rounded-full p-2 text-2xl hover:border-blue hover:bg-blue hover:opacity-100 hover:shadow-xl`}
     >
-      <Link className="group-hover:text-white" href={link}>
-        {icon}
-      </Link>
+      {link ? (
+        <Link className="group-hover:text-white" href={link}>
+          {icon}
+        </Link>
+      ) : (
+        icon
+      )}
     </li>
   )
 }
 
-export default function Socials({ dark }: { dark?: boolean }) {
+export default function Socials({
+  color,
+  vertical,
+  size,
+}: {
+  color?: string
+  vertical?: boolean
+  size?: string
+}) {
   const socialLinks = [
+    {
+      icon: <SlBriefcase />,
+      link: 'https://talent-trace.zohorecruit.com/forms/677184c20dcfb9044e43b5672ceb5e3530c617412e8922022dcc64355524d8f5',
+    },
     {
       icon: <SlSocialLinkedin />,
       link: 'https://www.linkedin.com/company/talent-trace/',
@@ -36,9 +61,18 @@ export default function Socials({ dark }: { dark?: boolean }) {
     },
   ]
   return (
-    <ul className="flex justify-center gap-4 px-1 py-8 md:justify-start md:py-6">
+    <ul
+      className={`flex ${vertical ? 'flex-col' : 'flex-row'} justify-center gap-4 px-1 py-8 md:justify-start md:py-6`}
+    >
       {socialLinks.map((link, index) => (
-        <IconLink key={index} icon={link.icon} link={link.link} dark={dark} />
+        <IconLink
+          key={index}
+          icon={link.icon}
+          link={link.link}
+          color={color}
+          vertical={vertical}
+          size={size}
+        />
       ))}
     </ul>
   )
