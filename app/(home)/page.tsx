@@ -1,7 +1,6 @@
 // app/page.tsx
 import Categories from '@/components/Home/Categories/Categories'
 import Companies from '@/components/Home/Companies/Companies'
-import ContactUs from '@/components/Home/Contact-Us/ContactUs'
 import FeaturedJobs from '@/components/Home/FeaturedJobs/FeaturedJobs'
 import NewsCarousel from '@/components/Home/Industries/NewsCarousel'
 import Services from '@/components/Home/Services/Services'
@@ -18,8 +17,6 @@ export default function Home() {
       <Services />
       <Testimonials />
       <NewsCarousel />
-      <ContactUs />
     </main>
   )
 }
-///categories/15bc4d0e-f108-8006-8459-db946e2c998f
