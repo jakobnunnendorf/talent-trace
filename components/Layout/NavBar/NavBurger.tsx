@@ -12,7 +12,7 @@ export default function NavBurger() {
   return (
     <Button
       onClick={toggleSidebar}
-      className={`h-12 w-12 transform-gpu gap-0 rounded-full bg-blue transition-all duration-500 ease-in-out ${
+      className={`h-12 w-12 transform-gpu gap-0 rounded-full bg-blue transition-all duration-500 ease-in-out md:hidden ${
         openMobile
           ? 'invisible scale-0 opacity-0'
           : 'visible scale-100 opacity-100'

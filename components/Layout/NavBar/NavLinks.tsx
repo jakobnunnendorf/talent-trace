@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import Link from 'next/link'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,28 +11,18 @@ import {
 import { cn } from '@/lib/utils'
 import { links } from './navlinkData'
 import { useRouter } from 'next/navigation'
-export default function NavLinks({
-  scrollDirection,
-}: {
-  scrollDirection: 'up' | 'down'
-}) {
-  const router = useRouter()
-  const visibilityClass =
-    scrollDirection === 'down'
-      ? 'invisible w-0 scale-x-0 opacity-0'
-      : 'visible w-fit scale-x-100 opacity-100'
+import Link from 'next/link'
 
-  const menuItemClass = `transition-opacity duration-700 ease-in-out ${
-    scrollDirection === 'down' ? 'opacity-0' : 'opacity-100'
-  }`
+export default function NavLinks() {
+  const router = useRouter()
 
   return (
-    <NavigationMenu className={visibilityClass}>
-      <NavigationMenuList className="gap-12 text-center text-white underline-offset-[6px] backdrop-blur-md transition-all duration-700 ease-in-out">
+    <NavigationMenu className="hidden text-white md:block">
+      <NavigationMenuList className="grid grid-cols-4 gap-12">
         {Object.values(links).map((link) => (
           <NavigationMenuItem
             key={link.title}
-            className={`flex h-16 min-w-28 items-center justify-center rounded-full bg-blue/80 px-4 py-4 ${menuItemClass}`}
+            className={`flex h-16 min-w-28 items-center justify-center rounded-full bg-blue/80 px-4 py-4`}
           >
             {link.subLinks ? (
               <>
@@ -59,13 +48,7 @@ export default function NavLinks({
                 </NavigationMenuContent>
               </>
             ) : (
-              <div>
-                <Link href={link.relativePath} legacyBehavior passHref>
-                  <NavigationMenuLink className="my-auto text-sm hover:text-white/80">
-                    {link.title}
-                  </NavigationMenuLink>
-                </Link>
-              </div>
+              <SimpleLink href={link.relativePath} title={link.title} />
             )}
           </NavigationMenuItem>
         ))}
@@ -74,6 +57,17 @@ export default function NavLinks({
   )
 }
 
+const SimpleLink = ({ href, title }: { href: string; title: string }) => {
+  return (
+    <div>
+      <Link href={href} legacyBehavior passHref>
+        <NavigationMenuLink className="my-auto text-sm hover:text-white/80">
+          {title}
+        </NavigationMenuLink>
+      </Link>
+    </div>
+  )
+}
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'> & { isExternal?: boolean }
