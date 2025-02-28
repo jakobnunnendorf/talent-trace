@@ -68,7 +68,7 @@ const JoinUsPage: React.FC = () => {
         }}
         secondaryButton={{
           text: 'Follow Us on LinkedIn',
-          href: 'https://www.linkedin.com/company/talent-trace/',
+          href: 'https://www.linkedin.com/company/talenttrace/',
         }}
       />
     </div>

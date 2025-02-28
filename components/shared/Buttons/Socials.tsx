@@ -51,7 +51,7 @@ export default function Socials({
     },
     {
       icon: <SlSocialLinkedin />,
-      link: 'https://www.linkedin.com/company/talent-trace/',
+      link: 'https://www.linkedin.com/company/talenttrace/',
     },
     { icon: <SlPhone />, link: 'tel:+6581398239' },
     { icon: <SlEnvolope />, link: 'mailto:pravin@talent-trace.com' },

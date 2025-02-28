@@ -32,7 +32,7 @@ const contactInformation: ContactInfo[] = [
     icon: Linkedin,
     type: 'LinkedIn',
     info: 'Talent Trace',
-    link: 'https://www.linkedin.com/company/talent-trace/',
+    link: 'https://www.linkedin.com/company/talenttrace/',
   },
 ]
 
