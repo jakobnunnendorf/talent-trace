@@ -5,7 +5,7 @@ import ComparisonTable from '@/components/shared/ComparisonTable'
 import MainButton from '@/components/shared/Buttons/MainButton'
 import TextSection from '@/components/shared/sections/TextSection'
 import CTASection from '@/components/shared/sections/CTASection'
-import { consultancyServices, consultancyContent } from './consultancy/content'
+import { consultancyContent } from './consultancy/content'
 
 const whyChooseUsFeatures = [
   {
@@ -58,7 +58,9 @@ const comparisonData = {
   ],
 }
 
-const { introduction, industries, testimonials } = consultancyContent
+const { introduction, benchmarking, industries } = consultancyContent
+// const { introduction, benchmarking, industries, testimonials } =
+//   consultancyContent
 
 export default function page() {
   return (
@@ -232,12 +234,7 @@ export default function page() {
 
         <TextSection {...introduction} />
 
-        <FeatureGrid
-          title="Our Services"
-          features={consultancyServices}
-          columns={2}
-          bgColor="gray"
-        />
+        <TextSection {...benchmarking} />
 
         <TextSection {...industries} bg />
 
@@ -248,7 +245,7 @@ export default function page() {
           bgColor="gray"
         />
 
-        <TextSection {...testimonials} />
+        {/* <TextSection {...testimonials} /> */}
 
         <CTASection
           title="Let's Build Your Success Together"

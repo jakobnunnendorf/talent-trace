@@ -3,14 +3,11 @@ import SubHero from '@/components/shared/Header/SubHero'
 import TextSection from '@/components/shared/sections/TextSection'
 import FeatureGrid from '@/components/shared/sections/FeatureGrid'
 import CTASection from '@/components/shared/sections/CTASection'
-import {
-  whyChooseUsFeatures,
-  consultancyServices,
-  consultancyContent,
-} from './content'
+import { whyChooseUsFeatures, consultancyContent } from './content'
 
 const ConsultancyPage: React.FC = () => {
-  const { introduction, industries, testimonials } = consultancyContent
+  const { introduction, benchmarking, industries, testimonials } =
+    consultancyContent
 
   return (
     <div className="bg-gray-50 text-gray-800">
@@ -25,12 +22,7 @@ const ConsultancyPage: React.FC = () => {
 
       <TextSection {...introduction} />
 
-      <FeatureGrid
-        title="Our Services"
-        features={consultancyServices}
-        columns={2}
-        bgColor="gray"
-      />
+      <TextSection {...benchmarking} />
 
       <TextSection {...industries} bg />
 
@@ -41,7 +33,7 @@ const ConsultancyPage: React.FC = () => {
         bgColor="gray"
       />
 
-      <TextSection {...testimonials} />
+      {/* <TextSection {...testimonials} /> */}
 
       <CTASection
         title="Let's Build Your Success Together"

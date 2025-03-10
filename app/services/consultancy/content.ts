@@ -21,35 +21,18 @@ export const whyChooseUsFeatures = [
   },
 ]
 
-export const consultancyServices = [
-  {
-    title: 'Market Research and Analysis',
-    description:
-      "Gain a competitive edge with in-depth market insights tailored to your industry. Whether you're entering a new market or looking to expand, our research services provide the clarity and data you need to make informed decisions.",
-  },
-  {
-    title: 'Employee Engagement Solutions',
-    description:
-      'Motivated employees drive success. We design and implement effective engagement strategies to enhance productivity, retention, and workplace satisfaction.',
-  },
-  {
-    title: 'Benchmarking and Salary Surveys',
-    description:
-      'Understand your industry landscape and ensure competitive compensation with our detailed benchmarking and salary surveys. Stay ahead in attracting and retaining top talent.',
-  },
-  {
-    title: 'Workflow Optimization',
-    description:
-      'Streamline your operations with consultancy services focused on eliminating inefficiencies, reducing resource wastage, and enhancing collaboration across teams.',
-  },
-]
-
 export const consultancyContent = {
   introduction: {
     heading: 'Introduction',
     paragraphs: [
       "At Talent Trace, we go beyond recruitment. Our comprehensive consultancy services are designed to help businesses and professionals in industries such as commodity trading, shipping, robotics, and IT thrive in today's competitive landscape.",
       'From market research to employee engagement, we deliver actionable insights and tailored solutions that eliminate inefficiencies and enable seamless workflows. Let us handle your operational challenges so you can focus on what matters most—growth and innovation.',
+    ],
+  },
+  benchmarking: {
+    heading: 'Benchmarking and Salary Surveys',
+    paragraphs: [
+      'At Talent Trace, we understand that competitive compensation is key to attracting and retaining top talent. That’s why our salary benchmarking services are designed to give you the insights needed to make informed, market-aligned decisions.',
     ],
   },
   industries: {
