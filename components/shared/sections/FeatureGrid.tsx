@@ -1,9 +1,12 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 interface Feature {
   title: string
   description: string
   bullets?: string[]
+  button?: { buttonText: string; buttonLink: string }
 }
 
 interface FeatureGridProps {
@@ -49,6 +52,15 @@ export default function FeatureGrid({
                 </ul>
               )}
             </CardContent>
+            {feature.button && (
+              <CardFooter>
+                <Link href={feature.button.buttonLink}>
+                  <Button className="mb-0 mt-auto bg-blue">
+                    {feature.button.buttonText}
+                  </Button>
+                </Link>
+              </CardFooter>
+            )}
           </Card>
         ))}
       </div>

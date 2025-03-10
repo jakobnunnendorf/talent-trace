@@ -1,62 +1,61 @@
 import MainButton from '@/components/shared/Buttons/MainButton'
 import SubHero from '@/components/shared/Header/SubHero'
-import { Button } from '@/components/ui/button'
 import React from 'react'
 import FeatureGrid from '@/components/shared/sections/FeatureGrid'
 import ComparisonTable from '@/components/shared/ComparisonTable'
 
-const ExecutiveSearchPage: React.FC = () => {
-  const whyChooseUsFeatures = [
-    {
-      title: 'Premium Service with Success Guarantee',
-      description:
-        'With our retained search model, you receive top-tier service and a 100% success guarantee, all at a cost lower than contingent recruitment. You get focused, personalized attention and a seamless hiring experience.',
-    },
-    {
-      title: 'We Cover the Extras',
-      description:
-        "Worried about job posting costs? Don't be. We cover all the expenses for job ads and outreach, so you don't have to. This means you can focus on what matters—finding the right person—while we handle the rest.",
-    },
-    {
-      title: 'Full Commitment, No Guesswork',
-      description:
-        "With us, you're not just another project. We take the time to understand your needs and take full accountability for everything—from interviewing every applicant to proactively reaching out to top talent. You'll only meet the candidates we know are a perfect fit.",
-    },
-    {
-      title: 'We Make It Simple',
-      description:
-        'Instead of sorting through stacks of resumes, we save you time by presenting only the best five candidates for the role. This focused approach ensures you meet top-tier talent without wasting time on unsuitable matches.',
-      bullets: [
-        'Engagement Fee: To kickstart your search and prioritize your needs.',
-        "Progress Fee: Ensures we're hitting milestones and staying on track.",
-        'Completion Fee: Paid only when we successfully place the right candidate.',
-      ],
-    },
-    {
-      title: 'A Proven Partner',
-      description:
-        "With a 100% success rate, we've consistently delivered results for every client we've worked with. We also go beyond recruitment, providing insights on market salaries, industry trends, and talent availability, so you're equipped with everything you need to make informed decisions.",
-    },
-  ]
-
-  const comparisonData = {
-    title: 'Contingent Search vs. Retained Executive Search',
-    headers: ['Aspect', 'Contingent Search', 'Retained Executive Search'],
-    rows: [
-      ['Fees', 'Higher', 'Lower'],
-      ['Payment Model', 'Lump Sum', 'Divided into 2 parts'],
-      ['Commitment', 'Non-exclusive', 'Exclusive'],
-      ['Candidate Quality', 'Volume-focused', 'Quality-focused'],
-      ['Specialization', 'Generalist', 'Specialized'],
-      ['Recruiter Focus', 'Divided', 'Dedicated'],
-      ['Market Insights', 'Limited', 'Comprehensive'],
-      ['Time Efficiency', 'Extended', 'Streamlined'],
-      ['Guarantee', 'None', '100% Success'],
-      ['Services', 'Limited', 'Comprehensive'],
-      ['Best For', 'High-volume roles', 'Executive roles'],
+const whyChooseUsFeatures = [
+  {
+    title: 'Premium Service with Success Guarantee',
+    description:
+      'With our retained search model, you receive top-tier service and a 100% success guarantee, all at a cost lower than contingent recruitment. You get focused, personalized attention and a seamless hiring experience.',
+  },
+  {
+    title: 'We Cover the Extras',
+    description:
+      "Worried about job posting costs? Don't be. We cover all the expenses for job ads and outreach, so you don't have to. This means you can focus on what matters—finding the right person—while we handle the rest.",
+  },
+  {
+    title: 'Full Commitment, No Guesswork',
+    description:
+      "With us, you're not just another project. We take the time to understand your needs and take full accountability for everything—from interviewing every applicant to proactively reaching out to top talent. You'll only meet the candidates we know are a perfect fit.",
+  },
+  {
+    title: 'We Make It Simple',
+    description:
+      'Instead of sorting through stacks of resumes, we save you time by presenting only the best five candidates for the role. This focused approach ensures you meet top-tier talent without wasting time on unsuitable matches.',
+    bullets: [
+      'Engagement Fee: To kickstart your search and prioritize your needs.',
+      "Progress Fee: Ensures we're hitting milestones and staying on track.",
+      'Completion Fee: Paid only when we successfully place the right candidate.',
     ],
-  }
+  },
+  {
+    title: 'A Proven Partner',
+    description:
+      "With a 100% success rate, we've consistently delivered results for every client we've worked with. We also go beyond recruitment, providing insights on market salaries, industry trends, and talent availability, so you're equipped with everything you need to make informed decisions.",
+  },
+]
 
+const comparisonData = {
+  title: 'Contingent Search vs. Retained Executive Search',
+  headers: ['Aspect', 'Contingent Search', 'Retained Executive Search'],
+  rows: [
+    ['Fees', 'Higher', 'Lower'],
+    ['Payment Model', 'Lump Sum', 'Divided into 2 parts'],
+    ['Commitment', 'Non-exclusive', 'Exclusive'],
+    ['Candidate Quality', 'Volume-focused', 'Quality-focused'],
+    ['Specialization', 'Generalist', 'Specialized'],
+    ['Recruiter Focus', 'Divided', 'Dedicated'],
+    ['Market Insights', 'Limited', 'Comprehensive'],
+    ['Time Efficiency', 'Extended', 'Streamlined'],
+    ['Guarantee', 'None', '100% Success'],
+    ['Services', 'Limited', 'Comprehensive'],
+    ['Best For', 'High-volume roles', 'Executive roles'],
+  ],
+}
+
+const ExecutiveSearchPage: React.FC = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
