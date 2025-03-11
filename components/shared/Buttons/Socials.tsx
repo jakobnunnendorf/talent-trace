@@ -73,7 +73,7 @@ export const IconLink = ({
   vertical,
 }: {
   icon: React.ReactNode
-  iconTitle: string
+  iconTitle?: string
   link?: string
   color?: string
   size?: string
