@@ -38,6 +38,7 @@ export default function TextAndPic({
       </Card>
       <figure className="relative order-1 h-full w-full md:order-2">
         <Image
+          unoptimized
           src={image}
           alt={title}
           fill

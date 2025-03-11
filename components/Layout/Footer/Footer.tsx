@@ -12,6 +12,7 @@ const Footer: React.FC = () => {
           {/* <Logo /> */}
           <figure className="">
             <Image
+              unoptimized
               src="/logos/Talent Trace logo.png"
               height={150}
               width={150}

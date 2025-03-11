@@ -5,6 +5,7 @@ export default function CoverImage({ src, alt }: { src: string; alt: string }) {
   return (
     <figure className="relative h-96 w-full">
       <Image
+        unoptimized
         src={src}
         alt={alt}
         fill

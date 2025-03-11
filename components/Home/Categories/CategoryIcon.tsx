@@ -21,6 +21,7 @@ export default function CategoryIcon({
           >
             <figure className="overflow-hidden rounded-lg">
               <Image
+                unoptimized
                 src={icon}
                 width={50}
                 height={50}

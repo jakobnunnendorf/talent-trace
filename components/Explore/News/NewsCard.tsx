@@ -23,6 +23,7 @@ export default function NewsCard({
     <div className="grid h-96 grid-rows-6 overflow-hidden rounded-xl bg-white shadow-lg lg:h-[420px] lg:grid-rows-5">
       <figure className="relative row-span-3">
         <Image
+          unoptimized
           src={imageLink}
           alt={title}
           fill

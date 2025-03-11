@@ -21,6 +21,7 @@ export default async function Page({
       <div className="w-full px-4 py-8">
         <figure className="relative h-96 w-full">
           <Image
+            unoptimized
             src={getCoverImageUrl(currentPost)}
             alt="Blog Post Image"
             fill

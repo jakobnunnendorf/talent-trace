@@ -18,6 +18,7 @@ async function LogoBanner() {
               >
                 <figure className="relative h-full w-full overflow-hidden rounded-lg">
                   <Image
+                    unoptimized
                     className="object-contain"
                     src={company.logo}
                     fill

@@ -9,7 +9,13 @@ interface NewsImageProps {
 export function NewsImage({ imageUrl, headline }: NewsImageProps) {
   return (
     <figure className="relative h-full w-full">
-      <Image src={imageUrl} alt={headline} fill className="object-cover" />
+      <Image
+        unoptimized
+        src={imageUrl}
+        alt={headline}
+        fill
+        className="object-cover"
+      />
     </figure>
   )
 }

@@ -20,6 +20,7 @@ const OurServices = () => {
         {/* Image Section */}
         <div className="relative h-48 w-full md:h-auto md:w-1/2">
           <Image
+            unoptimized
             src={imageUrl}
             alt="Our Services"
             fill
