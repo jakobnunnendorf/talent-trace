@@ -20,7 +20,7 @@ export default function SubHero({
 }) {
   return (
     <section className="relative overflow-hidden">
-      <figure className="drift-right absolute z-0 h-full w-[150vh] md:w-[150vw]">
+      <figure className="absolute z-0 h-full w-[150vh] md:w-[150vw]">
         <Image
           src="/hero/Hero-extended.png"
           alt="Test"
@@ -38,9 +38,7 @@ export default function SubHero({
                 asChild
                 className="ml-auto w-full max-w-sm rounded border-2 border-green bg-green px-1 py-3 text-lg font-semibold text-teal-900 hover:bg-teal-900 hover:text-green md:px-6"
               >
-                <Link href={primaryButtonLink || '#'}>
-                  {primaryButton}
-                </Link>
+                <Link href={primaryButtonLink || '#'}>{primaryButton}</Link>
               </Button>
             )}
             {secondaryButton && (
