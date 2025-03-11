@@ -22,7 +22,7 @@ export default function SubHero({
     <section className="relative overflow-hidden">
       <figure className="absolute z-0 h-full w-[150vh] md:w-[150vw]">
         <Image
-          src="/hero/Hero-extended.png"
+          src="/hero/Hero-extended xxxs.webp"
           alt="Test"
           fill
           className="-z-50"

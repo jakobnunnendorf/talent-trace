@@ -17,12 +17,12 @@ const BackgroundImage = ({ flip }: { flip?: boolean }) => {
     >
       <Image
         priority
-        src="/hero/Hero-extended xxxs.png"
+        src="/hero/Hero-extended xxxs.webp"
         alt="ocean background"
         fill
         sizes="(max-width: 768px) 100vh, 100vw"
         placeholder="blur"
-        blurDataURL="/hero/Hero-extended xxxs.png"
+        blurDataURL="/hero/Hero-extended xxxs.webp"
         className={flip ? 'scale-x-[-1]' : ''}
       />
     </figure>
