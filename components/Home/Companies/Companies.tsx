@@ -2,8 +2,6 @@ import React, { Suspense } from 'react'
 import LogoBanner from '@/components/Home/Companies/LogoBanner'
 import LogoBannerSkeletons from './LogoBannerSkeletons'
 
-export const revalidate = 3000
-
 export default function Companies() {
   return (
     <div className="pt-12 text-center md:grid md:grid-rows-5 md:pt-0">
